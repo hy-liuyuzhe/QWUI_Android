@@ -30,8 +30,9 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 
+import com.qwuiteam.qwui.R;
+
 import cn.dreamtobe.kpswitch.IPanelHeightTarget;
-import cn.dreamtobe.kpswitch.R;
 
 /**
  * Created by Jacksgong on 15/7/6.

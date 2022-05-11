@@ -19,8 +19,9 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.qwuiteam.qwui.R;
+
 import cn.dreamtobe.kpswitch.IPanelConflictLayout;
-import cn.dreamtobe.kpswitch.R;
 import cn.dreamtobe.kpswitch.util.ViewUtil;
 
 /**
