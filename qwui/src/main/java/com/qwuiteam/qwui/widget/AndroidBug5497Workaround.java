@@ -1,4 +1,4 @@
-package com.qmuiteam.qwui.widget;
+package com.qwuiteam.qwui.widget;
 
 import android.app.Activity;
 import android.graphics.Rect;
