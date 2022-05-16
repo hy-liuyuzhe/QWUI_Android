@@ -64,30 +64,20 @@ public class ViewUtil {
     }
 
     public static boolean isFullScreen(final Activity activity) {
+        if (activity == null) return false;
         return (activity.getWindow().getAttributes().flags
                 & WindowManager.LayoutParams.FLAG_FULLSCREEN) != 0;
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public static boolean isTranslucentStatus(final Activity activity) {
-        //noinspection SimplifiableIfStatement
-//        int flags = activity.getWindow().getAttributes().flags;
-//        Log.d("liuyuzhe", "isTranslucentStatus: "+flags);
-//        Log.d("liuyuzhe", "WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS: "+WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        boolean isTranslucent = (activity.getWindow().getAttributes().flags
-                & WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS) != 0;
-
-//        boolean isTranslucent2 = (activity.getWindow().getAttributes().flags
-//                & WindowManager.LayoutParams.FLAG_FULLSCREEN) == 0;
-
-        Log.d("liuyuzhe", "is tran: "+isTranslucent);
-        Log.d("liuyuzhe", "isTranslucent2  "+isStatusBarVisible(activity));
-        return isTranslucent ;
-    }
-
-    public static boolean isStatusBarVisible( final Activity activity) {
-        int flags = activity.getWindow().getAttributes().flags;
-        return (flags & WindowManager.LayoutParams.FLAG_FULLSCREEN) == 0;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return activity.getWindow().getStatusBarColor() == 0;
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            return (activity.getWindow().getAttributes().flags
+                    & WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS) != 0;
+        }
+        return false;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)

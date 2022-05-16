@@ -183,6 +183,7 @@ public class KPSwitchConflictUtil {
      * @see KPSwitchPanelLayoutHandler
      */
     public static void showPanel(final Window window, final View panelLayout) {
+        if (window == null) return;
         panelLayout.setVisibility(View.VISIBLE);
         if (window.getCurrentFocus() != null) {
             KeyboardUtil.hideKeyboard(window.getCurrentFocus());
@@ -235,12 +236,13 @@ public class KPSwitchConflictUtil {
      *
      * @param panelLayout the layout of panel.
      */
-    public static void hidePanelAndKeyboard(final View panelLayout) {
-        final Activity activity = (Activity) panelLayout.getContext();
-
-        final View focusView = activity.getCurrentFocus();
+    public static void hidePanelAndKeyboard(final View panelLayout, final Window window) {
+        if (window == null){
+            return;
+        }
+        final View focusView = window.getCurrentFocus();
         if (focusView != null) {
-            KeyboardUtil.hideKeyboard(activity.getCurrentFocus());
+            KeyboardUtil.hideKeyboard(window.getCurrentFocus());
             focusView.clearFocus();
         }
 
@@ -297,21 +299,20 @@ public class KPSwitchConflictUtil {
                 Boolean switchToPanel = null;
                 if (panelLayout.getVisibility() == View.VISIBLE) {
                     // panel is visible.
+
                     if (boundTriggerSubPanelView.getVisibility() == View.VISIBLE) {
-                        Log.d("liuyuzhe", "点击切换Switch显示键盘，通过高度隐藏面板: ");
+
                         // bound-trigger panel is visible.
                         // to show keyboard.
                         KPSwitchConflictUtil.showKeyboard(panelLayout, focusView);
                         switchToPanel = false;
 
                     } else {
-                        Log.d("liuyuzhe", "点击切换Switch 去切换面板的显示: ");
                         // bound-trigger panel is invisible.
                         // to show bound-trigger panel.
                         showBoundTriggerSubPanel(boundTriggerSubPanelView, subPanelAndTriggers);
                     }
                 } else {
-                    Log.d("liuyuzhe", "点击切换Switch面板显示: ");
                     // panel is gone.
                     // to show panel.
                     KPSwitchConflictUtil.showPanel(window, panelLayout);

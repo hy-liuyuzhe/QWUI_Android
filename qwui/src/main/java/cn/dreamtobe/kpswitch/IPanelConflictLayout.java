@@ -43,6 +43,10 @@ public interface IPanelConflictLayout {
      */
     void handleHide();
 
+    /**
+     * Panel-> hide need set gone when use android sdk 30
+     * @param visibility
+     */
     void setVisibility(int visibility);
 
     /**
