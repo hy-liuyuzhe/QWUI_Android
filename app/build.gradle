@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
@@ -32,11 +33,14 @@ android {
 }
 
 dependencies {
-//    implementation project(':qwui')
-    implementation 'io.github.hy-liuyuzhe:qwui:1.0.2'
+    implementation project(':qwui')
+//    implementation 'io.github.hy-liuyuzhe:qwui:1.0.2'
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    api 'com.blankj:utilcodex:1.30.6'
+
+    implementation 'com.blankj:utilcodex:1.30.6'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+
 }

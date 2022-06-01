@@ -28,6 +28,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.qwuiteam.qwui.R;
@@ -171,9 +172,13 @@ public class KeyboardUtil {
 
         // get the screen height.
         final Display display = activity.getWindowManager().getDefaultDisplay();
+        final Point screenSize = new Point();
         final int screenHeight;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            final Point screenSize = new Point();
+        WindowManager wm = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && wm != null) {
+            wm.getDefaultDisplay().getRealSize(screenSize);
+            screenHeight = screenSize.y;
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             display.getSize(screenSize);
             screenHeight = screenSize.y;
         } else {
