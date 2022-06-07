@@ -21,6 +21,7 @@ class SimpleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple)
         val pageContainer = intent.getSerializableExtra("page") as PageContainer
+        titleBar.title = pageContainer.title
         supportFragmentManager.beginTransaction().replace(
             R.id.container,
             pageContainer.targetClass.newInstance(), pageContainer.targetClass.simpleName

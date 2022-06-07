@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -42,5 +43,9 @@ dependencies {
 
     implementation 'com.blankj:utilcodex:1.30.6'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    //glide
+    api rootProject.ext.dependencies.glide
+    api rootProject.ext.dependencies.glide_transformations
+    kapt rootProject.ext.dependencies.annotation_glide
 
 }

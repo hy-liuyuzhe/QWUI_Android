@@ -1,4 +1,4 @@
-package com.qwuiteam.project
+package com.qwuiteam.project.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

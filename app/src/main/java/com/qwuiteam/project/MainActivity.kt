@@ -1,10 +1,11 @@
 package com.qwuiteam.project
 
-import androidx.appcompat.app.AppCompatActivity
+import android.Manifest
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        ActivityCompat.requestPermissions(
+            this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ,Manifest.permission.READ_EXTERNAL_STORAGE),
+            124
+        )
     }
 
 }
