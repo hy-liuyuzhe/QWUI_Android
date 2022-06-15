@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment : Fragment() {
 
+    companion object {
+         var TAG: String = this::class.simpleName.toString()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

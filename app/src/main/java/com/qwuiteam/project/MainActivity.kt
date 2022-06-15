@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE
-            ,Manifest.permission.READ_EXTERNAL_STORAGE),
+            this, arrayOf(
+                Manifest.permission_group.STORAGE,
+                Manifest.permission_group.MICROPHONE,
+                Manifest.permission_group.CAMERA,
+            ),
             124
         )
     }
