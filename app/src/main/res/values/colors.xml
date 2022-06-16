@@ -7,4 +7,350 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="appColor">#FED700</color>
+    <color name="roomMoreMsgTips">#E7F9F4</color>
+    <color name="roomTextNick">#FF3A30</color>
+
+    <!--common-->
+    <color name="common_color_gift_content">#09d2a8</color>
+    <color name="common_color_2">#f1f1f1</color>
+    <color name="common_color_7">#242424</color>
+    <color name="common_color_9">#999999</color>
+    <color name="common_color_14_transparent_87">#de000000</color>
+    <color name="common_color_11_transparent_54">#8affffff</color>
+    <color name="common_color_11_transparent_90">#ffffff</color>
+    <color name="white_alpha_20">#33ffffff</color>
+    <color name="white_alpha_30">#4dffffff</color>
+    <color name="white_alpha_50">#80ffffff</color>
+    <color name="white_alpha_10">#16ffffff</color>
+    <color name="color_ffd4d4d8">#FFD4D4D8</color>
+    <!--common end-->
+    <color name="color_white">#FFFFFF</color>
+    <color name="splash_bg">#1f105a</color>
+
+    <color name="white_op_60">#99FFFFFF</color>
+    <color name="white_op_40">#66FFFFFF</color>
+
+
+    <color name="theme">#10cfa6</color>
+    <color name="room_tip_color">#10cfa6</color>
+
+    <!-- 游戏语音 -->
+
+    <!--背景颜色-->
+    <color name="primary_hl">#8032a1e8</color>
+    <color name="primary_inverse">#fefefe</color>
+    <color name="primary_inverse_hl">#aaaaaa</color>
+    <color name="common_bg_color">#f1f1f1</color>
+    <!--二级子频道背景色-->
+    <color name="primary_disabled">#bdbdbd</color>
+    <!--字体颜色-->
+    <color name="text_color_primary">#333333</color>
+    <!-- 列表次要-->
+    <color name="text_color_secondary">#999999</color><!-- 绑定区服列表主要-->
+    <!-- 添加关注-->
+    <color name="text_color_hint">#ababab</color>
+    <!--当前所在子频道字体颜色-->
+    <!--红色字体-->
+
+    <!--除黑色字体颜色-->
+
+    <!--语音球-->
+
+    <color name="line_color">#d9d9d9</color>
+
+    <color name="line_color_f5f5f5">#f5f5f5</color>
+
+    <!--成员选择组件颜色-->
+    <!--成员选择组件颜色-END-->
+
+    <color name="black_transparent_30">#4d000000</color><!--30% #00000000 的遮罩效果-->
+
+    <!-- 按钮按下时字体透明度为50% -->
+    <!-- 按钮按下时字体透明度为50% -->
+    <color name="white_transparent_5">#0Dffffff</color><!-- 按钮按下时字体透明度为3% -->
+    <color name="white_transparent_10">#1Affffff</color><!-- 按钮按下时字体透明度为3% -->
+    <!--按钮的描边颜色-->
+    <!--按钮的描边颜色-->
+
+    <!--AuthUI button 的颜色值-->
+
+
+    <color name="bg">#f2f2ef</color>
+    <color name="app_bg">#f0f0f0</color>
+    <!-- <color name="app_color">#e84e40</color> -->
+    <color name="app_color">@color/primary_dark</color>
+    <color name="blue">#9AC7FD</color>
+    <color name="gray_light">#f5f5f5</color>
+    <color name="gray_light_2">#e8e8e8</color>
+    <color name="color_FFBC0F">#FFBC0F</color>
+
+    <!-- 分享 -->
+
+    <!-- 粉色 通用 -->
+
+    <!-- 绿色 -->
+    <!-- 浅绿色 -->
+    <!-- 灰色透明 -->
+
+    <!-- 橙色  我的钱包 -->
+
+    <!-- ===============字体颜色=============== -->
+    <!-- 蓝色 字 -->
+    <!-- <color name="blue_font">#539fc4</color> -->
+    <!-- 黑色 字 -->
+    <color name="back_font">#051b28</color>
+    <!-- 浅黑色 字 -->
+    <!-- 灰色 字 -->
+    <!-- 红色 字 -->
+    <color name="red_font">#db0913</color>
+
+    <!-- 粉红色 字 -->
+
+    <!-- 紫色 字 -->
+    <color name="purple">#C4AAFF</color>
+    <!-- 蓝红色 字 -->
+    <color name="blue_font">#44B7E1</color>
+
+    <!-- 红色 字 -->
+
+    <!-- 深红色 字 -->
+    <!-- 青色 -->
+
+    <!-- 黄色 字 -->
+
+    <!-- 灰色 背景 -->
+    <!-- 灰色 背景 -->
+
+    <!-- 点击 颜色 -->
+
+    <!-- 灰色 边框/分割线 -->
+
+    <!-- _zhou_ -->
+    <!-- 标题颜色 -->
+    <color name="transparent">#00000000</color>
+
+    <!-- 列表背景 -->
+    <!-- 大背景 -->
+    <color name="common_first_bg_color">#f5f5f5</color>
+    <!--     <color name="common_first_bg_color">#e0eef7</color> -->
+    <!-- 分割线颜色 -->
+    <color name="common_divider_color">#ebebeb</color>
+    <!-- 列表点击背景颜色 -->
+
+    <!-- 字体颜色终极版本 -->
+    <!-- text color -->
+    <!-- 用于标题 -->
+    <color name="text_primary">#333333</color>
+    <!-- 次级叙述性内容 -->
+    <color name="text_secondary">#666666</color>
+    <!-- 用于不重要的叙述性内容 -->
+    <color name="text_tertiary">#999999</color>
+    <!-- 用于站位性文本提示内容 -->
+    <color name="text_placeholder">#cccccc</color>
+
+
+    <color name="text_1A1A1A">#1A1A1A</color>
+
+
+    <!-- 用户深色背景 -->
+
+    <!-- 导航栏 颜色 -->
+
+    <!-- head bar 颜色 -->
+    <!--
+    <color name="primary">#2fc7ff</color>
+    <color name="primary_dark">#296aa6</color>
+    -->
+
+    <color name="primary_dark">@color/gray_light_2</color>
+
+    <!-- 提示框的背景色 -->
+    <color name="background_color_black">#33000000</color>
+
+    <!-- 提示框的背景色 -->
+
+    <!--甜甜-->
+
+
+    <!-- Background color for light LeBubbleView. -->
+    <!-- Background color for dark LeBubbleView. -->
+    <color name="bubbleView_dark_background">#CC000000</color>
+    <!-- text color for light LeBubbleTextView. -->
+    <color name="bubbleView_light_text_color">#CC323C49</color>
+    <!-- text color for dark LeBubbleTextView. -->
+    <color name="bubbleView_dark_text_color">#CCFFFFFF</color>
+    <!-- press Background color for light LeBubbleView. -->
+    <!-- press Background color for dark LeBubbleView. -->
+    <color name="bubbleView_dark_press_background">#E6000000</color>
+
+
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_ffc160">#4E3308</color>
+    <color name="color_7ee7f6">#7ee7f6</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_fed700">#000000</color>
+    <color name="color_DEDEDE">#DEDEDE</color>
+    <color name="color_1A1A1A">#1A1A1A</color>
+    <color name="color_d8367def">#d8367def</color>
+    <color name="color_d8ffa002">#d8ffa002</color>
+    <color name="color_d81be198">#d81be198</color>
+    <color name="color_d8b077f8">#d8b077f8</color>
+    <color name="color_d8fd5a87">#d8fd5a87</color>
+    <color name="color_FF4D4D">#FF4D4D</color>
+    <color name="color_33FFFFFF">#33FFFFFF</color>
+    <color name="color_CC000000">#CC000000</color>
+    <color name="color_12cda0">#12cda0</color>
+    <color name="color_fe5555">#fe5555</color>
+    <color name="color_b2b2b2">#b2b2b2</color>
+    <color name="color_bebfc2">#bebfc2</color>
+    <color name="color_ff6764">#ff6764</color>
+    <color name="red_fd2772">#fd2772</color>
+    <color name="color_F3D84D">#F3D84D</color>
+    <color name="color_15c6a0">#15c6a0</color>
+    <color name="color_6AB3F7">#6AB3F7</color>
+    <color name="color_90c8f4">#90c8f4</color>
+    <color name="color_ff6164">#ff6164</color>
+    <color name="color_ffc107">#ffc107</color>
+    <color name="color_339cfe">#339cfe</color>
+    <color name="color_070809">#F0070809</color>
+    <color name="color_CA9A56">#CA9A56</color>
+    <color name="color_FF9248">#FF9248</color>
+    <color name="color_ffd557">#ffd557</color>
+    <color name="color_ffd456">#ffd456</color>
+    <color name="color_0c0d0f_alpha_90">#e60c0d0f</color>
+    <color name="color_10fca6">#10fca6</color>
+    <color name="color_24fc9003">#24fc9003</color>
+    <color name="color_24FFBC0F">#24FFBC0F</color>
+    <color name="color_24ffca00">#24ffca00</color>
+    <color name="color_fe5b69">#fe5b69</color>
+    <color name="color_fedd27">#FEDD27</color>
+    <color name="color_474747">#474747</color>
+    <color name="color_ff55e496">#ff55e496</color>
+    <color name="color_23CFB1">#23CFB1</color>
+    <color name="color_5c5c5c">#5c5c5c</color>
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <color name="color_ff070809">#ff070809</color>
+    <color name="color_ff222325">#ff222325</color>
+    <color name="color_ff4ecf">#ff4ecf</color>
+    <color name="color_b3b3b3">#b3b3b3</color>
+    <color name="color_fff0f0f0">#fff0f0f0</color>
+    <color name="color_ff000000">#ff000000</color>
+    <color name="color_FFA800">#FFA800</color>
+    <color name="color_BFC0C3">#BFC0C3</color>
+    <color name="color_80ffffff">#80ffffff</color>
+    <color name="color_10CFA6">#10CFA6</color>
+    <color name="color_787879">#787879</color>
+    <color name="color_4E4E4E">#4E4E4E</color>
+    <color name="color_424242">#424242</color>
+    <color name="color_1Affffff">#1Affffff</color>
+    <color name="color_4Dffffff">#4Dffffff</color>
+    <color name="color_848C97">#848C97</color>
+    <color name="color_7D7E80">#7D7E80</color>
+    <color name="color_202020">#202020</color>
+    <color name="color_B3B3B3">#B3B3B3</color>
+    <color name="color_D5D5D5">#D5D5D5</color>
+    <color name="color_E8E8E8">#E8E8E8</color>
+    <color name="color_BBBEC0">#BBBEC0</color>
+    <color name="color_2A136A">#2A136A</color>
+    <color name="color_4036B4">#4036B4</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_FFDA81">#FFDA81</color>
+
+    <!--国王隐身进房，房间所有神秘人相关昵称高亮颜色保持一致-->
+    <color name="king_invisable_room_nick">#FAD23E</color>
+    <color name="room_msg_nick">#99ffffff</color>
+
+    <color name="color_ffb665fc">#FFB665FC</color>
+
+
+    <color name="color_f2f2f2">#FFF2F2F2</color>
+    <color name="color_d918121e">#d918121E</color>
+    <color name="color_10cfa6">#10CFA6</color>
+    <color name="color_f9e4501">#ff9e4501</color>
+    <color name="color_1cc9a4">#1CC9A4</color>
+    <color name="color_2D3A47">#2D3A47</color>
+
+    <color name="recharge_top_bg">#80d5d5d5</color>
+    <color name="color_ff2b2c40">#FF2B2C40</color>
+    <color name="color_ff0CD39D">#FF0CD39D</color>
+    <color name="color_FFE67606">#FFE67606</color>
+    <color name="color_EFCCFF">#EFCCFF</color>
+    <color name="color_FF510C8F">#FF510C8F</color>
+    <color name="color_8332CC">#FF8332CC</color>
+    <color name="color_340070">#340070</color>
+    <color name="color_FFD160">#FFD160</color>
+    <color name="color_ABB4BC">#ABB4BC</color>
+    <color name="color_66BCC0C3">#66BCC0C3</color>
+    <color name="black_trasparent_color">#66000000</color>
+    <color name="color_051E2C2E">#051E2C2E</color>
+    <color name="color_03C9A0">#03C9A0</color>
+    <color name="color_F9F4D6">#F9F4D6</color>
+    <color name="color_FAC68F">#FAC68F</color>
+    <color name="color_949595">#949595</color>
+    <color name="color_ff920934">#FF920934</color>
+    <color name="color_ffffd07e">#FFFFD07E</color>
+    <color name="color_fffff4b8">#FFFFF4B8</color>
+    <color name="title_ff212121">#FF212121</color>
+    <color name="color_ffbd1349">#FFBD1349</color>
+    <color name="color_FAC792">#FAC792</color>
+    <color name="color_DE3B21">#DE3B21</color>
+    <color name="color_ffffc86c">#FFFFC86C</color>
+    <color name="color_fffce190">#FFFCE190</color>
+    <color name="color_ffffe8a4">#FFFFE8A4</color>
+    <color name="color_ffababab">#FFABABAB</color>
+    <color name="color_ffffcb71">#FFFFCB71</color>
+    <color name="color_fff24861">#FFF24861</color>
+    <color name="color_ffdba757">#FFEDBA6A</color>
+    <color name="color_ffe8044c">#FFE8044C</color>
+    <color name="black_transparent_15">#26000000</color><!--按钮按下时背景有50% #00000000 的遮罩效果-->
+    <color name="color_ffffee45">#FFFFEE45</color>
+    <color name="color_ff0e00b5">#FF0E00B5</color>
+    <color name="color_B57100">#B57100</color>
+    <color name="color_FFFFF600">#FFFFF600</color>
+    <color name="color_f5f5f5">#F5F5F5</color>
+    <color name="color_f8e244">#F8E244</color>
+    <color name="color_54a9ff">#54A9FF</color>
+    <color name="color_ffff6562">#ffff6562</color>
+    <color name="color_ffffcb77">#ffffcb77</color>
+    <color name="color_ffe95c5e">#ffe95c5e</color>
+    <color name="color_ff8d8ba2">#ff8d8ba2</color>
+    <color name="color_9172fb">#9172FB</color>
+    <color name="color_ff212121">#ff212121</color>
+    <color name="color_ff666666">#ff666666</color>
+    <color name="color_line">#4D666666</color>
+    <color name="color_ff393939">#ff393939</color>
+    <color name="color_f6f6f6">#F6F6F6</color>
+    <color name="color_656667">#656667</color>
+    <color name="color_10e8c2">#10E8C2</color>
+    <color name="color_ffff6700">#ffff6700</color>
+    <color name="color_f3f5f8">#F3F5F8</color>
+    <color name="default_bg_color">#B3FFFFFF</color>
+    <color name="color_loading">#1A000000</color>
+    <color name="color_9f9f9f">#9F9F9F</color>
+    <color name="color_ffffbc0f">#FFFFBC0F</color>
+    <color name="color_ff606060">#FF606060</color>
+    <color name="color_fff2f2f2">#FFF2F2F2</color>
+    <color name="color_ffffc900">#FFFFC900</color>
+    <color name="color_e610051a">#E610051A</color>
+    <color name="color_ff7c7d7f">#FF7C7D7F</color>
+    <color name="color_ffffff19">#FFFFFF19</color>
+    <color name="color_ffe2e2e2">#FFE2E2E2</color>
+    <color name="color_ffffca00">#FFFFCA00</color>
+    <color name="color_fffc9003">#FFFC9003</color>
+    <color name="color_fff6f7fa">#FFF6F7FA</color>
+    <color name="color_ffee9012">#FFEE9012</color>
+    <color name="color_ffca9a56">#FFCA9A56</color>
+    <color name="color_fff8387b">#FFF8387B</color>
+    <color name="color_ff10051a">#FF10051A</color>
+    <color name="black_transparent_40">#66000000</color>
+    <color name="black_transparent_0">#00000000</color>
+    <color name="color_ffedc27f">#FFEDC27F</color>
+    <color name="color_ffc89d66">#FFC89D66</color>
+    <color name="color_ffff9248">#FFFF9248</color>
+    <color name="black_transparent_80">#CD000000</color>
+
 </resources>

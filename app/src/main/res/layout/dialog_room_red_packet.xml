@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_dialog_red_packet"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:background="@drawable/icon_room_red_packet_dialog_bg"
+                android:orientation="vertical"
+                android:paddingHorizontal="22dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <LinearLayout
+                    android:id="@+id/layoutRedPacketType"
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/layoutRedPacketCoin">
+
+                    <TextView
+                        android:id="@+id/layoutRoomLucky"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/room_lucky_bags"
+                        android:textColor="@color/color_DE3B21" />
+
+                    <TextView
+                        android:id="@+id/layoutWorldLucky"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/world_lucky_bags"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <com.qwuiteam.project.view.RoomRedPacketTypeLayout
+                    android:id="@+id/layoutRedPacketCoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textCoinTip" />
+
+                <TextView
+                    android:id="@+id/textCoinTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="111dp"
+                    android:text="@string/tv_send_redpackage_handing_fee_tips"
+                    android:textColor="#fffcc88c"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textSendRedPacket"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <com.qwuiteam.project.view.RoomRedPacketTypeLayout
+                    android:id="@+id/layoutRedPacketNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="33dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textSendRedPacket" />
+
+                <com.haki.mobile.ui.liveroom.imroom.room.widget.RoomRedPacketStyleTipLayout
+                    android:id="@+id/layoutRedPacketStyleTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/textSendRedPacket"
+                    app:layout_constraintTop_toBottomOf="@+id/textCoinTip"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/textSendRedPacket"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_tips" />
+
+                <TextView
+                    android:id="@+id/tv_tips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="11dp"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/luck_bag_coins"
+                    android:textColor="@color/color_ffffd07e"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/guideLineView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_dialog_red_packet" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_room_red_packet_dialog_top"
+                app:layout_constraintBottom_toBottomOf="@+id/guideLineView"
+                app:layout_constraintTop_toTopOf="@+id/guideLineView" />
+
+            <ImageView
+                android:id="@+id/imageRule"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_redpacket_rule"
+                app:layout_constraintBottom_toBottomOf="@+id/guideLineView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideLineView" />
+
+
+            <ImageView
+                android:id="@+id/imageClose"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_redpacket_close"
+                app:layout_constraintBottom_toBottomOf="@+id/guideLineView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideLineView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

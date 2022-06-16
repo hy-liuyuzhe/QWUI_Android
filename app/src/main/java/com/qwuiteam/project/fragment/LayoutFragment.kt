@@ -51,8 +51,11 @@ class LayoutFragment : BaseFragment() {
 
             mutableList.add("5")
             Log.d("liuyuzhe", "add: "+mutableList);
+        }
 
-
+        joinChannel.setOnClickListener {
+            RoomRedPacketDialogFragment.newInstance("")
+                .show(activity!!.supportFragmentManager,"124")
         }
     }
 }

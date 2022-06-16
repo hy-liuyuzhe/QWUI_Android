@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="chance_meeting_report_reason">
+        <item>Political sensitivity</item>
+        <item>Sex and violence</item>
+        <item>Personal attacks</item>
+    </string-array>
+
+    <string-array name="chance_meeting_random_man_to_woman">
+        <item>Hello, Nice to meet you!</item>
+        <item>Hi, are you online?</item>
+        <item>You have a very sweet voice. I want to talk to you.</item>
+        <item>You have such a lovely voice</item>
+        <item>Do you happy to today? </item>
+        <item>Hello</item>
+    </string-array>
+    <string-array name="chance_meeting_random_woman_to_man">
+        <item>Hello, Nice to meet you!</item>
+        <item>Welcome~</item>
+        <item>Are you a bad man or a good man？</item>
+        <item>You have such a lovely voice</item>
+        <item>Hi, guys. How are you doing?</item>
+        <item>Hi</item>
+    </string-array>
+
+    <string-array name="search_room_tags"/>
+
+    <string-array name="roomLuckyBagGolds">
+        <item>270</item>
+        <item>770</item>
+        <item>2770</item>
+        <item>17770</item>
+    </string-array>
+
+    <string-array name="luckyBagNum">
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="allRoomLuckyBagGolds">
+        <item>4777</item>
+        <item>7777</item>
+        <item>17777</item>
+        <item>77777</item>
+    </string-array>
+</resources>

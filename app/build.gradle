@@ -38,6 +38,10 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -57,5 +61,8 @@ dependencies {
     api rootProject.ext.dependencies.glide_transformations
     kapt rootProject.ext.dependencies.annotation_glide
     api 'com.google.firebase:firebase-auth:21.0.2'
+
+    implementation 'com.hi-dhl:binding:1.1.5'
+
 
 }
