@@ -15,7 +15,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@mipmap/ic_launcher_round"
-            android:text="add" />
+            android:text="add a object" />
 
         <ImageView
             android:id="@+id/avatarView"
@@ -31,11 +31,11 @@
             android:layout_gravity="center_horizontal|bottom" />
 
         <Button
-            android:id="@+id/convert_map"
+            android:id="@+id/addMoreObject"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical"
-            android:text="convert_map" />
+            android:text="addMoreObject" />
 
         <Button
             android:id="@+id/print"

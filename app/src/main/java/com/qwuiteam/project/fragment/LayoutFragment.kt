@@ -1,6 +1,7 @@
 package com.qwuiteam.project.fragment
 
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -12,6 +13,7 @@ import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.blankj.utilcode.util.Utils
 import com.qwuiteam.project.R
+import com.qwuiteam.project.utils.MainLooperPrinter
 import kotlinx.android.synthetic.main.fragment_layout.*
 
 /**
@@ -56,6 +58,18 @@ class LayoutFragment : BaseFragment() {
         joinChannel.setOnClickListener {
             RoomRedPacketDialogFragment.newInstance("")
                 .show(activity!!.supportFragmentManager,"124")
+        }
+
+        print.setOnClickListener {
+            try {
+                Thread.sleep(2000)
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+                Log.e("liuyuzhe", "onClick of R.id.button1: ", e)
+            }
+        }
+        log.setOnClickListener {
+            Looper.getMainLooper().setMessageLogging(MainLooperPrinter());
         }
     }
 }
