@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.qwuiteam.project"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -33,11 +33,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
     buildFeatures {
         dataBinding = true
         viewBinding = true
@@ -65,12 +65,12 @@ dependencies {
     kapt rootProject.ext.dependencies.annotation_glide
     api 'com.google.firebase:firebase-auth:21.0.2'
     //ui
-    implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
-    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
-    implementation 'com.netease.nimlib:basesdk:8.10.0'
-    implementation 'com.netease.nimlib:push:8.10.0'
+//    implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
+//    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+//    implementation 'com.netease.nimlib:basesdk:8.10.0'
+//    implementation 'com.netease.nimlib:push:8.10.0'
 
-
-
+    //ffmpag
+    implementation 'com.arthenica:ffmpeg-kit-full:4.5.1-1'
 
 }

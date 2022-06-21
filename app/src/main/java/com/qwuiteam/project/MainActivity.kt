@@ -2,6 +2,7 @@ package com.qwuiteam.project
 
 import android.Manifest
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -29,14 +30,31 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        ActivityCompat.requestPermissions(
-            this, arrayOf(
-                Manifest.permission_group.STORAGE,
-                Manifest.permission_group.MICROPHONE,
-                Manifest.permission_group.CAMERA,
-            ),
-            124
+
+//        ActivityCompat.requestPermissions(
+//            this, arrayOf(
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                Manifest.permission_group.STORAGE,
+//                Manifest.permission_group.MICROPHONE,
+//                Manifest.permission_group.CAMERA,
+//            ),
+//            124
+//        )
+
+        // 申请相机权限
+        requestPermissions(
+            arrayOf(
+                Manifest.permission.CAMERA,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ), 123
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("wwq", "request: ");
     }
 
 }

@@ -12,6 +12,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         Utils.init(this);
-        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        //BlockCanary.install(this, new AppBlockCanaryContext()).start();
     }
 }
