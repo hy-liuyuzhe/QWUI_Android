@@ -5,12 +5,11 @@
     android:orientation="vertical">
 
 
-
     <Button
-        android:id="@+id/add"
+        android:id="@+id/encode_video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add" />
+        android:text="encode_video" />
 
     <Button
         android:id="@+id/to_gif"
@@ -39,6 +38,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="video_convert_images" />
+    <Button
+        android:id="@+id/video_convert_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="video_convert_image" />
+    <Button
+        android:id="@+id/add_background_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add_background_audio" />
+
+    <Button
+        android:id="@+id/add_background_audio_cy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add_background_audio_cy" />
+    <Button
+        android:id="@+id/add_background_audio_loop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add_background_audio_loop" />
+    <Button
+        android:id="@+id/crop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="crop" />
 
 
 
