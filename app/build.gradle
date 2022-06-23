@@ -70,6 +70,8 @@ dependencies {
     implementation 'com.netease.nimlib:basesdk:8.10.0'
     implementation 'com.netease.nimlib:push:8.10.0'
 
+    implementation 'io.github.lucksiege:pictureselector:v2.6.1'
+
 
 
 
