@@ -65,6 +65,8 @@ dependencies {
     kapt rootProject.ext.dependencies.annotation_glide
     api 'com.google.firebase:firebase-auth:21.0.2'
     //ui
+    implementation 'io.github.lucksiege:pictureselector:v2.6.1'
+
 //    implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
 //    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 //    implementation 'com.netease.nimlib:basesdk:8.10.0'

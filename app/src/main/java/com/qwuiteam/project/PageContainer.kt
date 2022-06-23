@@ -13,6 +13,7 @@ enum class PageContainer(
     bitmap("研究bitmap", BitmapFragment::class.java),
     memory("内存研究", MemoryFragment::class.java),
     auto_text("研究自动滚动text", AutoScrollTextViewFragment::class.java),
+    choosePhoto("选择相册", ChoosePhotoFragment::class.java),
     FFmpag("ffmpag", FFmpagFragment::class.java)
 
 }
