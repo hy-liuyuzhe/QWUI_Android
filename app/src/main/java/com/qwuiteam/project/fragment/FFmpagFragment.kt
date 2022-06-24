@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.arthenica.ffmpegkit.FFmpegKit
+import com.arthenica.ffmpegkit.FFprobeKit.getMediaInformation
 import com.arthenica.ffmpegkit.ReturnCode
+import com.blankj.utilcode.util.LogUtils
 import com.qwuiteam.project.R
 import kotlinx.android.synthetic.main.fragment_ffmpag.*
 
@@ -14,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_ffmpag.*
  */
 class FFmpagFragment : BaseFragment() {
 
+    val watermark = "/storage/emulated/0/Download/watermark.png"
+    val cover = "/storage/emulated/0/Download/Cover.jpg"
     val dir = "/storage/emulated/0/Download/"
     val dirDownload = "/storage/emulated/0/Download"
     val opening = "/storage/emulated/0/Download/input.mp4"
@@ -30,6 +34,38 @@ class FFmpagFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //./s/ffmpeg -loop 1 -i /files/v/smallest_bunny_1080p_30fps_001.jpg -c:v libx264 -pix_fmt yuv420p -t 10 /files/v/smallest_bunny_1080p_30fps_frame_001.mp4
+        image_to_video.setOnClickListener {
+            val output = "$dir/video/image_to_video.mp4"
+            FFmpegKit.execute("-loop 1 -i $cover -t 3 $output")
+        }
+
+        video_watermark.setOnClickListener {
+            val commands = arrayListOf<String>()
+            commands.apply {
+                add("-i")
+                add("$dir/video/sunshine.mp4")
+                add("-i")
+                add(watermark)
+                add("-filter_complex")
+                add("overlay=10:10")
+                add("$dir/video/video_with_watermark.mp4")
+            }
+            FFmpegKit.executeWithArguments(commands.toTypedArray())
+        }
+
+        //比特率 * 时间(s) = file size (kb) * 8
+        //比特率 * duration /1024/1024 / 8 = file zie (mb)
+        media_info.setOnClickListener {
+            val information = getMediaInformation(opening).mediaInformation
+            LogUtils.d("info: " + information.allProperties)
+        }
+
+        //ffmpeg -i video.mp4 -i image.png -map 1 -map 0 -c copy -disposition:0 attached_pic out.mp4
+        add_cover_video.setOnClickListener {
+            //FFmpegKit.execute("-i $opening -i $cover -map 1 -map 0 -c copy -disposition:0 attached_pic $dir/video/video_with_cover.mp4")
+            FFmpegKit.execute("-i $opening -i $cover -filter_complex 'overlay=10:10' $dir/video/video_with_cover.mp4")
+        }
 
         encode_video.setOnClickListener {
             FFmpegKit.execute(

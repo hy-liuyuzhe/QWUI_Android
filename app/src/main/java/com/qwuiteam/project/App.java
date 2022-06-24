@@ -3,8 +3,6 @@ package com.qwuiteam.project;
 import android.app.Application;
 
 import com.blankj.utilcode.util.Utils;
-import com.github.moduth.blockcanary.BlockCanary;
-import com.qwuiteam.project.utils.AppBlockCanaryContext;
 
 public class App extends Application {
 
@@ -13,5 +11,6 @@ public class App extends Application {
         super.onCreate();
         Utils.init(this);
         //BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        //Looper.getMainLooper().setMessageLogging(new MainLooperPrinter());
     }
 }

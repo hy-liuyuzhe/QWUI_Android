@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/start_with"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start_with" />
+
+    <Button
+        android:id="@+id/start_with2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start_with2" />
+
+    <Button
+        android:id="@+id/media_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="media_info" />
+
+    <Button
+        android:id="@+id/add_cover_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add_cover_video" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add" />
+
+    <Button
+        android:id="@+id/to_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to_gif" />
+
+    <Button
+        android:id="@+id/array_command"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="array_command" />
+
+    <Button
+        android:id="@+id/merge_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="merge_video" />
+    <Button
+        android:id="@+id/merge_video1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="merge_video1" />
+    <Button
+        android:id="@+id/video_convert_images"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="video_convert_images" />
+
+
+
+</LinearLayout>
