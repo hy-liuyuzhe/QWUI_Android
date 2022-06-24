@@ -64,6 +64,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="crop" />
+    <Button
+        android:id="@+id/mute_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mute_video" />
 
 
 

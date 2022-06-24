@@ -117,10 +117,13 @@ class FFmpagFragment : BaseFragment() {
         //ss 开始时间 t持续时间
         crop.setOnClickListener {
             //audio
-            FFmpegKit.execute(
-                "-i $piano_quiet -c:a copy -ss 00:00:05 -t 00:00:30 $dirDownload/crop_piano.mp3")
-            //video
-            //FFmpegKit.execute("-i $sunshine -c:v copy -ss 00:00:05 -t 00:01:03 $dirDownload/crop_video.mp4")
+//            FFmpegKit.execute(
+//                "-i $piano_quiet -c:a copy -ss 00:00:05 -t 00:00:30 $dirDownload/crop_piano.mp3")
+            FFmpegKit.execute("-i $sunshine -c:v copy -ss 00:00:05 -t 00:00:35 $dirDownload/crop_sunshine_video.mp4")
+        }
+
+        mute_video.setOnClickListener {
+            FFmpegKit.execute("-i $dirDownload/hasBackground.mp4 -c copy -an $dirDownload/muteVideo.mp4")
         }
 
     }
