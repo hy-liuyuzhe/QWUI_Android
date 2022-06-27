@@ -20,17 +20,18 @@ import java.io.File
 class FFmpagFragment : BaseFragment() {
 
     val watermark = "/storage/emulated/0/Download/watermark.png"
-    val cover = "/storage/emulated/0/Download/Cover.jpg"
+    val cover = "/storage/emulated/0/Download/Cover.png"
     val dir = "/storage/emulated/0/Download/"
+    val testDir = "/storage/emulated/0/Download/test"
     val dirDownload = "/storage/emulated/0/Download"
     val videoDir = "/storage/emulated/0/Download/video"
+    val videoWaterAvi = "/storage/emulated/0/Download/video/video_with_watermarkV2.avi"
     val opening = "/storage/emulated/0/Download/input.mp4"
     val episode = "/storage/emulated/0/Download/opening.mp4"
     val ending = "/storage/emulated/0/Download/result.mp4"
     val output = "/storage/emulated/0/Download/output2.mp4"
     val output1 = "/storage/emulated/0/Download/output1.mp4"
     val audio1 = "/storage/emulated/0/Download/audio1.mp3"
-    //I/ffmpeg-kit: : Video: mpeg4 (mp4v / 0x7634706D), yuv420p(tv, bt709/bt709/smpte170m), 1280x720 [SAR 1:1 DAR 16:9], 569 kb/s
     val sunshine = "/storage/emulated/0/Download/video/sunshine.mp4"
     val piano_quiet = "/storage/emulated/0/Download/audio/piano_quiet.mp3"
     val class_alarm = "/storage/emulated/0/Download/audio/class_alarm.mp3"
@@ -39,15 +40,17 @@ class FFmpagFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        maintain_original_quality.setOnClickListener {
-            /*val command = "-i $sunshine -vcodec libx265 -crf 28 $videoDir/maintain_original_quality2.mp4"
+        FileUtils.createOrExistsDir(testDir)
+        auto_select_stream.setOnClickListener {
+            //ffmpeg -i A.avi -i B.mp4 out1.mkv out2.wav -map 1:a -c:a copy out3.mov
+            val command = "-i $videoWaterAvi -i $videoDir/hasBackground_keep_quality.mp4 $testDir/out1.mkv $testDir/out2.wav -map 1:a -c:a copy $testDir/out3.mov"
             FFmpegKit.executeAsync(command) {
-                Log.d("wwq", "FFmpegSession: " + it.returnCode);
-
                 if (ReturnCode.isSuccess(it.returnCode)) {
-                    it.output.openFile(requireContext())
+                    it.arguments.last().openFile(requireContext())
                 }
-            }*/
+            }
+        }
+        maintain_original_quality.setOnClickListener {
             val out = "$videoDir/maintain_original_quality3.mp4"
             val command = "-y -i $sunshine -acodec copy -vcodec libx264 $out"
             FFmpegKit.executeAsync(command) {
@@ -56,7 +59,6 @@ class FFmpagFragment : BaseFragment() {
                 }
             }
         }
-        //./s/ffmpeg -loop 1 -i /files/v/smallest_bunny_1080p_30fps_001.jpg -c:v libx264 -pix_fmt yuv420p -t 10 /files/v/smallest_bunny_1080p_30fps_frame_001.mp4
         addWatermark_music.setOnClickListener {
             val commands = arrayListOf<String>()
             val output1 = "$dirDownload/video/video_with_watermarkV2.mp4"
@@ -70,13 +72,13 @@ class FFmpagFragment : BaseFragment() {
                 add(output1)
             }
             FFmpegKit.executeWithArguments(commands.toTypedArray())
-
             val output = "$dir/video/addWatermark_music.mp4"
             FileUtils.delete(output)
-            val command = "-i $output1 -i $piano_quiet -map 0:v -map 1:a -b:v 4455306k -s 2560x1440 -shortest $output"
-            FFmpegKit.executeAsync(command){
-                Log.d("wwq", "FFmpegSession: "+it.returnCode);
-                if(ReturnCode.isSuccess(it.returnCode)){
+            val command =
+                "-i $output1 -i $piano_quiet -map 0:v -map 1:a -b:v 4455306k -s 2560x1440 -shortest $output"
+            FFmpegKit.executeAsync(command) {
+                Log.d("wwq", "FFmpegSession: " + it.returnCode);
+                if (ReturnCode.isSuccess(it.returnCode)) {
                     output.openFile(requireContext())
                 }
             }
@@ -107,10 +109,13 @@ class FFmpagFragment : BaseFragment() {
             LogUtils.d("info: " + information.allProperties)
         }
 
-        //ffmpeg -i video.mp4 -i image.png -map 1 -map 0 -c copy -disposition:0 attached_pic out.mp4
         add_cover_video.setOnClickListener {
-            //FFmpegKit.execute("-i $opening -i $cover -map 1 -map 0 -c copy -disposition:0 attached_pic $dir/video/video_with_cover.mp4")
-            FFmpegKit.execute("-i $opening -i $cover -filter_complex 'overlay=10:10' $dir/video/video_with_cover.mp4")
+//            FFmpegKit.execute("-i $sunshine -i $cover -map 1 -map 0 -c copy -disposition:0 attached_pic $dir/video/video_with_coverV6.mp4")
+//            FFmpegKit.execute("-i $opening -i $cover -filter_complex 'overlay=10:10' $dir/video/video_with_cover.mp4")
+//            ffmpeg -i in.mp4 -i IMAGE -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic out.mp4
+            //to do no working
+            FFmpegKit.execute("-i $sunshine -i $cover -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic $dir/video/video_with_coverV7.mp4")
+
         }
 
         encode_video.setOnClickListener {
@@ -120,14 +125,23 @@ class FFmpagFragment : BaseFragment() {
             )
         }
 
-        array_command.setOnClickListener {
-            val session = FFmpegKit.execute(
-                "-i $episode -y /storage/emulated/0/Download/output.gif -i $episode -c:v mpeg4 -y $output"
-            )
-            if (ReturnCode.isSuccess(session.returnCode)) {
-                Log.d("wwq", "SUCCESS: ");
-                // SUCCESS
+        //合并2个视频，如果不是同一个比例，后面的会强制按前面视频比例来显示
+        image_cover_merge_video.setOnClickListener {
+//            val output = "$dir/video/${System.currentTimeMillis()}.avi"
+//            FFmpegKit.execute("-loop 1 -i $cover -t 1 $output")
+//
+//            FFmpegKit.execute("-i $output -qscale:v 1 $videoDir/intermediate1.mpg")
+//            FFmpegKit.execute("-i $videoWaterAvi -qscale:v 1 $videoDir/intermediate2.mpg")
+//            FFmpegKit.execute("-i concat:'${videoDir}/intermediate1.mpg|${videoDir}/intermediate2.mpg' -c copy $videoDir/intermediate_all.mpg")
+//            FFmpegKit.execute("-i $videoDir/intermediate_all.mpg -qscale:v 2 $videoDir/image_cover_merge_video.avi")
+
+            //todo keep rate
+            FFmpegKit.executeAsync("-i concat:'${videoDir}/intermediate1.mpg|${videoDir}/intermediate2.mpg' -c copy -y $videoDir/intermediate_all.mpg"){
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
             }
+
         }
         to_gif.setOnClickListener {
             val session = FFmpegKit.execute(
@@ -168,32 +182,52 @@ class FFmpagFragment : BaseFragment() {
                 }
             }
         }
-
-        /**
-         * ffmpeg -i vid_dire01_seq01.mp4 -i video_base_1080p.mp4 -i vid_dire01_seq01.mp4
-         * -filter_complex "[0:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video0];[1:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video1];[2:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video2];[video0][0:a:0][video1][1:a:0][video2][2:a:0]concat=n=3:v=1:a=1[outv][outa]" -map [outv] -map [outa] -vsync 0 output.mp4
-         */
-        merge_video1.setOnClickListener {
-//            todo this no working
-//            val command =
-//                "-i $opening -i $episode $ending -filter_complex [0:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video0];[1:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video1];[2:v]setpts=PTS-STARTPTS,scale=1920x1080,fps=24,format=yuv420p[video2];[video0][0:a:0][video1][1:a:0][video2][2:a:0]concat=n=3:v=1:a=1[outv][outa] -map [outv] -map [outa] -vsync 0 $output1"
-            val command = "-i concat:$opening|$episode|$ending -c copy $output1"
-            FFmpegKit.execute(command)
+        scale_video.setOnClickListener {
+            val out = "$videoDir/${System.currentTimeMillis()}.mp4"
+            FFmpegKit.executeAsync("-i $sunshine -vf scale=320:240,setsar=1:1 $out") {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    out.openFile(requireContext())
+                }
+            }
         }
         add_background_audio.setOnClickListener {
-            val command = "-i $opening -i $audio1 -map 0:v -map 1:a $dirDownload/hasBackground.mp4"
-            FFmpegKit.execute(command)
+//            val command = "-i $opening -i $audio1 -map 0:v -map 1:a $dirDownload/hasBackground.mp4"
+//            FFmpegKit.execute(command)
+            //add background keep quality
+//            val command = "-i $sunshine -i $piano_quiet -map 0:v -c:v copy -map 1:a $videoDir/hasBackground_keep_quality.mp4"
+//            FFmpegKit.executeAsync(command){
+//                if (ReturnCode.isSuccess(it.returnCode)) {
+//                    it.arguments.last().openFile(requireContext())
+//                }
+//            }
+//            //keep 720p
+//            val command = "-i $sunshine -i $piano_quiet -map 0:v -vf scale=-1:720 -map 1:a -shortest $videoDir/hasBackground_horizontal_720p.mp4"
+//            FFmpegKit.executeAsync(command){
+//                if (ReturnCode.isSuccess(it.returnCode)) {
+//                    it.arguments.last().openFile(requireContext())
+//                }
+//            }
+            //keep 1080p
+            val command = "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
+            FFmpegKit.executeAsync(command){
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+
         }
 
         //-shortest 以最短的为基准 ， -c:v copy 不进行编解码，有压缩
         add_background_audio_cy.setOnClickListener {
-            val command = "-i $opening -i $class_alarm -map 0:v -map 1:a -c:v copy -shortest $dirDownload/hasBackgroundClassAlarm.mp4"
+            val command =
+                "-i $opening -i $class_alarm -map 0:v -map 1:a -c:v copy -shortest $dirDownload/hasBackgroundClassAlarm.mp4"
             FFmpegKit.execute(command)
         }
 
         //音频循环直到视频结束
         add_background_audio_loop.setOnClickListener {
-            val command = "-i $sunshine -stream_loop -1 -i $class_alarm -c:v copy -map 0:v -map 1:a -shortest $dirDownload/hasBackgroundLoop.mp4"
+            val command =
+                "-i $sunshine -stream_loop -1 -i $class_alarm -c:v copy -map 0:v -map 1:a -shortest $dirDownload/hasBackgroundLoop.mp4"
             FFmpegKit.execute(command)
         }
         //ffmpeg -y -i 124.mp3 -vn -acodec copy -ss 00:00:00 -t 00:01:32 output.mp3

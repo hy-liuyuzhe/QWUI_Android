@@ -10,6 +10,11 @@
 
 
         <Button
+            android:id="@+id/auto_select_stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="auto_select_stream" />
+        <Button
             android:id="@+id/maintain_original_quality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,10 +63,10 @@
             android:text="to_gif" />
 
         <Button
-            android:id="@+id/array_command"
+            android:id="@+id/image_cover_merge_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="array_command" />
+            android:text="image_cover_merge_video" />
 
         <Button
             android:id="@+id/merge_video"
@@ -70,10 +75,10 @@
             android:text="merge_video" />
 
         <Button
-            android:id="@+id/merge_video1"
+            android:id="@+id/scale_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="merge_video1" />
+            android:text="scale_video" />
 
         <Button
             android:id="@+id/video_convert_images"
