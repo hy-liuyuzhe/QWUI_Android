@@ -1,20 +1,13 @@
 package com.qwuiteam.project.fragment
 
-import android.app.Instrumentation
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
 import com.qwuiteam.project.bean.Person
 import com.qwuiteam.project.utils.MainLooperPrinter
-import kotlinx.android.synthetic.main.fragment_layout.*
-import kotlinx.android.synthetic.main.fragment_layout.add
+import kotlinx.android.synthetic.main.fragment_layout.encode_video
 import kotlinx.android.synthetic.main.fragment_layout.joinChannel
 import kotlinx.android.synthetic.main.fragment_layout.log
 import kotlinx.android.synthetic.main.fragment_layout.print
@@ -34,7 +27,7 @@ class MemoryFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         Looper.getMainLooper().setMessageLogging(MainLooperPrinter());
 
-        add.setOnClickListener(object : View.OnClickListener {
+        encode_video.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 person = Person("")
                 Log.d("liuyuzhe", "111111111111111: "+person);

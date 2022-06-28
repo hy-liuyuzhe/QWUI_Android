@@ -27,7 +27,7 @@ class LayoutFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        add.setOnClickListener(object : View.OnClickListener {
+        encode_video.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val child = Button(Utils.getApp())
                 child.setBackgroundColor(ColorUtils.getColor(R.color.teal_700))

@@ -1,68 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/image_to_video"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="image_to_Video" />
-
-    <Button
-        android:id="@+id/video_watermark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="video_watermark" />
-
-    <Button
-        android:id="@+id/media_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="media_info" />
-
-    <Button
-        android:id="@+id/add_cover_video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add_cover_video" />
-
-    <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="add" />
-
-    <Button
-        android:id="@+id/to_gif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="to_gif" />
-
-    <Button
-        android:id="@+id/array_command"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="array_command" />
-
-    <Button
-        android:id="@+id/merge_video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="merge_video" />
-    <Button
-        android:id="@+id/merge_video1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="merge_video1" />
-    <Button
-        android:id="@+id/video_convert_images"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="video_convert_images" />
+        android:orientation="vertical">
 
 
+        <Button
+            android:id="@+id/auto_select_stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="auto_select_stream" />
+        <Button
+            android:id="@+id/maintain_original_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maintain_original_quality" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/addWatermark_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_watermark_music" />
+
+        <Button
+            android:id="@+id/image_to_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="image_to_Video" />
+
+        <Button
+            android:id="@+id/video_watermark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="video_watermark" />
+
+        <Button
+            android:id="@+id/media_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="media_info" />
+
+        <Button
+            android:id="@+id/add_cover_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_cover_video" />
+
+        <Button
+            android:id="@+id/encode_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="encode_video" />
+
+        <Button
+            android:id="@+id/to_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_gif" />
+
+        <Button
+            android:id="@+id/image_cover_merge_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="image_cover_merge_video" />
+
+        <Button
+            android:id="@+id/merge_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="merge_video" />
+
+        <Button
+            android:id="@+id/scale_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale_video" />
+
+        <Button
+            android:id="@+id/video_convert_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="video_convert_images" />
+
+        <Button
+            android:id="@+id/video_convert_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="video_convert_image" />
+
+        <Button
+            android:id="@+id/add_background_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_background_audio" />
+
+        <Button
+            android:id="@+id/add_background_audio_cy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_background_audio_cy" />
+
+        <Button
+            android:id="@+id/add_background_audio_loop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_background_audio_loop" />
+
+        <Button
+            android:id="@+id/crop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="crop" />
+
+        <Button
+            android:id="@+id/mute_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mute_video" />
+
+
+    </LinearLayout>
+
+</ScrollView>
