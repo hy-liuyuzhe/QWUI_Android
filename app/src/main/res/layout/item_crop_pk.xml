@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:background="@color/red_fd2772">
+
+    <com.qwuiteam.project.view.CropVideoCursorLayout
+        android:id="@+id/layoutCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_green_light">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_interception_left" />
+
+            <View
+                android:id="@+id/view_top_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/black" />
+
+            <View
+                android:id="@+id/view_screen_shot_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="2dp"
+                android:alpha="0.8"
+                android:background="@color/white" />
+
+
+            <TextView
+                android:id="@+id/text_crop_range_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="1s"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/black" />
+
+            <ImageView
+                android:id="@+id/icon_crop_cursor_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_interception_right" />
+
+        </FrameLayout>
+
+    </com.qwuiteam.project.view.CropVideoCursorLayout>
+</FrameLayout>

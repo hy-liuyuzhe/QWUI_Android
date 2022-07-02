@@ -15,9 +15,11 @@ import kotlinx.android.synthetic.main.fragment_ffmpag.*
 import java.io.File
 
 
-/**
- *
- */
+//-vn 表示不使用视频
+//-ar 设置音频采样率
+//-ac 设置音频 Channels
+//-ab 设置音频比特率 bitrate
+//-f 输出文件的格式
 class FFmpagFragment : BaseFragment() {
 
     val watermark = "/storage/emulated/0/Download/watermark.png"
