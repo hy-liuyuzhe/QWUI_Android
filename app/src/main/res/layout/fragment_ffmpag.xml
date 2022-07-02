@@ -10,10 +10,24 @@
 
 
         <Button
+            android:id="@+id/show_streams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show_streams" />
+
+        <Button
+            android:id="@+id/flip_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="flip_video" />
+
+        <Button
             android:id="@+id/auto_select_stream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="auto_select_stream" />
+
+
         <Button
             android:id="@+id/maintain_original_quality"
             android:layout_width="wrap_content"

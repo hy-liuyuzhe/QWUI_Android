@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.arthenica.ffmpegkit.FFmpegKit
+import com.arthenica.ffmpegkit.FFprobeKit
 import com.arthenica.ffmpegkit.FFprobeKit.getMediaInformation
 import com.arthenica.ffmpegkit.ReturnCode
 import com.blankj.utilcode.util.FileUtils
@@ -41,6 +42,19 @@ class FFmpagFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         FileUtils.createOrExistsDir(testDir)
+        show_streams.setOnClickListener {
+            val execute = FFprobeKit.execute("-show_streams -i $sunshine")
+        }
+
+        //ffmpeg -i INPUT -vf "split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2" OUTPUT
+        flip_video.setOnClickListener {
+            val command = "-i $episode -vf \"split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2\" -y $testDir/flip.mp4"
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
         auto_select_stream.setOnClickListener {
             //ffmpeg -i A.avi -i B.mp4 out1.mkv out2.wav -map 1:a -c:a copy out3.mov
             val command = "-i $videoWaterAvi -i $videoDir/hasBackground_keep_quality.mp4 $testDir/out1.mkv $testDir/out2.wav -map 1:a -c:a copy $testDir/out3.mov"
