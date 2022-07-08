@@ -8,4 +8,8 @@
 <!--        <item name="android:windowAnimationStyle">@style/BottomDialogAnimation</item>-->
     </style>
 
+    <style name="Theme_Dialog_NoTitle" parent="Theme.AppCompat.Light.Dialog">
+
+    </style>
+
 </resources>

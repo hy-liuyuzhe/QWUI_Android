@@ -1,5 +1,6 @@
 package com.qwuiteam.project
 
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.qwuiteam.project.fragment.*
 
 enum class PageContainer(
@@ -17,6 +18,7 @@ enum class PageContainer(
     auto_text("研究自动滚动text", AutoScrollTextViewFragment::class.java),
     choosePhoto("选择相册", ChoosePhotoFragment::class.java),
     string("字符串", StringFragment::class.java),
+    BottomSheet("弹窗", BottomSheetFragment::class.java),
     FFmpag("ffmpag", FFmpagFragment::class.java)
 
 }

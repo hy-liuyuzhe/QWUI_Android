@@ -27,8 +27,8 @@
             android:id="@+id/log"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:text="log"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="log" />
 
         <Button
             android:id="@+id/convert_map"
@@ -51,6 +51,28 @@
             android:layout_gravity="end"
             android:text="red packet" />
 
+        <TextView
+            android:id="@+id/textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0:00"
+            android:textColor="@color/red_fd2772"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="开始倒计时" />
+
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:text="重新设置时间" />
 
     </FrameLayout>
 
