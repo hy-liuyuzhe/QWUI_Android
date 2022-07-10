@@ -10,6 +10,12 @@
 
 
         <Button
+            android:id="@+id/add_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_subtitle" />
+
+        <Button
             android:id="@+id/show_streams"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,6 +51,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="image_to_Video" />
+        <Button
+            android:id="@+id/images_to_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="images_to_Video" />
 
         <Button
             android:id="@+id/video_watermark"

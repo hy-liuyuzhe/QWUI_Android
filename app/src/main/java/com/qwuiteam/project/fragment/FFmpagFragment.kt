@@ -25,6 +25,7 @@ class FFmpagFragment : BaseFragment() {
     val watermark = "/storage/emulated/0/Download/watermark.png"
     val cover = "/storage/emulated/0/Download/Cover.png"
     val dir = "/storage/emulated/0/Download/"
+    val dirImages = "/storage/emulated/0/Download/images"
     val testDir = "/storage/emulated/0/Download/test"
     val dirDownload = "/storage/emulated/0/Download"
     val videoDir = "/storage/emulated/0/Download/video"
@@ -44,6 +45,25 @@ class FFmpagFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         FileUtils.createOrExistsDir(testDir)
+        //ffmpeg -i infile.mp4 -f srt -i infile.srt -c:v copy -c:a copy -c:s mov_text outfile.mp4
+        add_subtitle.setOnClickListener {
+//            val command = "-i $sunshine -f srt -i-vf subtitles=$videoDir/subtitles.srt -c copy -y $videoDir/subtitle_video2.mkv"
+//            val command = "-i $sunshine -f srt -i $videoDir/subtitles.srt -c:v copy -c:a copy -c:s mov_text $videoDir/subtitle_video2.mp4"
+
+            val subtitlePAth = "$videoDir/subtitles.srt"
+            val outputVideoPath = "$videoDir/subtitle_video3.mp4"
+
+            val cmd =
+                "-i " + sunshine + " -vf subtitles=\"" + subtitlePAth.toString() + ":force_style='Alignment=10,Fontsize=18\" " +
+                        outputVideoPath
+
+//            val command = "-i $sunshine -vf srt -i $videoDir/subtitles.srt -y $videoDir/subtitle_video2.mp4"
+            FFmpegKit.executeAsync(cmd) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
         show_streams.setOnClickListener {
             val execute = FFprobeKit.execute("-show_streams -i $sunshine")
         }
@@ -101,7 +121,21 @@ class FFmpagFragment : BaseFragment() {
         }
         image_to_video.setOnClickListener {
             val output = "$dir/video/image_to_video.mp4"
-            FFmpegKit.execute("-loop 1 -i $cover -t 3 $output")
+            FFmpegKit.execute("-r 30 -s 1920*1080 -loop 1 -i $cover -t 3 -vcodec libx264 -crf 25 -pix_fmt yuv420p -c:a aac -y $output")
+        }
+        //ffmpeg -r 30 -f image2 -i im%04d.png -c:v huffyuv -pix_fmt rgb24 output.avi
+        //String strCommand = "ffmpeg -loop 1 -t 3 -i " + /sdcard/videokit/1.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/2.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/3.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/4.jpg + " -filter_complex [0:v]trim=duration=3,fade=t=out:st=2.5:d=0.5[v0];[1:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v1];[2:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v2];[3:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v3];[v0][v1][v2][v3]concat=n=4:v=1:a=0,format=yuv420p[v] -map [v] -preset ultrafast " + /sdcard/videolit/output.mp4;
+//                "-r 30 -s 1920x1080 -i $dirImages/%d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p -y $output")
+        images_to_video.setOnClickListener {
+            val output = "$dir/video/images_to_video.mp4"
+            FFmpegKit.executeAsync(
+            "-framerate 24 -i ${dirImages}/img%03d.png -y $output")
+            {
+                Log.d("wwq", "images_to_video: " + it.returnCode);
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    output.openFile(requireContext())
+                }
+            }
         }
 
         video_watermark.setOnClickListener {
