@@ -1,20 +1,14 @@
 package com.qwuiteam.project.fragment
 
-import android.content.ContentProvider
 import android.os.Bundle
-import android.text.Html
-import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
+import com.qwuiteam.project.view.TouchRootLayout
 import kotlinx.android.synthetic.main.fragment_layout.*
 import kotlinx.android.synthetic.main.fragment_string.*
 
@@ -57,7 +51,11 @@ class ExpandLayoutFragment : BaseFragment() {
             }
         }
 
+        val touchLayout = view.findViewById<TouchRootLayout>(R.id.touchLayout)
+        val temp = view.findViewById<View>(R.id.temp)
+        temp.postDelayed({
+            touchLayout.maxHeight = temp.height
+        },2000)
     }
-
 
 }

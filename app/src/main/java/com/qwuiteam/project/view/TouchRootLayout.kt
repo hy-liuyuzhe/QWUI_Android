@@ -3,6 +3,7 @@ package com.qwuiteam.project.view
 import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
@@ -10,11 +11,13 @@ import android.widget.FrameLayout
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
+import kotlin.properties.Delegates
 
 open class TouchRootLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : FrameLayout(context, attrs), View.OnTouchListener {
 
+    var maxHeight by Delegates.notNull<Int>()
     private var touchSlop: Int = ViewConfiguration.get(getContext()).scaledTouchSlop
     private var xCoOrdinate: Float = 0.0f
     private var mWidth = 0
@@ -30,17 +33,6 @@ open class TouchRootLayout @JvmOverloads constructor(
     override fun onFinishInflate() {
         super.onFinishInflate()
         setOnTouchListener(this)
-    }
-
-    private fun getCanUseActivity(): Activity? {
-        if (context is Activity && !((context as Activity).isFinishing)) {
-            return context as Activity
-        }
-        val topActivity = ActivityUtils.getTopActivity()
-        if (topActivity != null && !topActivity.isFinishing) {
-            return topActivity
-        }
-        return null
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -67,11 +59,23 @@ open class TouchRootLayout @JvmOverloads constructor(
                 if (x > screenWidth - mWidth) {
                     x = (screenWidth - mWidth).toFloat()
                 }
-                val screenHeight = ScreenUtils.getScreenHeight()
-                val justHeight = (screenHeight - mHeight - navigationBarHeight - SizeUtils.dp2px(57f)).toFloat()
-                if (y > justHeight) {
+
+                if (y < SizeUtils.dp2px(200f)) {
+                    y = SizeUtils.dp2px(200f).toFloat()
+                }
+
+                Log.d("liuyuzhe", "yyyyy: " + y);
+
+                val screenHeight = ScreenUtils.getAppScreenHeight()
+                val justHeight = (screenHeight - mHeight - SizeUtils.dp2px(100f)).toFloat()
+                if (maxHeight > 0 && y > maxHeight - mHeight) {
+                    Log.d("liuyuzhe", "maxHeight: " + (maxHeight-mHeight));
+                    y = (maxHeight - mHeight).toFloat()
+                } else if (y > justHeight) {
                     y = justHeight
                 }
+
+
                 if (Math.abs(x - lastX) > touchSlop || Math.abs(y - lastY) > touchSlop) {
                     isMove = true
                 }
