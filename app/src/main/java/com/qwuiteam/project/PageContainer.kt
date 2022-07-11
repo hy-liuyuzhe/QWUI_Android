@@ -8,10 +8,10 @@ enum class PageContainer(
     val targetClass: Class<out BaseFragment>
 ) {
 
+//    agoraRTC("研究声网", RTCFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
-//    agoraRTC("研究声网", RTCFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
     bitmap("研究bitmap", BitmapFragment::class.java),
     memory("内存研究", MemoryFragment::class.java),
@@ -19,6 +19,7 @@ enum class PageContainer(
     choosePhoto("选择相册", ChoosePhotoFragment::class.java),
     string("字符串", StringFragment::class.java),
     BottomSheet("弹窗", BottomSheetFragment::class.java),
+    ExpandLayout("展开折叠", ExpandLayoutFragment::class.java),
     FFmpag("ffmpag", FFmpagFragment::class.java)
 
 }
