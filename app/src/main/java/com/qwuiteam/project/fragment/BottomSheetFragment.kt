@@ -11,25 +11,23 @@ import android.widget.Button
 import android.widget.FrameLayout
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
+import com.qwuiteam.project.view.RoomPkBottomSheetDialog
 import kotlinx.android.synthetic.main.fragment_layout.*
 import kotlinx.android.synthetic.main.fragment_string.*
 
 /**
  * id
  */
-class StringFragment : BaseFragment() {
+class BottomSheetFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_string
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        start_with.text = "show dialog"
         start_with.setOnClickListener {
-            val all = "https://passport.odaily.news/api/mobi-investor/appversion?app=0&os=android"
-            val target = "https://passport.odaily.news/"
-
-            val result = all.startsWith(target)
-            Log.d("liuyuzhe", "result: " + result);
+            RoomPkBottomSheetDialog().show(requireActivity().supportFragmentManager, "pk")
         }
 
         start_with2.setOnClickListener {
@@ -41,9 +39,16 @@ class StringFragment : BaseFragment() {
         }
         formatText.setOnClickListener {
             val originContent = "@yzqing 阿"
-            val nickname = originContent.substring(originContent.indexOf("@"), originContent.indexOf(" "))
-            val content = originContent.replace(nickname,"")
-            atText.text = Html.fromHtml(String.format(StringUtils.getString(R.string.at_content), nickname, content))
+            val nickname =
+                originContent.substring(originContent.indexOf("@"), originContent.indexOf(" "))
+            val content = originContent.replace(nickname, "")
+            atText.text = Html.fromHtml(
+                String.format(
+                    StringUtils.getString(R.string.at_content),
+                    nickname,
+                    content
+                )
+            )
 
         }
         val content = "hahaha"

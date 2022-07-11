@@ -41,6 +41,7 @@
         android:theme="@style/Theme.QWUI_Android">
         <activity
             android:name=".SimpleActivity"
+            android:launchMode="singleTask"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

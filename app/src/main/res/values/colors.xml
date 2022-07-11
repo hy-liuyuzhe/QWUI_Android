@@ -12,6 +12,8 @@
     <color name="roomMoreMsgTips">#E7F9F4</color>
     <color name="roomTextNick">#FF3A30</color>
 
+    <color name="roomTextNick123">#FFC973FF</color>
+
     <!--common-->
     <color name="common_color_gift_content">#09d2a8</color>
     <color name="common_color_2">#f1f1f1</color>
