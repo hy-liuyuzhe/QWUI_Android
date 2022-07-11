@@ -9,6 +9,7 @@ import com.arthenica.ffmpegkit.FFprobeKit.getMediaInformation
 import com.arthenica.ffmpegkit.ReturnCode
 import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.SizeUtils
 import com.qwuiteam.project.R
 import com.qwuiteam.project.utils.openFile
 import kotlinx.android.synthetic.main.fragment_ffmpag.*
@@ -39,26 +40,38 @@ class FFmpagFragment : BaseFragment() {
     val sunshine = "/storage/emulated/0/Download/video/sunshine.mp4"
     val piano_quiet = "/storage/emulated/0/Download/audio/piano_quiet.mp3"
     val class_alarm = "/storage/emulated/0/Download/audio/class_alarm.mp3"
+    val font = "/storage/emulated/0/Download/font/alike.ttf"
 
     override fun getLayoutId(): Int = R.layout.fragment_ffmpag
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         FileUtils.createOrExistsDir(testDir)
-        //ffmpeg -i infile.mp4 -f srt -i infile.srt -c:v copy -c:a copy -c:s mov_text outfile.mp4
+        //ffmpeg -i myvideo.mp4 -i image.png -filter_complex [0:v][1:v]overlay=5:5,drawtext=text=mytext:fontcolor=orange@1.0:fontsize=30:x=30:y=200 -c:a copy output.mp4
+        drawText.setOnClickListener {
+            val command =
+                "-i $episode -vf drawtext=" + "fontfile=$font:text='this is dynamic text':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${
+                    SizeUtils.sp2px(16f)
+                }" + " -y $videoDir/draw_text_video4.mp4"
+
+
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
+
         add_subtitle.setOnClickListener {
-//            val command = "-i $sunshine -f srt -i-vf subtitles=$videoDir/subtitles.srt -c copy -y $videoDir/subtitle_video2.mkv"
-//            val command = "-i $sunshine -f srt -i $videoDir/subtitles.srt -c:v copy -c:a copy -c:s mov_text $videoDir/subtitle_video2.mp4"
-
             val subtitlePAth = "$videoDir/subtitles.srt"
-            val outputVideoPath = "$videoDir/subtitle_video3.mp4"
+            val outputVideoPath = "$videoDir/subtitle_video4.mp4"
 
-            val cmd =
-                "-i " + sunshine + " -vf subtitles=\"" + subtitlePAth.toString() + ":force_style='Alignment=10,Fontsize=18\" " +
-                        outputVideoPath
+            val command =
+                "-i " + sunshine + " -vf subtitles=\"" + subtitlePAth.toString() + ":force_style='Alignment=4,Fontsize=18,MarginL=5,MarginV=25\" " +
+                        "-y " + outputVideoPath
 
-//            val command = "-i $sunshine -vf srt -i $videoDir/subtitles.srt -y $videoDir/subtitle_video2.mp4"
-            FFmpegKit.executeAsync(cmd) {
+//            val command = "-i $sunshine -vf subtitles='$subtitlePAth:force_style=' -i $videoDir/subtitles.srt -y $videoDir/subtitle_video4.mp4"
+            FFmpegKit.executeAsync(command) {
                 if (ReturnCode.isSuccess(it.returnCode)) {
                     it.arguments.last().openFile(requireContext())
                 }
@@ -70,7 +83,8 @@ class FFmpagFragment : BaseFragment() {
 
         //ffmpeg -i INPUT -vf "split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2" OUTPUT
         flip_video.setOnClickListener {
-            val command = "-i $episode -vf \"split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2\" -y $testDir/flip.mp4"
+            val command =
+                "-i $episode -vf \"split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2\" -y $testDir/flip.mp4"
             FFmpegKit.executeAsync(command) {
                 if (ReturnCode.isSuccess(it.returnCode)) {
                     it.arguments.last().openFile(requireContext())
@@ -79,7 +93,8 @@ class FFmpagFragment : BaseFragment() {
         }
         auto_select_stream.setOnClickListener {
             //ffmpeg -i A.avi -i B.mp4 out1.mkv out2.wav -map 1:a -c:a copy out3.mov
-            val command = "-i $videoWaterAvi -i $videoDir/hasBackground_keep_quality.mp4 $testDir/out1.mkv $testDir/out2.wav -map 1:a -c:a copy $testDir/out3.mov"
+            val command =
+                "-i $videoWaterAvi -i $videoDir/hasBackground_keep_quality.mp4 $testDir/out1.mkv $testDir/out2.wav -map 1:a -c:a copy $testDir/out3.mov"
             FFmpegKit.executeAsync(command) {
                 if (ReturnCode.isSuccess(it.returnCode)) {
                     it.arguments.last().openFile(requireContext())
@@ -129,7 +144,8 @@ class FFmpagFragment : BaseFragment() {
         images_to_video.setOnClickListener {
             val output = "$dir/video/images_to_video.mp4"
             FFmpegKit.executeAsync(
-            "-framerate 24 -i ${dirImages}/img%03d.png -y $output")
+                "-framerate 24 -i ${dirImages}/img%03d.png -y $output"
+            )
             {
                 Log.d("wwq", "images_to_video: " + it.returnCode);
                 if (ReturnCode.isSuccess(it.returnCode)) {
@@ -186,7 +202,7 @@ class FFmpagFragment : BaseFragment() {
 //            FFmpegKit.execute("-i $videoDir/intermediate_all.mpg -qscale:v 2 $videoDir/image_cover_merge_video.avi")
 
             //todo keep rate
-            FFmpegKit.executeAsync("-i concat:'${videoDir}/intermediate1.mpg|${videoDir}/intermediate2.mpg' -c copy -y $videoDir/intermediate_all.mpg"){
+            FFmpegKit.executeAsync("-i concat:'${videoDir}/intermediate1.mpg|${videoDir}/intermediate2.mpg' -c copy -y $videoDir/intermediate_all.mpg") {
                 if (ReturnCode.isSuccess(it.returnCode)) {
                     it.arguments.last().openFile(requireContext())
                 }
@@ -258,8 +274,9 @@ class FFmpagFragment : BaseFragment() {
 //                }
 //            }
             //keep 1080p
-            val command = "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
-            FFmpegKit.executeAsync(command){
+            val command =
+                "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
+            FFmpegKit.executeAsync(command) {
                 if (ReturnCode.isSuccess(it.returnCode)) {
                     it.arguments.last().openFile(requireContext())
                 }
