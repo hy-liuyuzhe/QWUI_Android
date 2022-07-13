@@ -13,6 +13,7 @@ enum class PageContainer(
     pk("pk 需求", PkFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
+    svga("研究svga", SvgaViewFragment::class.java),
     bitmap("研究bitmap", BitmapFragment::class.java),
     memory("内存研究", MemoryFragment::class.java),
     auto_text("研究自动滚动text", AutoScrollTextViewFragment::class.java),

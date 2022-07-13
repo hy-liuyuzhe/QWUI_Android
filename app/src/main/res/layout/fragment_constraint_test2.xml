@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/btn_one"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="用户名" />
+
+    <TextView
+        android:id="@+id/btn_three"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="密码"
+        app:layout_constraintTop_toBottomOf="@id/btn_one" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="btn_one,btn_three" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="输入姓名"
+        app:layout_constraintBottom_toBottomOf="@id/btn_one"
+        app:layout_constraintLeft_toRightOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="@id/btn_one" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="输入密码"
+        app:layout_constraintBottom_toBottomOf="@id/btn_three"
+        app:layout_constraintLeft_toRightOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="@id/btn_three" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
