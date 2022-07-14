@@ -5,44 +5,34 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/getHeight"
-        android:text="getHeight"
+        android:id="@+id/load1"
+        android:text="load1"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@mipmap/ic_launcher_round" />
 
-    <ImageView
-        android:id="@+id/avatarView"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
 
-    <ImageView
-        android:id="@+id/avatarCacheView"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
 
     <Button
-        android:id="@+id/bitmapPoolSize"
+        android:id="@+id/load2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_vertical"
-        android:text="pool size"/>
+        android:text="load2"/>
 
     <Button
-        android:id="@+id/clear"
+        android:id="@+id/cache1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="clear"
+        android:text="cache1"
         android:layout_gravity="center_vertical|right" />
 
     <Button
-        android:id="@+id/imageBitmapCache"
+        android:id="@+id/cache2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="end"
-        android:text="使用缓存"/>
+        android:text="cache2"/>
 
     <com.opensource.svgaplayer.SVGAImageView
         android:id="@+id/svgaView"

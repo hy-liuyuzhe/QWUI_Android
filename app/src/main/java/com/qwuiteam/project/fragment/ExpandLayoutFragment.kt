@@ -55,7 +55,7 @@ class ExpandLayoutFragment : BaseFragment() {
         val temp = view.findViewById<View>(R.id.temp)
         temp.postDelayed({
             touchLayout.maxHeight = temp.height
-        },2000)
+        },0)
     }
 
 }
