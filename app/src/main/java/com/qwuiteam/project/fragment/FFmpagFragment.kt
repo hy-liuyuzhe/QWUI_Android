@@ -61,6 +61,26 @@ class FFmpagFragment : BaseFragment() {
                 }
             }
         }
+        mixAudio.setOnClickListener {
+            val command = "-i $class_alarm -i $piano_quiet -filter_complex \"[0:a][1:a]amerge=inputs=2[a]\" -map \"[a]\" -ac 2 ${dir}/audio/mix_audio_output.mp3"
+
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
+
+        mixVideoAudio.setOnClickListener {
+            val drawText = "-vf drawtext=" + "fontfile=$font:text='this is test':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${SizeUtils.sp2px(16f)}"
+            val command = "-i $piano_quiet -i /storage/emulated/0/Download/video/hasBackground4.mp4 -filter_complex '[0:a][1:a]amerge=inputs=2[a]' -map '[a]' -ac 2 -map 1:v:0 $drawText -y ${videoDir}/mix_video_audio_output.mp4"
+
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
 
         add_subtitle.setOnClickListener {
             val subtitlePAth = "$videoDir/subtitles.srt"
@@ -140,7 +160,6 @@ class FFmpagFragment : BaseFragment() {
         }
 
 //        ffmpeg
-
 
 
         images_to_video.setOnClickListener {
@@ -271,8 +290,16 @@ class FFmpagFragment : BaseFragment() {
             }
         }
         add_background_audio.setOnClickListener {
-//            val command = "-i $opening -i $audio1 -map 0:v -map 1:a $dirDownload/hasBackground.mp4"
-//            FFmpegKit.execute(command)
+//            val command = "-i $opening -i $piano_quiet $videoDir/hasBackground2.mp4"
+            val drawText = "-vf drawtext=" + "fontfile=$font:text='this is test':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${SizeUtils.sp2px(16f)}"
+
+            //val command = "-i /storage/emulated/0/Download/test/out2.wav -i /storage/emulated/0/Download/video/video_with_coverV8.mp4 -y $videoDir/hasBackground4.mp4"
+            val command = "-i /storage/emulated/0/Download/video/hasBackground4.mp4 -i $piano_quiet -map 0:v:0 -map 1:a:0 $drawText -shortest -y $videoDir/hasBackground6.mp4"
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
             //add background keep quality
 //            val command = "-i $sunshine -i $piano_quiet -map 0:v -c:v copy -map 1:a $videoDir/hasBackground_keep_quality.mp4"
 //            FFmpegKit.executeAsync(command){
@@ -288,13 +315,13 @@ class FFmpagFragment : BaseFragment() {
 //                }
 //            }
             //keep 1080p
-            val command =
-                "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
-            FFmpegKit.executeAsync(command) {
-                if (ReturnCode.isSuccess(it.returnCode)) {
-                    it.arguments.last().openFile(requireContext())
-                }
-            }
+//            val command =
+//                "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
+//            FFmpegKit.executeAsync(command) {
+//                if (ReturnCode.isSuccess(it.returnCode)) {
+//                    it.arguments.last().openFile(requireContext())
+//                }
+//            }
 
         }
 
@@ -322,6 +349,9 @@ class FFmpagFragment : BaseFragment() {
 
         mute_video.setOnClickListener {
             FFmpegKit.execute("-i $dirDownload/hasBackground.mp4 -c copy -an $dirDownload/muteVideo.mp4")
+        }
+        mute_video_add_audio_video.setOnClickListener {
+            FFmpegKit.execute("-an -i $dirDownload/hasBackgroundClassAlarm.mp4  -i $piano_quiet -map 0:v -map 1:a -c:v copy -shortest $videoDir/mute_origin_video_add_audio.mp4")
         }
 
     }
