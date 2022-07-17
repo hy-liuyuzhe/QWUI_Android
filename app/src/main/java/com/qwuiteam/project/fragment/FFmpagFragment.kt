@@ -52,7 +52,7 @@ class FFmpagFragment : BaseFragment() {
             val command =
                 "-i $episode -vf drawtext=" + "fontfile=$font:text='this is dynamic text':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${
                     SizeUtils.sp2px(16f)
-                }" + " -y $videoDir/draw_text_video4.mp4"
+                }" + " -y $videoDir/draw_text_video6.mp4"
 
 
             FFmpegKit.executeAsync(command) {
@@ -138,14 +138,28 @@ class FFmpagFragment : BaseFragment() {
             val output = "$dir/video/image_to_video.mp4"
             FFmpegKit.execute("-r 30 -s 1920*1080 -loop 1 -i $cover -t 3 -vcodec libx264 -crf 25 -pix_fmt yuv420p -c:a aac -y $output")
         }
-        //ffmpeg -r 30 -f image2 -i im%04d.png -c:v huffyuv -pix_fmt rgb24 output.avi
-        //String strCommand = "ffmpeg -loop 1 -t 3 -i " + /sdcard/videokit/1.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/2.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/3.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/4.jpg + " -filter_complex [0:v]trim=duration=3,fade=t=out:st=2.5:d=0.5[v0];[1:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v1];[2:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v2];[3:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v3];[v0][v1][v2][v3]concat=n=4:v=1:a=0,format=yuv420p[v] -map [v] -preset ultrafast " + /sdcard/videolit/output.mp4;
-//                "-r 30 -s 1920x1080 -i $dirImages/%d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p -y $output")
+
+//        ffmpeg
+
+
+
         images_to_video.setOnClickListener {
-            val output = "$dir/video/images_to_video.mp4"
+            val output = "$dir/video/images_6_video.mp4"
+//            FFmpegKit.executeAsync(
+//                "-r 30 -s 1920*1080 -i ${dirImages}/%d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p -c:a aac -y $output"
+//            )
+
+//            -framerate 25 -t 124 -loop 1 -i image1
+//            -framerate 25 -t 124 -loop 1 -i image2
+//            -framerate 25 -t 124 -loop 1 -i image3
+//            -framerate 25 -t 124 -loop 1 -i image4
+//            -filter_complex "[0][1][2][3]concat=n=4"
+//            -c:v libx264 -s 640x480 outputfile
             FFmpegKit.executeAsync(
-                "-framerate 24 -i ${dirImages}/img%03d.png -y $output"
+                "-framerate 25 -t 5 -loop 1 -i ${dirImages}/1.png -framerate 25 -t 5 -loop 1 -i ${dirImages}/5.png -framerate 25 -t 5 -loop 1 -i ${dirImages}/11.png -filter_complex '[0][1][2]concat=n=3' -c:v libx264 -s 1280x720 ${output}"
             )
+
+
             {
                 Log.d("wwq", "images_to_video: " + it.returnCode);
                 if (ReturnCode.isSuccess(it.returnCode)) {
@@ -180,7 +194,7 @@ class FFmpagFragment : BaseFragment() {
 //            FFmpegKit.execute("-i $opening -i $cover -filter_complex 'overlay=10:10' $dir/video/video_with_cover.mp4")
 //            ffmpeg -i in.mp4 -i IMAGE -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic out.mp4
             //to do no working
-            FFmpegKit.execute("-i $sunshine -i $cover -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic $dir/video/video_with_coverV7.mp4")
+            FFmpegKit.execute("-i $sunshine -i $cover -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic $dir/video/video_with_coverV8.mp4")
 
         }
 

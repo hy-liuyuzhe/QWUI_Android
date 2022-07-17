@@ -14,6 +14,6 @@ public class App extends Application {
         Utils.init(this);
         //BlockCanary.install(this, new AppBlockCanaryContext()).start();
         //Looper.getMainLooper().setMessageLogging(new MainLooperPrinter());
-        FFmpegKitConfig.setFontDirectory(this,"/storage/emulated/0/Download/font",null);
+        //FFmpegKitConfig.setFontDirectory(this,"/storage/emulated/0/Download/font",null);
     }
 }
