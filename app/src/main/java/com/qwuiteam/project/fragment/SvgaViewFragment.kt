@@ -9,14 +9,12 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.adapters.ImageViewBindingAdapter.setImageDrawable
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool
-import com.opensource.svgaplayer.SVGADrawable
-import com.opensource.svgaplayer.SVGADynamicEntity
-import com.opensource.svgaplayer.SVGAParser
-import com.opensource.svgaplayer.SVGAVideoEntity
+import com.opensource.svgaplayer.*
 import com.qwuiteam.project.PageContainer
 import com.qwuiteam.project.R
 import com.qwuiteam.project.SimpleActivity
@@ -30,6 +28,7 @@ import kotlinx.android.synthetic.main.fragment_bitmap.clear
 import kotlinx.android.synthetic.main.fragment_bitmap.imageBitmapCache
 import kotlinx.android.synthetic.main.fragment_bitmap.load
 import kotlinx.android.synthetic.main.fragment_svga.*
+import java.net.URL
 
 /**
  * videoItem.videoSize / 2 等于 Android dp值
@@ -72,6 +71,42 @@ class SvgaViewFragment : BaseFragment() {
                             svgaDrawable2
                         )
                         svgaView.startAnimation()
+                    }
+
+                    override fun onError() {
+
+                    }
+                })
+        }
+        loadFull.setOnClickListener {
+            svgaViewFull.callback = object : SVGACallback{
+                override fun onFinished() {
+                    Log.e(TAG,"onFinished: ");
+                }
+
+                override fun onPause() {
+                    Log.e(TAG,"onPause: ");
+                }
+
+                override fun onRepeat() {
+                    Log.e(TAG,"onRepeat: ");
+                }
+
+                override fun onStep(frame: Int, percentage: Double) {
+                    Log.e(TAG,"onStep: "+frame);
+                    Log.e(TAG,"percentage: "+percentage);
+                }
+
+            }
+//            val url = "https://img.hakiapp.com/FnYguyw0fvvXfWNoBD1QxtoYamhY?imageslim"
+//                URL(url)
+            SVGAParser(context).decodeFromAssets("long.svga",
+                object : SVGAParser.ParseCompletion {
+                    override fun onComplete(videoItem: SVGAVideoEntity) {
+                        val svgaDrawable2 = SVGADrawable(
+                            videoItem, SVGADynamicEntity().apply {})
+                        svgaViewFull.setImageDrawable(svgaDrawable2)
+                        svgaViewFull.startAnimation()
                     }
 
                     override fun onError() {

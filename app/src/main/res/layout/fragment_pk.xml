@@ -15,12 +15,21 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp" />
 
+
+
         <Button
             android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:text="start" />
+
+
+        <com.qwuiteam.project.view.RoomPkProgressBar
+            android:layout_marginTop="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+
 
 
         <com.qwuiteam.project.view.PKProgressBar
@@ -36,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical"
-            android:background="@android:color/holo_blue_light">
+            android:background="@android:color/holo_blue_light"
+            android:visibility="gone">
 
             <com.qwuiteam.project.view.CropVideoCursorLayout
                 android:id="@+id/layoutCrop"
