@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_height="30dp"
+        tools:layout_marginHorizontal="50dp">
+
+        <com.qwuiteam.project.view.Round4ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical">
+
+            <View
+                android:id="@+id/rightSpace"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <View
+                android:id="@+id/leftSpace"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_FFBC0F" />
+
+
+            <com.qwuiteam.project.view.RoomPkProgressBarView
+                android:id="@+id/progressView"
+                android:layout_width="0dp"
+                android:background="@color/blue"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toStartOf="@+id/rightSpace"
+                app:layout_constraintStart_toEndOf="@+id/leftSpace" />
+
+
+            <TextView
+                android:id="@+id/textLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="11111"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="22222"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.qwuiteam.project.view.Round4ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageProgressFlag"
+            android:src="@drawable/icon_progress_flag"
+            android:adjustViewBounds="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+    </FrameLayout>
+</layout>

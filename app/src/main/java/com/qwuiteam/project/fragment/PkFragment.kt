@@ -30,7 +30,10 @@ class PkFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser) progressPk.update(10f, progress.toFloat())
+                if (fromUser) {
+                    progressPk.update(10f, progress.toFloat())
+                    layoutProgress.update(10f,progress.toFloat())
+                }
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -40,11 +43,18 @@ class PkFragment : BaseFragment() {
             }
 
         })
+        load.setOnClickListener {
+            layoutProgress.update(50f,100f)
+            progressPk.progressBitmapWidth = SizeUtils.dp2px(15f)
+            progressPk.playAnimation = true
+            progressPk.update(0f, 10f)
+        }
 
         start.setOnClickListener {
             progressPk.progressBitmapWidth = SizeUtils.dp2px(15f)
             progressPk.playAnimation = true
             progressPk.update(0f, 10f)
+            layoutProgress.update(0f, 10f)
         }
 //        val params = layoutCrop.layoutParams as FrameLayout.LayoutParams
 //        params.width = SizeUtils.dp2px(1000f)
