@@ -28,16 +28,17 @@
 
             <View
                 android:id="@+id/leftSpace"
-                android:layout_width="15dp"
+                android:layout_width="25dp"
                 android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
                 android:background="@color/color_FFBC0F" />
 
 
             <com.qwuiteam.project.view.RoomPkProgressBarView
                 android:id="@+id/progressView"
                 android:layout_width="0dp"
-                android:background="@color/blue"
                 android:layout_height="match_parent"
+                android:background="@color/blue"
                 app:layout_constraintEnd_toStartOf="@+id/rightSpace"
                 app:layout_constraintStart_toEndOf="@+id/leftSpace" />
 
@@ -47,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:includeFontPadding="false"
                 android:text="11111"
                 android:textColor="@color/white"
                 android:textSize="8sp"
@@ -60,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:includeFontPadding="false"
                 android:text="22222"
                 android:textColor="@color/white"
                 android:textSize="8sp"
@@ -71,10 +74,10 @@
 
         <ImageView
             android:id="@+id/imageProgressFlag"
-            android:src="@drawable/icon_progress_flag"
-            android:adjustViewBounds="true"
             android:layout_width="30dp"
-            android:layout_height="30dp"/>
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/icon_progress_flag" />
 
     </FrameLayout>
 </layout>

@@ -44,17 +44,17 @@ class PkFragment : BaseFragment() {
 
         })
         load.setOnClickListener {
-            layoutProgress.update(50f,100f)
+            layoutProgress.update(1111110f*1000, 11111f)
             progressPk.progressBitmapWidth = SizeUtils.dp2px(15f)
             progressPk.playAnimation = true
-            progressPk.update(0f, 10f)
+            progressPk.update(1111110f, 1111110f*1000)
         }
 
         start.setOnClickListener {
             progressPk.progressBitmapWidth = SizeUtils.dp2px(15f)
             progressPk.playAnimation = true
-            progressPk.update(0f, 10f)
-            layoutProgress.update(0f, 10f)
+            progressPk.update(0f, 0f)
+            layoutProgress.update(0f, 0f)
         }
 //        val params = layoutCrop.layoutParams as FrameLayout.LayoutParams
 //        params.width = SizeUtils.dp2px(1000f)

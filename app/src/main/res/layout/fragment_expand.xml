@@ -7,16 +7,18 @@
     tools:context=".MainActivity">
 
     <!--Base CardView-->
-    <FrameLayout
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/base_cardview"
         style="@style/Base.CardView"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@android:color/holo_green_light"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content">
 
         <!--This is a ConstraintLayout for the entire CardView
                 including the expandable portion-->
-        <com.qwuiteam.project.view.RoundConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
@@ -167,7 +169,7 @@
             </LinearLayout>
 
 
-        </com.qwuiteam.project.view.RoundConstraintLayout>
-    </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>

@@ -15,9 +15,9 @@ class RoomPkProgressBarView @JvmOverloads constructor(
     var rightStartColor: Int = 0
     var leftStartColor: Int = 0
     var leftEndColor: Int = 0
+    var viewWidth: Int = 0
     var callBack: ((Float) -> Unit)? = null
     private var viewHeight: Int = 0
-    private var viewWidth: Int = 0
     private var percentage: Float = -0.1f
     private var leftGradient: LinearGradient? = null
     private var rightGradient: LinearGradient? = null
@@ -84,6 +84,7 @@ class RoomPkProgressBarView @JvmOverloads constructor(
         Log.d("liuyuzhe", "update: " + progress);
         leftGradient = null
         rightGradient = null
+        invalidate()
         invalidate()
     }
 
