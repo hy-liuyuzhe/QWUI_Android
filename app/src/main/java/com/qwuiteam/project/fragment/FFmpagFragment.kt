@@ -348,7 +348,13 @@ class FFmpagFragment : BaseFragment() {
         }
 
         mute_video.setOnClickListener {
-            FFmpegKit.execute("-i $dirDownload/hasBackground.mp4 -c copy -an $dirDownload/muteVideo.mp4")
+//            val command = "-i $dirDownload/hasBackground.mp4 -map 0:v:0 -y $dirDownload/muteVideo.mp4"
+            val command = "-i $dirDownload/hasBackground.mp4 -an -y $dirDownload/muteVideo.mp4"
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
         }
         mute_video_add_audio_video.setOnClickListener {
             FFmpegKit.execute("-an -i $dirDownload/hasBackgroundClassAlarm.mp4  -i $piano_quiet -map 0:v -map 1:a -c:v copy -shortest $videoDir/mute_origin_video_add_audio.mp4")

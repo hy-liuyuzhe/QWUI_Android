@@ -13,6 +13,7 @@ import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
 import kotlinx.android.synthetic.main.fragment_layout.*
 import kotlinx.android.synthetic.main.fragment_string.*
+import java.math.BigDecimal
 
 /**
  * id
@@ -25,11 +26,17 @@ class StringFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         start_with.setOnClickListener {
-            val all = "https://passport.odaily.news/api/mobi-investor/appversion?app=0&os=android"
-            val target = "https://passport.odaily.news/"
+//            val all = "https://passport.odaily.news/api/mobi-investor/appversion?app=0&os=android"
+//            val target = "https://passport.odaily.news/"
+//
+//            val result = all.startsWith(target)
+//            Log.d("liuyuzhe", "result: " + result);
 
-            val result = all.startsWith(target)
-            Log.d("liuyuzhe", "result: " + result);
+            val completePercentage = BigDecimal("174500000000000010658141036401502788066864013671875")
+                .divide(BigDecimal("1745000000000000106581410364015027880668640136718750"), 2, BigDecimal.ROUND_HALF_UP).toString()
+
+            Log.d("liuyuzhe", "result: " + completePercentage);
+
         }
 
         start_with2.setOnClickListener {
