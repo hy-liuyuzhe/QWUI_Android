@@ -44,7 +44,11 @@ class StringFragment : BaseFragment() {
             val nickname = originContent.substring(originContent.indexOf("@"), originContent.indexOf(" "))
             val content = originContent.replace(nickname,"")
             atText.text = Html.fromHtml(String.format(StringUtils.getString(R.string.at_content), nickname, content))
+        }
+        //    <string name="turntable_win_tip">Congratulations %1s for winning  %2s gold coins in wheel of fortune</string>
+        formatText2.setOnClickListener {
 
+            atText.text = StringUtils.getString(R.string.turntable_win_tip,"liuyuzhe","1232")
         }
         val content = "hahaha"
         atText.setText(

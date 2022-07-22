@@ -8,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
-import com.blankj.utilcode.util.ColorUtils
-import com.blankj.utilcode.util.SizeUtils
-import com.blankj.utilcode.util.ToastUtils
-import com.blankj.utilcode.util.Utils
+import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
+import com.qwuiteam.project.utils.HkCountDownTimer
 import kotlinx.android.synthetic.main.fragment_layout.*
 
 /**
@@ -25,5 +23,11 @@ class IdImageFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //30
+        for (i in 0..600) {
+            if (i % 90 == 0) {
+                LogUtils.d("命中了： " + i);
+            }
+        }
     }
 }

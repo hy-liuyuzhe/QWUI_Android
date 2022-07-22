@@ -1281,7 +1281,7 @@
     <string name="tv_truntable_rule4">After joining you can\'t quit. If it\'s closed, the entrance fee will be refunded to the wallet.</string>
     <string name="tv_truntable_rule5">Waiting for users to join</string>
     <string name="turntable_create">%s start a wheel</string>
-    <string name="turntable_win_tip">Congratulations %1s for winning  %2s gold coins in wheel of fortune</string>
+    <string name="turntable_win_tip" formatted="false">Congratulations %1$s for winning  %2$s gold coins in wheel of fortune</string>
     <string name="turntable_close_tip">%s close the wheel</string>
     <string name="turntable_close_tip_a">The wheel is closed</string>
     <string name="turntable_user_out_game">is out</string>

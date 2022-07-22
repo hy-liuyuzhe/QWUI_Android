@@ -16,6 +16,9 @@ class RoomPkProgressBarView @JvmOverloads constructor(
     var leftStartColor: Int = 0
     var leftEndColor: Int = 0
     var viewWidth: Int = 0
+
+    var leftMinWidth = 0f
+    var rightMinWidth = 0f
     var callBack: ((Float) -> Unit)? = null
     private var viewHeight: Int = 0
     private var percentage: Float = -0.1f
@@ -25,14 +28,12 @@ class RoomPkProgressBarView @JvmOverloads constructor(
     private val leftPaint by lazy {
         Paint().apply {
             isAntiAlias = true
-            color = Color.parseColor("#F73450")
         }
     }
 
     private val rightPaint by lazy {
         Paint().apply {
             isAntiAlias = true
-            color = Color.parseColor("#0647E7")
         }
     }
 
@@ -50,7 +51,14 @@ class RoomPkProgressBarView @JvmOverloads constructor(
 
 
     private fun drawTrack(canvas: Canvas) {
-        val leftWidth = viewWidth * percentage
+        var leftWidth = viewWidth * percentage
+        if (leftMinWidth > 0 && leftMinWidth > leftWidth) {
+            leftWidth = leftMinWidth
+        }
+        if (rightMinWidth > 0 && rightMinWidth > (viewWidth - leftWidth)) {
+            leftWidth = viewWidth - rightMinWidth
+        }
+        Log.d("liuyuzhe", "view left width: "+leftWidth);
         callBack?.invoke(leftWidth)
         if (leftGradient == null) {
             leftGradient = LinearGradient(
@@ -84,7 +92,6 @@ class RoomPkProgressBarView @JvmOverloads constructor(
         Log.d("liuyuzhe", "update: " + progress);
         leftGradient = null
         rightGradient = null
-        invalidate()
         invalidate()
     }
 

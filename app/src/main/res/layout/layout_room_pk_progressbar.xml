@@ -18,29 +18,13 @@
             android:layout_height="15dp"
             android:layout_gravity="center_vertical">
 
-            <View
-                android:id="@+id/rightSpace"
-                android:layout_width="15dp"
-                android:layout_height="match_parent"
-                android:background="@color/blue"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-
-            <View
-                android:id="@+id/leftSpace"
-                android:layout_width="25dp"
-                android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:background="@color/color_FFBC0F" />
-
-
             <com.qwuiteam.project.view.RoomPkProgressBarView
                 android:id="@+id/progressView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@color/blue"
-                app:layout_constraintEnd_toStartOf="@+id/rightSpace"
-                app:layout_constraintStart_toEndOf="@+id/leftSpace" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
             <TextView
