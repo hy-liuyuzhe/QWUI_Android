@@ -27,6 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="formatText2" />
+    <Button
+        android:id="@+id/bigDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BigDecimal" />
 
 
     <TextView

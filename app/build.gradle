@@ -33,6 +33,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        // 网易云信升级8.9.0以后，内部应该使用了xlog的so库，所以这里需要处理。
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/x86_64/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+    }
 //    sourceSets {
 //        main {
 //            jniLibs.srcDirs = ['libs']
@@ -75,5 +82,7 @@ dependencies {
 
     //ffmpag
     implementation 'com.arthenica:ffmpeg-kit-full-gpl:4.5.1'
+    //xlog
+    implementation 'com.tencent.mars:mars-xlog:1.2.5'
 
 }

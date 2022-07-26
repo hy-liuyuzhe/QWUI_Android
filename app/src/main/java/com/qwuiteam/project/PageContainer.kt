@@ -11,6 +11,7 @@ enum class PageContainer(
 //    agoraRTC("研究声网", RTCFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
+    xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
     svga("研究svga", SvgaViewFragment::class.java),

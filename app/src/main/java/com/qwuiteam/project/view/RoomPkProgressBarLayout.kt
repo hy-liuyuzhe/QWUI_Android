@@ -11,6 +11,7 @@ import com.blankj.utilcode.util.SizeUtils
 import com.blankj.utilcode.util.Utils
 import com.qwuiteam.project.databinding.LayoutRoomPkProgressbarBinding
 import kotlinx.android.synthetic.main.fragment_pk.*
+import java.math.BigDecimal
 
 class RoomPkProgressBarLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -56,6 +57,9 @@ class RoomPkProgressBarLayout @JvmOverloads constructor(
         binding.textRight.text = rightText
 
         justMinProgressBarTipWidth(leftValue, rightValue, leftText, rightText)
+
+//        val s = BigDecimal(leftValue).add(rightValue)
+
         binding.progressView.update(leftValue, leftValue + rightValue)
     }
 

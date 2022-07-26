@@ -100,7 +100,7 @@ class SvgaViewFragment : BaseFragment() {
             }
 //            val url = "https://img.hakiapp.com/FnYguyw0fvvXfWNoBD1QxtoYamhY?imageslim"
 //                URL(url)
-            SVGAParser(context).decodeFromAssets("long.svga",
+            SVGAParser(context).decodeFromAssets("longV2.svga",
                 object : SVGAParser.ParseCompletion {
                     override fun onComplete(videoItem: SVGAVideoEntity) {
                         val svgaDrawable2 = SVGADrawable(
