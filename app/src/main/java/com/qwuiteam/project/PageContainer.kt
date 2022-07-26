@@ -8,11 +8,12 @@ enum class PageContainer(
     val targetClass: Class<out BaseFragment>
 ) {
 
-//    agoraRTC("研究声网", RTCFragment::class.java),
+    viewmodel("研究双向绑定", ViewmodelFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
+//    agoraRTC("研究声网", RTCFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
     svga("研究svga", SvgaViewFragment::class.java),
     bitmap("研究bitmap", BitmapFragment::class.java),

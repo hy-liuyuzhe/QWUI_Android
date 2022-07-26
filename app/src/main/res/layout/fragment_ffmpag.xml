@@ -10,6 +10,16 @@
 
 
         <Button
+            android:id="@+id/mixAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mixAudio" />
+        <Button
+            android:id="@+id/mixVideoAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mixVideoAudio" />
+        <Button
             android:id="@+id/drawText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -151,6 +161,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="mute_video" />
+
+        <Button
+            android:id="@+id/mute_video_add_audio_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mute_inputvideo_addnewaudio_video" />
 
 
     </LinearLayout>

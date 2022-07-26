@@ -52,8 +52,28 @@ class FFmpagFragment : BaseFragment() {
             val command =
                 "-i $episode -vf drawtext=" + "fontfile=$font:text='this is dynamic text':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${
                     SizeUtils.sp2px(16f)
-                }" + " -y $videoDir/draw_text_video4.mp4"
+                }" + " -y $videoDir/draw_text_video6.mp4"
 
+
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
+        mixAudio.setOnClickListener {
+            val command = "-i $class_alarm -i $piano_quiet -filter_complex \"[0:a][1:a]amerge=inputs=2[a]\" -map \"[a]\" -ac 2 ${dir}/audio/mix_audio_output.mp3"
+
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
+
+        mixVideoAudio.setOnClickListener {
+            val drawText = "-vf drawtext=" + "fontfile=$font:text='this is test':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${SizeUtils.sp2px(16f)}"
+            val command = "-i $piano_quiet -i /storage/emulated/0/Download/video/hasBackground4.mp4 -filter_complex '[0:a][1:a]amerge=inputs=2[a]' -map '[a]' -ac 2 -map 1:v:0 $drawText -y ${videoDir}/mix_video_audio_output.mp4"
 
             FFmpegKit.executeAsync(command) {
                 if (ReturnCode.isSuccess(it.returnCode)) {
@@ -138,14 +158,27 @@ class FFmpagFragment : BaseFragment() {
             val output = "$dir/video/image_to_video.mp4"
             FFmpegKit.execute("-r 30 -s 1920*1080 -loop 1 -i $cover -t 3 -vcodec libx264 -crf 25 -pix_fmt yuv420p -c:a aac -y $output")
         }
-        //ffmpeg -r 30 -f image2 -i im%04d.png -c:v huffyuv -pix_fmt rgb24 output.avi
-        //String strCommand = "ffmpeg -loop 1 -t 3 -i " + /sdcard/videokit/1.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/2.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/3.jpg + " -loop 1 -t 3 -i " + /sdcard/videokit/4.jpg + " -filter_complex [0:v]trim=duration=3,fade=t=out:st=2.5:d=0.5[v0];[1:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v1];[2:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v2];[3:v]trim=duration=3,fade=t=in:st=0:d=0.5,fade=t=out:st=2.5:d=0.5[v3];[v0][v1][v2][v3]concat=n=4:v=1:a=0,format=yuv420p[v] -map [v] -preset ultrafast " + /sdcard/videolit/output.mp4;
-//                "-r 30 -s 1920x1080 -i $dirImages/%d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p -y $output")
+
+//        ffmpeg
+
+
         images_to_video.setOnClickListener {
-            val output = "$dir/video/images_to_video.mp4"
+            val output = "$dir/video/images_6_video.mp4"
+//            FFmpegKit.executeAsync(
+//                "-r 30 -s 1920*1080 -i ${dirImages}/%d.png -vcodec libx264 -crf 25 -pix_fmt yuv420p -c:a aac -y $output"
+//            )
+
+//            -framerate 25 -t 124 -loop 1 -i image1
+//            -framerate 25 -t 124 -loop 1 -i image2
+//            -framerate 25 -t 124 -loop 1 -i image3
+//            -framerate 25 -t 124 -loop 1 -i image4
+//            -filter_complex "[0][1][2][3]concat=n=4"
+//            -c:v libx264 -s 640x480 outputfile
             FFmpegKit.executeAsync(
-                "-framerate 24 -i ${dirImages}/img%03d.png -y $output"
+                "-framerate 25 -t 5 -loop 1 -i ${dirImages}/1.png -framerate 25 -t 5 -loop 1 -i ${dirImages}/5.png -framerate 25 -t 5 -loop 1 -i ${dirImages}/11.png -filter_complex '[0][1][2]concat=n=3' -c:v libx264 -s 1280x720 ${output}"
             )
+
+
             {
                 Log.d("wwq", "images_to_video: " + it.returnCode);
                 if (ReturnCode.isSuccess(it.returnCode)) {
@@ -180,7 +213,7 @@ class FFmpagFragment : BaseFragment() {
 //            FFmpegKit.execute("-i $opening -i $cover -filter_complex 'overlay=10:10' $dir/video/video_with_cover.mp4")
 //            ffmpeg -i in.mp4 -i IMAGE -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic out.mp4
             //to do no working
-            FFmpegKit.execute("-i $sunshine -i $cover -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic $dir/video/video_with_coverV7.mp4")
+            FFmpegKit.execute("-i $sunshine -i $cover -map 0 -map 1 -c copy -c:v:1 png -disposition:v:1 attached_pic $dir/video/video_with_coverV8.mp4")
 
         }
 
@@ -257,8 +290,16 @@ class FFmpagFragment : BaseFragment() {
             }
         }
         add_background_audio.setOnClickListener {
-//            val command = "-i $opening -i $audio1 -map 0:v -map 1:a $dirDownload/hasBackground.mp4"
-//            FFmpegKit.execute(command)
+//            val command = "-i $opening -i $piano_quiet $videoDir/hasBackground2.mp4"
+            val drawText = "-vf drawtext=" + "fontfile=$font:text='this is test':x=(w-tw)/2:y=(h-th)/2:fontcolor=red:fontsize=${SizeUtils.sp2px(16f)}"
+
+            //val command = "-i /storage/emulated/0/Download/test/out2.wav -i /storage/emulated/0/Download/video/video_with_coverV8.mp4 -y $videoDir/hasBackground4.mp4"
+            val command = "-i /storage/emulated/0/Download/video/hasBackground4.mp4 -i $piano_quiet -map 0:v:0 -map 1:a:0 $drawText -shortest -y $videoDir/hasBackground6.mp4"
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
             //add background keep quality
 //            val command = "-i $sunshine -i $piano_quiet -map 0:v -c:v copy -map 1:a $videoDir/hasBackground_keep_quality.mp4"
 //            FFmpegKit.executeAsync(command){
@@ -274,13 +315,13 @@ class FFmpagFragment : BaseFragment() {
 //                }
 //            }
             //keep 1080p
-            val command =
-                "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
-            FFmpegKit.executeAsync(command) {
-                if (ReturnCode.isSuccess(it.returnCode)) {
-                    it.arguments.last().openFile(requireContext())
-                }
-            }
+//            val command =
+//                "-i $opening -i $piano_quiet -map 0:v -vf scale=-1:1080 -map 1:a -shortest -y $videoDir/hasBackground_vertical_1080p.mp4"
+//            FFmpegKit.executeAsync(command) {
+//                if (ReturnCode.isSuccess(it.returnCode)) {
+//                    it.arguments.last().openFile(requireContext())
+//                }
+//            }
 
         }
 
@@ -307,7 +348,16 @@ class FFmpagFragment : BaseFragment() {
         }
 
         mute_video.setOnClickListener {
-            FFmpegKit.execute("-i $dirDownload/hasBackground.mp4 -c copy -an $dirDownload/muteVideo.mp4")
+//            val command = "-i $dirDownload/hasBackground.mp4 -map 0:v:0 -y $dirDownload/muteVideo.mp4"
+            val command = "-i $dirDownload/hasBackground.mp4 -an -y $dirDownload/muteVideo.mp4"
+            FFmpegKit.executeAsync(command) {
+                if (ReturnCode.isSuccess(it.returnCode)) {
+                    it.arguments.last().openFile(requireContext())
+                }
+            }
+        }
+        mute_video_add_audio_video.setOnClickListener {
+            FFmpegKit.execute("-an -i $dirDownload/hasBackgroundClassAlarm.mp4  -i $piano_quiet -map 0:v -map 1:a -c:v copy -shortest $videoDir/mute_origin_video_add_audio.mp4")
         }
 
     }
