@@ -1,23 +1,14 @@
 package com.qwuiteam.project.fragment
 
-import android.content.ContentProvider
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
-import com.blankj.utilcode.util.ColorUtils
-import com.blankj.utilcode.util.SizeUtils
-import com.blankj.utilcode.util.ToastUtils
-import com.blankj.utilcode.util.Utils
 import com.qwuiteam.project.R
 import com.qwuiteam.project.databinding.FragmentViewmodelBinding
 import com.qwuiteam.project.viewmodel.EditViewModel
@@ -46,23 +37,21 @@ class ViewmodelFragment : BaseFragment(), TextWatcher {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.setTestButton.setOnClickListener {
-
-        }
-        editViewModel = ViewModelProvider(this).get("123", EditViewModel::class.java)
-        binding.lifecycleOwner = this
-        binding.viewModel = editViewModel
-        editViewModel.subtitlesLiveData.value = "init 请输入内容"
-
-        binding.edit.doAfterTextChanged {
-            if (it.toString().isEmpty()) {
-                Log.d("wwq", "为空了: ");
-                binding.textView.text = "请输入内容"
-            }
-        }
+//        binding.setTestButton.setOnClickListener {}
+//        editViewModel = ViewModelProvider(this).get("123", EditViewModel::class.java)
+//        binding.lifecycleOwner = this
+//        binding.viewModel = editViewModel
+//        editViewModel.subtitlesLiveData.value = "init 请输入内容"
+//
+//        binding.edit.doAfterTextChanged {
+//            if (it.toString().isEmpty()) {
+//                Log.d("wwq", "为空了: ");
+//                binding.textView.text = "请输入内容"
+//            }
+//        }
 
         //editViewModel.subtitlesLiveData.postValue("请输入内容")
-        //binding.edit2.addTextChangedListener(this)
+        binding.edit2.addTextChangedListener(this)
     }
 
     override fun onResume() {
@@ -78,10 +67,18 @@ class ViewmodelFragment : BaseFragment(), TextWatcher {
     }
 
     override fun afterTextChanged(s: Editable?) {
-        if (s.toString().isEmpty()) {
-            binding.textView.text = "请输入内容"
-        }else{
-            editViewModel.subtitlesLiveData.value = s.toString()
+//        if (s.toString().isEmpty()) {
+//            binding.textView.text = "请输入内容"
+//        }else{
+//            editViewModel.subtitlesLiveData.value = s.toString()
+//        }
+        Log.d("liuyuzhe", "替换字符串: ");
+        val result: String = s.toString().replace(" ", "")
+        if (!s.toString().equals(result)) {
+            Log.d("liuyuzhe", "发现空串: ");
+            binding.edit2.setText(result)
+            binding.edit2.setSelection(result.length)
+            // alert the user
         }
     }
 }

@@ -35,14 +35,14 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:hint="请输入内容"
+            android:visibility="gone"
             android:text="@={viewModel.subtitlesLiveData}" />
 
         <EditText
             android:id="@+id/edit2"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:hint="请输入内容" />
 
     </FrameLayout>
