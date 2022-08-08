@@ -12,8 +12,8 @@ class EditViewModel : ViewModel() {
 
     val subtitlesLiveData = MutableLiveData<String>()
 
-    private val stateFlowV1 = MutableStateFlow<Int>(0)
-    val resultFlow = stateFlowV1.flatMapLatest { netWork() }
+    private val stateFlowV1 = MutableStateFlow(0)
+    val resultFlow = stateFlowV1.map { netWork() }
 
     suspend fun netWork(): Flow<String> {
         return flow<String> {
@@ -41,4 +41,18 @@ class EditViewModel : ViewModel() {
         ).onStart { LogUtils.d("onStart") }
     }
 
+
+    val m = MutableSharedFlow<Int>()
+    fun update() {
+        val simpleFlow = flow {
+            number++
+            emit("send value: $number")
+        }.catch {
+
+        }.flowOn(Dispatchers.IO)
+            .onCompletion {
+
+            }
+
+    }
 }
