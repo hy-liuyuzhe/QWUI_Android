@@ -11,8 +11,9 @@
         android:layout_height="100dp"
         android:src="@mipmap/ic_launcher_round" />
 
-    <ImageView
-        android:id="@+id/avatarView"
+    <Button
+        android:id="@+id/playMusic"
+        android:text="播放音乐"
         android:layout_gravity="center_horizontal"
         android:layout_width="100dp"
         android:layout_height="100dp" />
@@ -24,11 +25,19 @@
         android:layout_height="100dp" />
 
     <Button
-        android:id="@+id/setRole"
+        android:id="@+id/setRoleBTR"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_vertical"
-        android:text="setRole"/>
+        android:text="setRoleBTR"/>
+
+    <Button
+        android:id="@+id/setRoleAUD"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_vertical"
+        android:text="setRoleAUD"/>
 
     <Button
         android:id="@+id/clear"

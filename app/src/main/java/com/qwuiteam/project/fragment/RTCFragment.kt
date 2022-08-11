@@ -46,14 +46,24 @@ class RTCFragment : BaseFragment() {
         joinChannel.setOnClickListener {
             val res: Int =
                 rtcEngine.joinChannel(
-                    "005AQAoAEUxOTAyMUM2QjI0MTczRjNFMjJCNTk0RERDOTBFRkIwNDA0MTAwNjYQAKw7RyXdBkHeipqNlTMo5Imra7liUfVFLQAAAAAAAA==",
-                    "1410970", "Extra Optional Data", 1000039
+                    "005AQAoADk1RjMyOTI2MDQ3NzQxOTM2RjFCOEJDMEMyRENCMTI4MjRCNTlDOTAQAGWPO8PKekuDhK84rq+JGNP3DfJiZfkGCwAAAAAAAA==",
+                    "1847", "Extra Optional Data", 10240
                 )
             Log.e(TAG, "join channel: " + res)
         }
-        setRole.setOnClickListener {
+        setRoleBTR.setOnClickListener {
             val res: Int = rtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
-            Log.e(TAG, "set role: " + res)
+            Log.e(TAG, "set role setRoleBTR: " + res)
+        }
+        setRoleAUD.setOnClickListener {
+            val res: Int = rtcEngine.setClientRole(Constants.CLIENT_ROLE_AUDIENCE)
+            Log.e(TAG, "set role setRoleAUD: " + res)
+        }
+
+        playMusic.setOnClickListener {
+            val filePath = "/storage/emulated/0/Download/audio/piano_quiet.mp3"
+            val r = rtcEngine.startAudioMixing(filePath, false, false, -1);
+            Log.d("liuyuzhe", "startAudioMixing: "+r);
         }
     }
 
@@ -96,11 +106,12 @@ class RTCFragment : BaseFragment() {
 
         override fun onUserOffline(uid: Int, reason: Int) {
             super.onUserOffline(uid, reason)
+            Log.e(TAG, "onUserOffline.uid: " + uid+", reason: $reason")
         }
 
         override fun onConnectionStateChanged(state: Int, reason: Int) {
             super.onConnectionStateChanged(state, reason)
-            Log.i(TAG, "onConnectionStateChanged: " + reason)
+            Log.e(TAG, "onConnectionStateChanged.state: $state , reason: $reason" )
         }
 
         override fun onConnectionInterrupted() {
@@ -109,6 +120,7 @@ class RTCFragment : BaseFragment() {
 
         override fun onConnectionLost() {
             super.onConnectionLost()
+            Log.e(TAG, "onConnectionLost")
         }
 
         override fun onConnectionBanned() {
