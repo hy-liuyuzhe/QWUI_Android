@@ -77,6 +77,7 @@ dependencies {
     api rootProject.ext.dependencies.glide_transformations
     kapt rootProject.ext.dependencies.annotation_glide
     api 'com.google.firebase:firebase-auth:21.0.2'
+    api 'cat.ereza:customactivityoncrash:2.3.0'
     //ui
     implementation 'io.github.lucksiege:pictureselector:v2.6.1'
     implementation 'com.github.yyued:SVGAPlayer-Android:2.6.1'

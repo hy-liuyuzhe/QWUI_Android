@@ -26,6 +26,14 @@ class StringFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        json.setOnClickListener {
+            val json = "{\n" +
+                    "    \"code\": 10003,\n" +
+                    "    \"message\": \"Please update app version\"\n" +
+                    "}"
+            val bean = GsonUtils.fromJson<Test>(json,Test::class.java)
+            LogUtils.d("bean: $bean");
+        }
         start_with.setOnClickListener {
             val all = "https://passport.odaily.news/api/mobi-investor/appversion?app=0&os=android"
             val target = "https://passport.odaily.news/"
@@ -68,7 +76,7 @@ class StringFragment : BaseFragment() {
             val r = BigDecimal(6749.03123141422432)
                 .setScale(0, BigDecimal.ROUND_DOWN).toString()
 
-            Log.d("liuyuzhe", "r: "+r);
+            Log.d("liuyuzhe", "r: " + r);
 
         }
         val content = "hahaha"
@@ -81,5 +89,11 @@ class StringFragment : BaseFragment() {
                 )
             )
         )
+    }
+
+    class Test {
+        val code: Int = 0
+        val code1: Int = 0
+        val message: Test? = null
     }
 }
