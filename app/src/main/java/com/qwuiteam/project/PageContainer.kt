@@ -8,6 +8,7 @@ enum class PageContainer(
     val targetClass: Class<out BaseFragment>
 ) {
 
+    senderView("研究连击条", SenderViewFragment::class.java),
     tablayout("研究tablayout", TabLayoutFragment::class.java),
     flow("研究flow", FlowFragment::class.java),
     viewmodel("研究双向绑定", ViewmodelFragment::class.java),

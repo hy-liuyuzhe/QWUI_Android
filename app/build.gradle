@@ -53,7 +53,6 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-
 //    api project(':qwui')
 //    implementation 'io.github.hy-liuyuzhe:qwui:1.0.2'
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -65,8 +64,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 
-
-
     implementation 'com.blankj:utilcodex:1.30.6'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
     implementation 'com.hi-dhl:binding:1.1.5'
@@ -76,12 +73,13 @@ dependencies {
     api rootProject.ext.dependencies.glide
     api rootProject.ext.dependencies.glide_transformations
     kapt rootProject.ext.dependencies.annotation_glide
-    api 'com.google.firebase:firebase-auth:21.0.2'
+    api 'com.google.firebase:firebase-auth:21.0.4'
+    api 'com.google.android.gms:play-services-safetynet:18.0.1'
     api 'cat.ereza:customactivityoncrash:2.3.0'
     //ui
     implementation 'io.github.lucksiege:pictureselector:v2.6.1'
     implementation 'com.github.yyued:SVGAPlayer-Android:2.6.1'
-
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
     implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
 //    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 //    implementation 'com.netease.nimlib:basesdk:8.10.0'

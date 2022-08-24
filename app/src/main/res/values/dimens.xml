@@ -1,0 +1,325 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="big_fnt">17sp</dimen>
+
+
+    <!--对话框信息文字-->
+    <!--对话框按钮文字-->
+    <dimen name="dialog_btn_text_fnt">18sp</dimen>
+    <!--对话框标题文字-->
+    <dimen name="dialog_title_text_fnt">18sp</dimen>
+    <!--短文本（导航栏文字）-->
+    <!--长文本（提示文字）-->
+    <dimen name="long_text_tips_fnt">16sp</dimen>
+
+
+
+    <!-- 本APP间距标准 -->
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- 网络工作item -->
+    <dimen name="common_item_view_height">40dp</dimen>
+    <dimen name="common_item_view_height_big">45dp</dimen>
+    <dimen name="common_item_view_height_bigger_max">55dp</dimen>
+    <dimen name="common_item_view_margin_top_bottom">20dp</dimen>
+
+    <!-- 网络工作item -->
+    <dimen name="common_item_view_margin_left_right">15dp</dimen>
+
+    <!-- 字体大小终极版本 -->
+    <!-- font sizes -->
+    <dimen name="font_size_sp_34">34sp</dimen>
+    <dimen name="font_size_sp_24">24sp</dimen>
+    <dimen name="font_size_sp_22">22sp</dimen>
+    <dimen name="font_larger">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_large">15sp</dimen>
+    <dimen name="font_medium">13sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_tiny">11sp</dimen>
+    <dimen name="font_best_tiny">10sp</dimen>
+
+    <!-- 间隔 -->
+    <dimen name="space_normal">5dp</dimen>
+    <dimen name="space_tiny">2dp</dimen>
+    <dimen name="space_smalls">4dp</dimen>
+    <dimen name="space_larger">12dp</dimen>
+
+    <!-- 图片尺寸 -->
+    <dimen name="image_size_big">65dp</dimen>
+
+    <!-- icon、text默认大小 -->
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!--账单item高度-->
+    <dimen name="bill_item_height">60dp</dimen>
+    <dimen name="bill_item_time">40dp</dimen>
+    <dimen name="bill_chat_item_height">70dp</dimen>
+
+    <dimen name="dp_0">0dp</dimen>
+    <dimen name="dp_half">0.5dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_7">7dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_9">9dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_19">19dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_21">21dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_22_5">22.5dp</dimen>
+    <dimen name="dp_23">23dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_26">26dp</dimen>
+    <dimen name="dp_29">29dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_34">34dp</dimen>
+    <dimen name="dp_35">35dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_37_5">37.5dp</dimen>
+    <dimen name="dp_38">38dp</dimen>
+    <dimen name="dp_39_5">39.5dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_54">54dp</dimen>
+    <dimen name="dp_55">55dp</dimen>
+    <dimen name="dp_58">58dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_63">63dp</dimen>
+    <dimen name="dp_72">72dp</dimen>
+    <dimen name="dp_78">78dp</dimen>
+    <dimen name="dp_84">84dp</dimen>
+    <dimen name="dp_92">92dp</dimen>
+    <dimen name="dp_122">122dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="me_item_height">60dp</dimen>
+    <dimen name="base_margin_left">5dp</dimen>
+    <dimen name="base_margin_right">5dp</dimen>
+    <dimen name="common_cover_round_size">5dp</dimen>
+    <dimen name="common_toolbar_height">48dp</dimen>
+    <dimen name="me_user_circle_avatar">75dp</dimen>
+    <dimen name="me_user_circle_avatar_margin_top">69dp</dimen>
+    <dimen name="me_card_margin_top">-40dp</dimen>
+    <dimen name="my_wallet_header_height">154dp</dimen>
+    <dimen name="my_wallet_wanna_charge_height">35dp</dimen>
+    <dimen name="my_income_header_margin_bottom">55dp</dimen>
+    <dimen name="my_income_button_width">311dp</dimen>
+    <dimen name="my_income_button_height">40dp</dimen>
+    <dimen name="exchange_gold_diamond_item_height">55dp</dimen>
+    <dimen name="exchange_gold_gold_item_height">50dp</dimen>
+    <dimen name="exchange_gold_confirm_button_margin_top">85dp</dimen>
+    <dimen name="exchange_gold_item_margin_start">8.5dp</dimen>
+
+    <!--BillItemView default value-->
+    <dimen name="bill_item_view_margin_start">16dp</dimen>
+    <dimen name="bill_item_view_margin_end">20dp</dimen>
+    <dimen name="bill_item_view_text_margin_start">15dp</dimen>
+    <dimen name="bill_item_view_text_size">15sp</dimen>
+    <dimen name="bill_item_view_under_line_height">0.5dp</dimen>
+
+    <!--dialog-->
+    <dimen name="dialog_new_gift_height">320dp</dimen>
+    <dimen name="dialog_new_gift_height_max">400dp</dimen>
+    <dimen name="dialog_gift_height">281dp</dimen>
+    <dimen name="dialog_face_height">293dp</dimen>
+    <dimen name="dialog_share_height">189.5dp</dimen>
+    <dimen name="dialog_share_height_2">289.5dp</dimen>
+    <dimen name="dialog_common_button_item_height">50dp</dimen>
+    <dimen name="dialog_voice_seek_height">100dp</dimen>
+    <dimen name="dialog_auction_height">300dp</dimen>
+
+    <!--user info dialog-->
+    <dimen name="dialog_user_info_radius">1dp</dimen>
+    <dimen name="dialog_user_info_height">234dp</dimen>
+    <dimen name="dialog_user_info_layout_height">269dp</dimen>
+    <dimen name="dialog_user_info_avatar">70dp</dimen>
+    <dimen name="dialog_user_info_margin_top">35dp</dimen>
+    <dimen name="dialog_user_info_avatar_border_width">2dp</dimen>
+    <dimen name="dialog_user_info_user_name_margin_top">10dp</dimen>
+    <dimen name="dialog_user_info_user_name_drawable_padding">5dp</dimen>
+    <dimen name="dialog_user_info_user_name_text_size">16dp</dimen>
+    <dimen name="dialog_user_info_id_layout_margin_top">10dp</dimen>
+    <dimen name="dialog_user_info_constellation_margin_start">5dp</dimen>
+    <dimen name="dialog_user_info_fans_number_margin_top">20dp</dimen>
+    <dimen name="dialog_user_info_fans_number_text_size">15dp</dimen>
+    <dimen name="dialog_user_info_options_height">50dp</dimen>
+
+    <!--room-->
+    <dimen name="dialog_list_width">323dp</dimen>
+    <dimen name="dialog_list_height">470dp</dimen>
+    <dimen name="dialog_room_msg_height">486dp</dimen>
+    <dimen name="dialog_list_title_diver">0.5dp</dimen>
+    <dimen name="dialog_list_title_height">50dp</dimen>
+    <dimen name="dialog_list_item_height">60dp</dimen>
+    <dimen name="dialog_list_user_avatar">35dp</dimen>
+    <dimen name="dialog_list_gender">10dp</dimen>
+    <dimen name="dialog_list_online_user_nick_name_margin_start">10dp</dimen>
+    <dimen name="dialog_list_online_user_logo_layout_margin_start">10dp</dimen>
+    <dimen name="dialog_list_online_user_logo_layout_margin_top">5dp</dimen>
+    <dimen name="dialog_list_online_user_owner_logo_width">25dp</dimen>
+    <dimen name="dialog_list_online_user_owner_logo_height">14dp</dimen>
+    <dimen name="dialog_list_online_user_owner_logo_margin_end">5dp</dimen>
+    <dimen name="dialog_list_online_user_manager_logo_width">34dp</dimen>
+    <dimen name="dialog_list_online_user_manager_logo_height">14dp</dimen>
+    <dimen name="dialog_list_contribution_coin_text_padding">5dp</dimen>
+    <dimen name="dialog_list_contribution_nick_name_margin">10dp</dimen>
+    <dimen name="dialog_list_contribution_nick_name_drawable_padding">6dp</dimen>
+
+    <!--gift dialog-->
+    <dimen name="gift_to_man_radius">2dp</dimen>
+    <dimen name="gift_selector_stroke_width">0.5dp</dimen>
+    <dimen name="gift_top_height">40dp</dimen>
+    <dimen name="gift_footer_height">49dp</dimen>
+    <dimen name="gift_to_man_layout_width">103dp</dimen>
+    <dimen name="gift_to_man_layout_height">30dp</dimen>
+    <dimen name="gift_amount_layout_width">131dp</dimen>
+    <dimen name="gift_amount_layout_height">30dp</dimen>
+    <dimen name="gift_quantity_send_layout_width">65.5dp</dimen>
+    <dimen name="gift_send_width">65.5dp</dimen>
+    <dimen name="gift_number_layout_width">96dp</dimen>
+    <dimen name="gift_number_layout_height">196dp</dimen>
+    <dimen name="gift_image_width">55dp</dimen>
+    <dimen name="gift_image_anim_width">65dp</dimen>
+    <dimen name="gift_image_height">55dp</dimen>
+    <dimen name="gift_image_anim_height">65dp</dimen>
+    <dimen name="gift_gold_padding_top">4dp</dimen>
+    <dimen name="gift_gold_padding_bottom">8dp</dimen>
+    <dimen name="gift_avatar_list_width">115dp</dimen>
+    <dimen name="gift_avatar_list_height">313dp</dimen>
+    <dimen name="gift_avatar_list_margin_start">10dp</dimen>
+    <dimen name="gift_avatar_item_height">30dp</dimen>
+    <dimen name="gift_avatar_width">20dp</dimen>
+    <dimen name="gift_avatar_height">20dp</dimen>
+    <dimen name="gift_user_info_width">49dp</dimen>
+    <dimen name="gift_user_info_height">25dp</dimen>
+
+    <!--about-->
+    <dimen name="about_logo_margin_top">88dp</dimen>
+    <dimen name="about_version_name_margin_top">197dp</dimen>
+    <dimen name="about_slogan_margin_top">17dp</dimen>
+    <dimen name="about_company_name_margin_bottom">25dp</dimen>
+
+    <!--setting-->
+    <dimen name="setting_item_height">50dp</dimen>
+
+    <dimen name="game_home_banner_height">140dp</dimen>
+
+    <dimen name="layout_come_msg_width">304dp</dimen>
+
+    <dimen name="layout_room_gift_banner_width">345dp</dimen>
+
+    <dimen name="room_message_view_right_margin">94dp</dimen>
+    <dimen name="dp_205">205dp</dimen>
+    <dimen name="dp_145">145dp</dimen>
+    <dimen name="dp_150">150dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+    <dimen name="dp_51">51dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_42">42dp</dimen>
+    <dimen name="dp_52">52dp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="dp_62">62dp</dimen>
+    <dimen name="dp_65">65dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_75">75dp</dimen>
+    <dimen name="dp_80">80dp</dimen>
+    <dimen name="dp_85">85dp</dimen>
+    <dimen name="dp_88">88dp</dimen>
+    <dimen name="dp_95">95dp</dimen>
+    <dimen name="dp_98">98dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_106">106dp</dimen>
+    <dimen name="dp_66">66dp</dimen>
+    <dimen name="dp_53">53dp</dimen>
+    <dimen name="dp_112">112dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_128">128dp</dimen>
+    <dimen name="dp_140">140dp</dimen>
+    <dimen name="dp_130">130dp</dimen>
+    <dimen name="dp_208">208dp</dimen>
+    <dimen name="dp_76">76dp</dimen>
+    <dimen name="dp_71">71dp</dimen>
+    <dimen name="dp_200">200dp</dimen>
+    <dimen name="dp_210">210dp</dimen>
+    <dimen name="dp_235">235dp</dimen>
+    <dimen name="dp_280">280dp</dimen>
+    <dimen name="dp_290">290dp</dimen>
+    <dimen name="dp_300">300dp</dimen>
+    <dimen name="dp_310">310dp</dimen>
+    <dimen name="dp_320">320dp</dimen>
+    <dimen name="dp_350">350dp</dimen>
+    <dimen name="dp_500">500dp</dimen>
+    <dimen name="dp_190">190dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_46">46dp</dimen>
+    <dimen name="dp_110">110dp</dimen>
+
+    <!--原始12-->
+    <dimen name="buttom_left_view">12dp</dimen>
+    <dimen name="buttom_left_normal_view">8dp</dimen>
+    <!--原始10-->
+    <dimen name="buttom_gift_left">10dp</dimen>
+    <dimen name="buttom_gift_normal_left">8dp</dimen>
+    <!--原始15-->
+    <dimen name="buttom_right_margin">15dp</dimen>
+    <dimen name="buttom_left_margin">15dp</dimen>
+    <dimen name="buttom_left_margin_single">11dp</dimen>
+    <dimen name="buttom_left_right_normal">6dp</dimen>
+
+    <dimen name="room_banner_width">70dp</dimen>
+    <dimen name="room_banner_height">84dp</dimen>
+    <dimen name="room_multi_indic_height">14dp</dimen>
+
+    <dimen name="charge_top_radius">8dp</dimen>
+    <dimen name="d_300">300dp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_8">8sp</dimen>
+    <dimen name="dp_33">33dp</dimen>
+    <dimen name="dp_31">31dp</dimen>
+    <dimen name="sp_5">5sp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="dp_90">90dp</dimen>
+    <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_82">82dp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="dp_220">220dp</dimen>
+    <dimen name="dp_230">230dp</dimen>
+    <dimen name="dp_260">260dp</dimen>
+    <dimen name="dp_270">270dp</dimen>
+    <dimen name="dp_41">41dp</dimen>
+    <dimen name="dp_67">67dp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_17">17sp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="dp_86">86dp</dimen>
+    <dimen name="dp_170">170dp</dimen>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    tools:parentTag="android.widget.RelativeLayout">
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/vComboAnimBg"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/dp_44"
+      android:layout_marginBottom="@dimen/dp_8"
+      android:background="@drawable/bg_gift_combo_item"
+      android:visibility="visible" />
+
+  <LinearLayout
+      android:id="@+id/llCombo"
+      android:layout_width="wrap_content"
+      android:layout_height="48dp"
+      android:layout_marginBottom="8dp"
+      android:orientation="horizontal"
+      android:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp_6"
+        android:src="@drawable/ic_default_avatar" />
+
+    <LinearLayout
+        android:id="@+id/llUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:includeFontPadding="false"
+          android:textColor="@android:color/white"
+          tools:text="帅到没朋友" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvRecvDesc"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/dp_4"
+          android:includeFontPadding="false"
+          android:layoutDirection="locale"
+          android:textColor="@color/white"
+          android:textDirection="locale"
+          android:textSize="@dimen/dp_10"
+          tools:text="给 小甜甜哈... 送了" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_gift"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp_8"
+        android:src="@drawable/ic_default_avatar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_gift_combo_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textDirection="locale"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/dp_28"
+        android:textStyle="bold"
+        tools:text="x28800000" />
+
+  </LinearLayout>
+
+</RelativeLayout>
