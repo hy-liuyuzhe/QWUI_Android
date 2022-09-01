@@ -38,9 +38,12 @@ class ViewmodelFragment : BaseFragment(), TextWatcher {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        binding.setTestButton.setOnClickListener {}
-//        editViewModel = ViewModelProvider(this).get("123", EditViewModel::class.java)
-//        binding.lifecycleOwner = this
-//        binding.viewModel = editViewModel
+        editViewModel = ViewModelProvider(this).get("123", EditViewModel::class.java)
+        binding.lifecycleOwner = this
+        binding.viewModel = editViewModel
+        editViewModel.subtitlesLiveData.observe(viewLifecycleOwner){
+            Log.d("liuyuzhe", "data change: ");
+        }
 //        editViewModel.subtitlesLiveData.value = "init 请输入内容"
 //
 //        binding.edit.doAfterTextChanged {

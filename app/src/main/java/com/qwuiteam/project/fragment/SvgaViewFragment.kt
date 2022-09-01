@@ -35,6 +35,10 @@ import java.net.URL
  */
 class SvgaViewFragment : BaseFragment() {
 
+    companion object{
+        const val TAG = "SvgaViewFragment"
+    }
+
     override fun getLayoutId(): Int = R.layout.fragment_svga
 
     lateinit var svgaDrawable1: SVGADrawable
@@ -93,14 +97,15 @@ class SvgaViewFragment : BaseFragment() {
                 }
 
                 override fun onStep(frame: Int, percentage: Double) {
-                    Log.e(TAG,"onStep: "+frame);
+                    Log.i(TAG,"onStep: "+frame);
                     Log.e(TAG,"percentage: "+percentage);
                 }
 
             }
 //            val url = "https://img.hakiapp.com/FnYguyw0fvvXfWNoBD1QxtoYamhY?imageslim"
 //                URL(url)
-            SVGAParser(context).decodeFromAssets("longV2.svga",
+//            SVGAParser(context).decodeFromAssets("longV2.svga",
+            SVGAParser(context).decodeFromURL(URL("https://img.hakiapp.com/FpNSQCjsZRZ6Efb0mgX5mhK6tbMR?imageslim"),
                 object : SVGAParser.ParseCompletion {
                     override fun onComplete(videoItem: SVGAVideoEntity) {
                         val svgaDrawable2 = SVGADrawable(
@@ -110,7 +115,7 @@ class SvgaViewFragment : BaseFragment() {
                     }
 
                     override fun onError() {
-
+                        Log.e(TAG,"onError: ");
                     }
                 })
         }

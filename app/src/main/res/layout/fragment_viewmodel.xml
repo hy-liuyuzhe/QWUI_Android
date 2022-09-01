@@ -33,9 +33,8 @@
             android:id="@+id/edit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
             android:hint="请输入内容"
-            android:visibility="gone"
             android:text="@={viewModel.subtitlesLiveData}" />
 
         <EditText

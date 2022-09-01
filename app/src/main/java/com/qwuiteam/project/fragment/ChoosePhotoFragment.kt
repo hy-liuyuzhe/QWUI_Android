@@ -9,13 +9,16 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import androidx.core.content.FileProvider
-import com.blankj.utilcode.util.FileUtils
-import com.blankj.utilcode.util.PathUtils
+import com.blankj.utilcode.util.GsonUtils
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.UriUtils
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureMimeType
+import com.luck.picture.lib.config.PictureSelectionConfig
 import com.luck.picture.lib.entity.LocalMedia
+import com.luck.picture.lib.listener.OnQueryDataResultListener
 import com.luck.picture.lib.listener.OnResultCallbackListener
+import com.luck.picture.lib.model.LocalMediaPageLoader
 import com.qwuiteam.project.R
 import com.qwuiteam.project.utils.GlideEngine
 import kotlinx.android.synthetic.main.fragment_choose_photo.*
@@ -33,9 +36,13 @@ class ChoosePhotoFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        loadAudio.setOnClickListener {
+            loadAudioData()
+        }
+
         choose.setOnClickListener {
             PictureSelector.create(this)
-                .openGallery(PictureMimeType.ofAll())
+                .openGallery(PictureMimeType.ofAudio())
                 .imageEngine(GlideEngine.createGlideEngine())
                 .forResult(object : OnResultCallbackListener<LocalMedia?> {
                     override fun onResult(result: MutableList<LocalMedia?>?) {
@@ -60,6 +67,17 @@ class ChoosePhotoFragment : BaseFragment() {
         }
     }
 
+    private fun loadAudioData() {
+        val instance = PictureSelectionConfig.getInstance()
+        instance.chooseMode =  PictureMimeType.ofAudio()
+        instance.pageSize = 60
+        LocalMediaPageLoader.getInstance(context).loadPageMediaData(-1, 1,
+            label@ OnQueryDataResultListener { data: List<LocalMedia?>, currentPage: Int, isHasMore: Boolean ->
+                LogUtils.d("loadAudioData.size: "+data.size)
+                LogUtils.d("loadAudioData: "+GsonUtils.toJson(data))
+            })
+    }
+
     lateinit var uri: Uri
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -74,7 +92,7 @@ class ChoosePhotoFragment : BaseFragment() {
         Log.d("liuyuzhe", "requestCode.file.absolutePath: ${file.absolutePath}");
         Log.d("liuyuzhe", "requestCode.uri: $uri");
 //        Log.d("liuyuzhe", "requestCode.uri.toFile().exists(): ${uri.toFile().exists()}");
-        image.setImageURI(uri)
+//        image.setImageURI(uri)
         imagePath.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
 
     }

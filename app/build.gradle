@@ -84,6 +84,7 @@ dependencies {
 //    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 //    implementation 'com.netease.nimlib:basesdk:8.10.0'
 //    implementation 'com.netease.nimlib:push:8.10.0'
+//    implementation 'io.agora.rtc:voice-sdk:3.7.1'
 
     //ffmpag
     implementation 'com.arthenica:ffmpeg-kit-full-gpl:4.5.1'
