@@ -10,6 +10,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <com.luck.picture.lib.photoview.PhotoView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.yalantis.ucrop.view.OverlayView
+            android:id="@+id/view_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/ucrop_padding_crop_frame"/>
+
+        <com.yalantis.ucrop.view.UCropView
+            android:id="@+id/ucropView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <Button
             android:id="@+id/loadAudio"
             android:text="loadAudio"
@@ -38,6 +55,7 @@
             android:layout_height="100dp"
             android:src="@mipmap/ic_launcher_round"
             android:text="load" />
+
 
 
     </FrameLayout>

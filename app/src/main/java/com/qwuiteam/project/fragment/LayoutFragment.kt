@@ -45,13 +45,15 @@ class LayoutFragment : BaseFragment() {
             mapOf(Pair("b", listOf("3", "4")))
         )
         convert_map.setOnClickListener {
-            ToastUtils.showShort("1234")
-            val mutableList: MutableList<String> = list.map { it.values }
-                .flatMap { it.map { it.toString() } }.toMutableList()
-            Log.d("liuyuzhe", "map: " + mutableList);
+            radioButton.isSelected = !radioButton.isSelected
+//            ToastUtils.showShort("1234")
+//            val mutableList: MutableList<String> = list.map { it.values }
+//                .flatMap { it.map { it.toString() } }.toMutableList()
+//            Log.d("liuyuzhe", "map: " + mutableList);
+//
+//            mutableList.add("5")
+//            Log.d("liuyuzhe", "add: " + mutableList);
 
-            mutableList.add("5")
-            Log.d("liuyuzhe", "add: " + mutableList);
         }
 
         joinChannel.setOnClickListener {

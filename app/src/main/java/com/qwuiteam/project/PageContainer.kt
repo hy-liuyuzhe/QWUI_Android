@@ -16,6 +16,7 @@ enum class PageContainer(
     pk("pk 需求", PkFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
+    date("日期格式化", DateFragment::class.java),
 //    agoraRTC("研究声网", RTCFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
     svga("研究svga", SvgaViewFragment::class.java),

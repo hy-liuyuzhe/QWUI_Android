@@ -1,18 +1,12 @@
 package com.qwuiteam.project.fragment
 
-import android.content.ContentProvider
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
 import com.qwuiteam.project.view.RoomPkBottomSheetDialog
-import kotlinx.android.synthetic.main.fragment_layout.*
 import kotlinx.android.synthetic.main.fragment_string.*
 
 /**
@@ -30,7 +24,7 @@ class BottomSheetFragment : BaseFragment() {
             RoomPkBottomSheetDialog().show(requireActivity().supportFragmentManager, "pk")
         }
 
-        start_with2.setOnClickListener {
+        countdown.setOnClickListener {
             val all = "http://www.odaily.news/pp/api/hot-word"
             val target = "http://www.odaily.news/"
 

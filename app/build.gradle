@@ -77,7 +77,10 @@ dependencies {
     api 'com.google.android.gms:play-services-safetynet:18.0.1'
     api 'cat.ereza:customactivityoncrash:2.3.0'
     //ui
+//    implementation 'com.github.CanHub:Android-Image-Cropper:4.3.2'
+//    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
     implementation 'io.github.lucksiege:pictureselector:v2.6.1'
+//    implementation 'io.github.lucksiege:ucrop:v3.10.6'
     implementation 'com.github.yyued:SVGAPlayer-Android:2.6.1'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
     implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'

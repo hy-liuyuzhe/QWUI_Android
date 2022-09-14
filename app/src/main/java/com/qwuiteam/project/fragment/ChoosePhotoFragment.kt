@@ -1,17 +1,15 @@
 package com.qwuiteam.project.fragment
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.PointF
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import androidx.core.content.FileProvider
-import com.blankj.utilcode.util.GsonUtils
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.UriUtils
+import com.blankj.utilcode.util.*
 import com.luck.picture.lib.PictureSelector
 import com.luck.picture.lib.config.PictureMimeType
 import com.luck.picture.lib.config.PictureSelectionConfig
@@ -19,11 +17,15 @@ import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.listener.OnQueryDataResultListener
 import com.luck.picture.lib.listener.OnResultCallbackListener
 import com.luck.picture.lib.model.LocalMediaPageLoader
+import com.luck.picture.lib.widget.longimage.ImageSource
+import com.luck.picture.lib.widget.longimage.ImageViewState
+import com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView
 import com.qwuiteam.project.R
 import com.qwuiteam.project.utils.GlideEngine
+import com.theartofdev.edmodo.cropper.CropImage
+import com.yalantis.ucrop.UCrop
+import com.yalantis.ucrop.view.OverlayView
 import kotlinx.android.synthetic.main.fragment_choose_photo.*
-import java.io.File
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -34,47 +36,136 @@ class ChoosePhotoFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_choose_photo
 
+//    private val cropImage = registerForActivityResult(CropImageContract()) { result ->
+//        if (result.isSuccessful) {
+//            // use the returned uri
+//            val uriContent = result.uriContent
+//            val uriFilePath = result.getUriFilePath(context) // optional usage
+//        } else {
+//            // an error occurred
+//            val exception = result.error
+//        }
+//    }
+
+//    private fun startCrop() {
+//        // start picker to get image for cropping and then use the image in cropping activity
+//        cropImage.launch(
+//            options {
+//                setGuidelines(Guidelines.ON)
+//            }
+//        )
+//
+//        //start picker to get image for cropping from only gallery and then use the image in
+//        //cropping activity
+//        cropImage.launch(
+//            options {
+//                setImagePickerContractOptions(
+//                    PickImageContractOptions(includeGallery = true, includeCamera = false)
+//                )
+//            }
+//        )
+//
+//        // start cropping activity for pre-acquired image saved on the device and customize settings
+//        cropImage.launch(
+//            options(uri = imageUri) {
+//                setGuidelines(Guidelines.ON)
+//                setOutputCompressFormat(CompressFormat.PNG)
+//            }
+//        )
+//    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadAudio.setOnClickListener {
             loadAudioData()
         }
-
         choose.setOnClickListener {
-            PictureSelector.create(this)
-                .openGallery(PictureMimeType.ofAudio())
-                .imageEngine(GlideEngine.createGlideEngine())
-                .forResult(object : OnResultCallbackListener<LocalMedia?> {
-                    override fun onResult(result: MutableList<LocalMedia?>?) {
-                        Log.d("liuyuzhe", "post: "+result.toString());
-                    }
+//            PictureSelector.create(this)
+//                .openGallery(PictureMimeType.ofImage())
+//                .imageEngine(GlideEngine.createGlideEngine())
+////                .isEnableCrop(true)
+////                .freeStyleCropEnabled(true)
+////                .cropImageWideHigh(ScreenUtils.getScreenWidth(), SizeUtils.dp2px(128f))
+//                .forResult(object : OnResultCallbackListener<LocalMedia> {
+//                    override fun onResult(result: MutableList<LocalMedia>) {
+//                        val media = result.first()
+//                        Log.d("liuyuzhe", "size screen: " + ScreenUtils.getScreenWidth());
+//                        Log.d("liuyuzhe", "size 128: " + SizeUtils.dp2px(128f));
+//                        Log.d("liuyuzhe", "r.cut: " + media.isCut);
+//                        Log.d("liuyuzhe", "r.w: " + media.width);
+//                        Log.d("liuyuzhe", "r.h: " + media.height);
+//                        //test(media)
+//
+//                    }
+//
+//                    override fun onCancel() {
+//
+//                    }
+//                })
+            CropImage.activity().start(requireContext(), this@ChoosePhotoFragment);
 
-                    override fun onCancel() {
-
-                    }
-                })
         }
 
 
         load.setOnClickListener {
-            val f = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),
-                SimpleDateFormat("yyyyMMdd-HHmmss").format(Date()) + ".jpg")
-            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            uri = FileProvider.getUriForFile(requireContext(),
-                requireActivity().packageName + ".fileprovider", f)
-            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
-            this.startActivityForResult(takePictureIntent, 111)
+//            view_overlay.setTargetAspectRatio(1.77f)
+
+//            val f = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),
+//                SimpleDateFormat("yyyyMMdd-HHmmss").format(Date()) + ".jpg")
+//            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//            uri = FileProvider.getUriForFile(requireContext(),
+//                requireActivity().packageName + ".fileprovider", f)
+//            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
+//            this.startActivityForResult(takePictureIntent, 111)
         }
+    }
+
+    private fun test(media: LocalMedia) {
+        //                        ucropView.cropImageView.setImageBitmap(BitmapFactory.decodeFile(media.realPath))
+        view_overlay.isDragFrame = true
+        view_overlay.setShowCropGrid(true)
+        view_overlay.setTargetAspectRatio(1.77f)
+
+        val intent = requireActivity().intent
+        // Overlay view options
+        view_overlay.setFreestyleCropEnabled(intent.getBooleanExtra(UCrop.Options.EXTRA_FREE_STYLE_CROP,
+            OverlayView.DEFAULT_FREESTYLE_CROP_MODE != OverlayView.FREESTYLE_CROP_MODE_DISABLE))
+        view_overlay.setDragFrame(true)
+        view_overlay.setDimmedColor(intent.getIntExtra(UCrop.Options.EXTRA_DIMMED_LAYER_COLOR,
+            Color.parseColor("#8c000000")))
+        view_overlay.setCircleDimmedLayer(intent.getBooleanExtra(UCrop.Options.EXTRA_CIRCLE_DIMMED_LAYER,
+            OverlayView.DEFAULT_CIRCLE_DIMMED_LAYER))
+
+        view_overlay.setShowCropFrame(intent.getBooleanExtra(UCrop.Options.EXTRA_SHOW_CROP_FRAME,
+            OverlayView.DEFAULT_SHOW_CROP_FRAME))
+        view_overlay.setCropFrameColor(intent.getIntExtra(UCrop.Options.EXTRA_CROP_FRAME_COLOR,
+            Color.parseColor("#ffffff")))
+        view_overlay.setCropFrameStrokeWidth(intent.getIntExtra(UCrop.Options.EXTRA_CROP_FRAME_STROKE_WIDTH,
+            SizeUtils.dp2px(1f)))
+
+        view_overlay.setShowCropGrid(intent.getBooleanExtra(UCrop.Options.EXTRA_SHOW_CROP_GRID,
+            OverlayView.DEFAULT_SHOW_CROP_GRID))
+        view_overlay.setCropGridRowCount(intent.getIntExtra(UCrop.Options.EXTRA_CROP_GRID_ROW_COUNT,
+            OverlayView.DEFAULT_CROP_GRID_ROW_COUNT))
+        view_overlay.setCropGridColumnCount(intent.getIntExtra(UCrop.Options.EXTRA_CROP_GRID_COLUMN_COUNT,
+            OverlayView.DEFAULT_CROP_GRID_COLUMN_COUNT))
+        view_overlay.setCropGridColor(intent.getIntExtra(UCrop.Options.EXTRA_CROP_GRID_COLOR,
+            resources.getColor(R.color.purple)))
+        view_overlay.setCropGridStrokeWidth(intent.getIntExtra(UCrop.Options.EXTRA_CROP_GRID_STROKE_WIDTH,
+            SizeUtils.dp2px(2f)))
+
+
+        image.setImageBitmap(BitmapFactory.decodeFile(media.realPath))
+        //                        displayLongPic(Uri.parse(media.path), image)
     }
 
     private fun loadAudioData() {
         val instance = PictureSelectionConfig.getInstance()
-        instance.chooseMode =  PictureMimeType.ofAudio()
+        instance.chooseMode = PictureMimeType.ofAudio()
         instance.pageSize = 60
         LocalMediaPageLoader.getInstance(context).loadPageMediaData(-1, 1,
             label@ OnQueryDataResultListener { data: List<LocalMedia?>, currentPage: Int, isHasMore: Boolean ->
-                LogUtils.d("loadAudioData.size: "+data.size)
-                LogUtils.d("loadAudioData: "+GsonUtils.toJson(data))
+                LogUtils.d("loadAudioData.size: " + data.size)
+                LogUtils.d("loadAudioData: " + GsonUtils.toJson(data))
             })
     }
 
@@ -82,18 +173,38 @@ class ChoosePhotoFragment : BaseFragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 111){
+//        if (requestCode == 111) {
+//
+//        }
+//        val file = UriUtils.uri2File(uri)
+//        Log.d("liuyuzhe", "requestCode: $requestCode");
+//        Log.d("liuyuzhe", "requestCode.path: ${uri.path}");
+//        Log.d("liuyuzhe", "requestCode.file: ${file}");
+//        Log.d("liuyuzhe", "requestCode.file.absolutePath: ${file.absolutePath}");
+//        Log.d("liuyuzhe", "requestCode.uri: $uri");
+////        Log.d("liuyuzhe", "requestCode.uri.toFile().exists(): ${uri.toFile().exists()}");
+////        image.setImageURI(uri)
+//        imagePath.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
 
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode == RESULT_OK) {
+                val resultUri = result.uri
+                image.setImageURI(resultUri)
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                val error = result.error
+            }
+            Log.d("liuyuzhe", "result: "+result);
         }
-        val file = UriUtils.uri2File(uri)
-        Log.d("liuyuzhe", "requestCode: $requestCode");
-        Log.d("liuyuzhe", "requestCode.path: ${uri.path}");
-        Log.d("liuyuzhe", "requestCode.file: ${file}");
-        Log.d("liuyuzhe", "requestCode.file.absolutePath: ${file.absolutePath}");
-        Log.d("liuyuzhe", "requestCode.uri: $uri");
-//        Log.d("liuyuzhe", "requestCode.uri.toFile().exists(): ${uri.toFile().exists()}");
-//        image.setImageURI(uri)
-        imagePath.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
+    }
 
+    private fun displayLongPic(uri: Uri, longImg: SubsamplingScaleImageView) {
+        longImg.isQuickScaleEnabled = true
+        longImg.isZoomEnabled = true
+        longImg.setDoubleTapZoomDuration(100)
+        longImg.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_CROP)
+        longImg.setDoubleTapZoomDpi(SubsamplingScaleImageView.ZOOM_FOCUS_CENTER)
+        val i = 0f
+        longImg.setImage(ImageSource.uri(uri), ImageViewState(i, PointF(i, i), 0))
     }
 }

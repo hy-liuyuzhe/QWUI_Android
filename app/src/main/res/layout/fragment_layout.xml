@@ -17,6 +17,13 @@
             android:src="@mipmap/ic_launcher_round"
             android:text="add" />
 
+        <com.qwuiteam.project.view.CommonRadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="150dp" />
+
         <ImageView
             android:id="@+id/avatarView"
             android:layout_width="100dp"

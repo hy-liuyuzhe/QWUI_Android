@@ -1,20 +1,13 @@
 package com.qwuiteam.project.fragment
 
-import android.content.ContentProvider
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
-import kotlinx.android.synthetic.main.fragment_layout.*
 import kotlinx.android.synthetic.main.fragment_string.*
 import java.math.BigDecimal
-import java.math.RoundingMode
 
 /**
  * id
@@ -26,7 +19,7 @@ class StringFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        json.setOnClickListener {
+        format1.setOnClickListener {
             val json = "{\n" +
                     "    \"code\": 10003,\n" +
                     "    \"message\": \"Please update app version\"\n" +
@@ -42,7 +35,7 @@ class StringFragment : BaseFragment() {
             Log.d("liuyuzhe", "result: " + result);
         }
 
-        start_with2.setOnClickListener {
+        countdown.setOnClickListener {
             val all = "http://www.odaily.news/pp/api/hot-word"
             val target = "http://www.odaily.news/"
 
