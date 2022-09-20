@@ -22,8 +22,8 @@ open class TouchRootLayout @JvmOverloads constructor(
     private var xCoOrdinate: Float = 0.0f
     private var mWidth = 0
     private var mHeight = 0
-    private var lastX: Float = 0.0f
-    private var lastY: Float = 0.0f
+    var lastX: Float = 0.0f
+    var lastY: Float = 0.0f
     private var yCoOrdinate: Float = 0.0f
     private val currentState = State.EDIT_MOVE
     private var isMove: Boolean = false
@@ -33,6 +33,7 @@ open class TouchRootLayout @JvmOverloads constructor(
     override fun onFinishInflate() {
         super.onFinishInflate()
         setOnTouchListener(this)
+        maxHeight = ScreenUtils.getScreenHeight()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -60,9 +61,9 @@ open class TouchRootLayout @JvmOverloads constructor(
                     x = (screenWidth - mWidth).toFloat()
                 }
 
-                if (y < SizeUtils.dp2px(200f)) {
-                    y = SizeUtils.dp2px(200f).toFloat()
-                }
+//                if (y < SizeUtils.dp2px(200f)) {
+//                    y = SizeUtils.dp2px(200f).toFloat()
+//                }
 
                 Log.d("liuyuzhe", "yyyyy: " + y);
 

@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
 import com.blankj.utilcode.util.*
+import com.bumptech.glide.util.LogTime
 import com.qwuiteam.project.R
 import com.qwuiteam.project.utils.HkCountDownTimer
 import com.qwuiteam.project.utils.MainLooperPrinter
 import kotlinx.android.synthetic.main.fragment_layout.*
 import java.util.concurrent.TimeUnit
+import kotlin.system.measureTimeMillis
 
 /**
  * 动态设置layoutParams的类型要和add的父类一致，否则你设置的属性无效（宽高除外）
@@ -62,12 +64,17 @@ class LayoutFragment : BaseFragment() {
         }
 
         print.setOnClickListener {
-            try {
-                Thread.sleep(2000)
-            } catch (e: InterruptedException) {
-                e.printStackTrace()
-                Log.e("liuyuzhe", "onClick of R.id.button1: ", e)
+            val s = LogTime.getLogTime()
+            val time = measureTimeMillis {
+                try {
+                    Thread.sleep(2000)
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                    Log.e("liuyuzhe", "onClick of R.id.button1: ", e)
+                }
             }
+            Log.d("liuyuzhe", "time method: " + time);
+            Log.d("liuyuzhe", "time: " + LogTime.getElapsedMillis(s));
         }
         log.setOnClickListener {
             Looper.getMainLooper().setMessageLogging(MainLooperPrinter());
@@ -83,7 +90,7 @@ class LayoutFragment : BaseFragment() {
             countDownTimer = object : HkCountDownTimer(TimeUnit.SECONDS.toMillis(10), 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     LogUtils.d("onTick: " + millisUntilFinished)
-                    textTime.text = TimeUtils.millis2String(millisUntilFinished,"mm:ss")
+                    textTime.text = TimeUtils.millis2String(millisUntilFinished, "mm:ss")
                 }
 
                 override fun onFinish() {

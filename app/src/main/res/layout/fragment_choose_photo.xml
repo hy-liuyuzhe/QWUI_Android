@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -15,31 +16,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="128dp" />
+
         <com.yalantis.ucrop.view.OverlayView
             android:id="@+id/view_overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/ucrop_padding_crop_frame"/>
+            android:padding="@dimen/ucrop_padding_crop_frame"
+            android:visibility="gone" />
 
         <com.yalantis.ucrop.view.UCropView
             android:id="@+id/ucropView"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
 
         <Button
             android:id="@+id/loadAudio"
-            android:text="loadAudio"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end"
+            android:visibility="gone"
+            android:text="loadAudio" />
 
         <ImageView
             android:id="@+id/imagePath"
-            android:layout_marginTop="120dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end"
+            android:layout_marginTop="120dp" />
 
         <Button
             android:id="@+id/choose"
@@ -49,12 +59,45 @@
             android:text="choose" />
 
         <Button
-            android:id="@+id/load"
-            android:layout_gravity="center_vertical"
+            android:id="@+id/save"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:text="save" />
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="200dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:text="camera" />
+
+        <Button
+            android:id="@+id/load"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
             android:src="@mipmap/ic_launcher_round"
             android:text="load" />
+
+
+
+        <com.qwuiteam.project.view.TouchRootLayout
+            android:id="@+id/layoutOverLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.noober.background.view.BLView
+                android:id="@+id/viewOverLay"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                app:bl_stroke_color="@color/red_fd2772"
+                app:bl_stroke_width="2dp" />
+
+        </com.qwuiteam.project.view.TouchRootLayout>
 
 
 

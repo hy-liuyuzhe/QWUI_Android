@@ -1,10 +1,8 @@
 package com.qwuiteam.project.fragment
 
-import android.app.Activity.RESULT_OK
+//import com.theartofdev.edmodo.cropper.CropImage
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.PointF
+import android.graphics.*
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +20,6 @@ import com.luck.picture.lib.widget.longimage.ImageViewState
 import com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView
 import com.qwuiteam.project.R
 import com.qwuiteam.project.utils.GlideEngine
-import com.theartofdev.edmodo.cropper.CropImage
 import com.yalantis.ucrop.UCrop
 import com.yalantis.ucrop.view.OverlayView
 import kotlinx.android.synthetic.main.fragment_choose_photo.*
@@ -33,6 +30,8 @@ import java.util.*
  * 动态设置layoutParams的类型要和add的父类一致，否则你设置的属性无效（宽高除外）
  */
 class ChoosePhotoFragment : BaseFragment() {
+
+    private lateinit var sourceBitmap: Bitmap
 
     override fun getLayoutId(): Int = R.layout.fragment_choose_photo
 
@@ -73,35 +72,85 @@ class ChoosePhotoFragment : BaseFragment() {
 //            }
 //        )
 //    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        save.setOnClickListener {
+//            CropImage.activity()
+//                .setGuidelines(CropImageView.Guidelines.ON)
+//                .start(this);
+            //BitmapUtils.rotateImage()
+
+            val drawRect = Rect()
+//            layoutOverLay.getDrawingRect(drawRect)
+            layoutOverLay.getGlobalVisibleRect(drawRect)
+
+            val b = Bitmap.createBitmap(sourceBitmap,
+                drawRect.left,
+                drawRect.top,
+                drawRect.width(), drawRect.height(), image.matrix, false)
+            image2.setImageBitmap(b)
+            LogUtils.d("createBitmap.x: " + layoutOverLay.x.toInt() + ",  " +
+                    "createBitmap.y: " + layoutOverLay.y.toInt())
+        }
+        camera.setOnClickListener {
+            PictureSelector.create(this)
+                .openCamera(PictureMimeType.ofImage())
+                .forResult(object : OnResultCallbackListener<LocalMedia> {
+                    override fun onResult(result: MutableList<LocalMedia>) {
+                        val media = result.first()
+                        Log.d("liuyuzhe", "openCamera : " + GsonUtils.toJson(media));
+//                        Log.d("liuyuzhe", "size 128: " + SizeUtils.dp2px(128f));
+//                        Log.d("liuyuzhe", "r.cut: " + media.realPath);
+//                        Log.d("liuyuzhe", "r.w: " + media.width);
+//                        Log.d("liuyuzhe", "r.h: " + media.height);
+//                        sourceBitmap = BitmapFactory.decodeFile(media.realPath)
+//                        image.setImageBitmap(sourceBitmap)
+
+                        //test(media)
+                    }
+
+                    override fun onCancel() {
+
+                    }
+                })
+        }
         loadAudio.setOnClickListener {
             loadAudioData()
         }
+
         choose.setOnClickListener {
-//            PictureSelector.create(this)
-//                .openGallery(PictureMimeType.ofImage())
-//                .imageEngine(GlideEngine.createGlideEngine())
-////                .isEnableCrop(true)
-////                .freeStyleCropEnabled(true)
-////                .cropImageWideHigh(ScreenUtils.getScreenWidth(), SizeUtils.dp2px(128f))
-//                .forResult(object : OnResultCallbackListener<LocalMedia> {
-//                    override fun onResult(result: MutableList<LocalMedia>) {
-//                        val media = result.first()
-//                        Log.d("liuyuzhe", "size screen: " + ScreenUtils.getScreenWidth());
+//            val p =
+//                "/storage/emulated/0/DCIM/Screenshots/Screenshot_2022-08-18-16-08-35-364_com.haki.mobile.png"
+//            sourceBitmap = BitmapFactory.decodeFile(p)
+//            image.setImageBitmap(sourceBitmap)
+
+            PictureSelector.create(this)
+                .openGallery(PictureMimeType.ofImage())
+                .imageEngine(GlideEngine.createGlideEngine())
+                .isCamera(false)
+//                .isEnableCrop(true)
+//                .freeStyleCropEnabled(true)
+//                .cropImageWideHigh(ScreenUtils.getScreenWidth(), SizeUtils.dp2px(128f))
+                .forResult(object : OnResultCallbackListener<LocalMedia> {
+                    override fun onResult(result: MutableList<LocalMedia>) {
+                        val media = result.first()
+                        Log.d("liuyuzhe", "size screen: " + GsonUtils.toJson(media));
 //                        Log.d("liuyuzhe", "size 128: " + SizeUtils.dp2px(128f));
-//                        Log.d("liuyuzhe", "r.cut: " + media.isCut);
+//                        Log.d("liuyuzhe", "r.cut: " + media.realPath);
 //                        Log.d("liuyuzhe", "r.w: " + media.width);
 //                        Log.d("liuyuzhe", "r.h: " + media.height);
-//                        //test(media)
-//
-//                    }
-//
-//                    override fun onCancel() {
-//
-//                    }
-//                })
-            CropImage.activity().start(requireContext(), this@ChoosePhotoFragment);
+//                        sourceBitmap = BitmapFactory.decodeFile(media.realPath)
+//                        image.setImageBitmap(sourceBitmap)
+
+                        //test(media)
+                    }
+
+                    override fun onCancel() {
+
+                    }
+                })
+//            CropImage.activity().start(requireContext(), this@ChoosePhotoFragment);
 
         }
 
@@ -186,16 +235,16 @@ class ChoosePhotoFragment : BaseFragment() {
 ////        image.setImageURI(uri)
 //        imagePath.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            val result = CropImage.getActivityResult(data)
-            if (resultCode == RESULT_OK) {
-                val resultUri = result.uri
-                image.setImageURI(resultUri)
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                val error = result.error
-            }
-            Log.d("liuyuzhe", "result: "+result);
-        }
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            val result = CropImage.getActivityResult(data)
+//            if (resultCode == RESULT_OK) {
+//                val resultUri = result.uri
+//                image.setImageURI(resultUri)
+//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//                val error = result.error
+//            }
+//            Log.d("liuyuzhe", "result: "+result);
+//        }
     }
 
     private fun displayLongPic(uri: Uri, longImg: SubsamplingScaleImageView) {
