@@ -1,6 +1,7 @@
 package com.qwuiteam.project
 
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.qwuiteam.project.algorithm.AlgorithmNiceFragment
 import com.qwuiteam.project.fragment.*
 
 enum class PageContainer(
@@ -16,6 +17,7 @@ enum class PageContainer(
     pk("pk 需求", PkFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
+    algorithm("算法", AlgorithmNiceFragment::class.java),
     date("日期格式化", DateFragment::class.java),
 //    agoraRTC("研究声网", RTCFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),

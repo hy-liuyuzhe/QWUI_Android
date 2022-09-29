@@ -23,6 +23,31 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/buffer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:text="buffer" />
+            <Button
+                android:id="@+id/process"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:text="process" />
+            <Button
+                android:id="@+id/process2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:text="process2" />
+            <Button
+                android:id="@+id/product"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:text="product" />
+
+            <Button
                 android:id="@+id/create"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

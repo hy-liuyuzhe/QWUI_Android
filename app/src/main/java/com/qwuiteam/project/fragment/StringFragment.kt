@@ -24,7 +24,7 @@ class StringFragment : BaseFragment() {
                     "    \"code\": 10003,\n" +
                     "    \"message\": \"Please update app version\"\n" +
                     "}"
-            val bean = GsonUtils.fromJson<Test>(json,Test::class.java)
+            val bean = GsonUtils.fromJson<Test>(json, Test::class.java)
             LogUtils.d("bean: $bean");
         }
         start_with.setOnClickListener {
@@ -57,8 +57,11 @@ class StringFragment : BaseFragment() {
         }
         //    <string name="turntable_win_tip">Congratulations %1s for winning  %2s gold coins in wheel of fortune</string>
         formatText2.setOnClickListener {
-
-            atText.text = StringUtils.getString(R.string.turntable_win_tip, "liuyuzhe", "1232")
+            val phone = "1-2950069"
+//            val r = phone.substring(0, phone.indexOf("-"))
+            val r = phone.substring(phone.indexOf("-")+1, phone.length)
+            Log.d("liuyuzhe", "r: $r");
+            //atText.text = StringUtils.getString(R.string.turntable_win_tip, "liuyuzhe", "1232")
         }
         bigDecimal.setOnClickListener {
 //            val r = BigDecimal(10000.0).add(BigDecimal(0.0))

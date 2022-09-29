@@ -44,6 +44,7 @@
 
     <com.opensource.svgaplayer.SVGAImageView
         android:id="@+id/svgaView"
+        app:loopCount="-1"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
 
