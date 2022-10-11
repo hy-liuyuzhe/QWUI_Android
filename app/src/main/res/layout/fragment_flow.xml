@@ -39,13 +39,13 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/ic_launcher_round"
-                android:text="process2" />
+                android:text="消费并创建对象注册" />
             <Button
                 android:id="@+id/product"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@mipmap/ic_launcher_round"
-                android:text="product" />
+                android:text="生产数据" />
 
             <Button
                 android:id="@+id/create"

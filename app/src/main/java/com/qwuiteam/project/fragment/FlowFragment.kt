@@ -13,6 +13,7 @@ import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.FlowableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Consumer
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
@@ -31,12 +32,14 @@ class FlowFragment : BaseFragment() {
 
     lateinit var editViewModel: EditViewModel
 
+    var count = 0
+
     override fun getLayoutId(): Int = R.layout.fragment_flow
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         RxJavaPlugins.setErrorHandler {
-            Log.d("liuyuzhe", "拦截错误: "+it);
+            Log.e("liuyuzhe", "拦截错误: "+it);
         }
     }
 
@@ -109,29 +112,55 @@ class FlowFragment : BaseFragment() {
     lateinit var publishSubject: PublishSubject<Int>
 
     private fun product(){
+        count = 0
         GlobalScope.launch(Dispatchers.IO) {
-            for (i in 0..1300) {
-                Log.d(TAG, "process.上游给数据 : " + (i));
+            for (i in 0..1000) {
+                Log.e(TAG, "process.上游给数据 : " + (i));
                 publishSubject.onNext(i)
-                delay(10)
+                delay(100L)
+//                Thread.sleep(10);
             }
+            publishSubject.onComplete()
+//            Log.e(TAG, "等10秒");
+//            delay(10000)
+//            Log.e(TAG, "等10秒了");
+//            for (i in 0..10) {
+//                Log.d(TAG, "process.上游给数据 : " + (i));
+//                publishSubject.onNext(i)
+//            }
         }
     }
 
     private fun process2() {
         publishSubject = PublishSubject.create<Int>()
-        publishSubject.toFlowable(BackpressureStrategy.BUFFER)
-            .buffer(200, TimeUnit.MILLISECONDS, 20)
+        publishSubject
+            .toFlowable(BackpressureStrategy.LATEST)
+            .debounce(100L,TimeUnit.MILLISECONDS)
+//            .buffer(1)
+//            .onBackpressureLatest()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                GlobalScope.launch {
-                    Log.e(TAG, "process.onNext : " + (it));
-                    delay(100)
+            .subscribe(object : Consumer<Int> {
+                override fun accept(it: Int) {
+                    Log.e(TAG, "下游接收数据" + (it) + ", size: $count")
+//                    GlobalScope.launch {
+//                        //Thread.sleep(100)
+//                        delay(100)
+//
+//                    }
                 }
-//                Log.e(TAG, "外部 process.onNext : " + (it));
-            }
-
+            },{})
+//                if (it.isEmpty()) {
+//                    Log.d("liuyuzhe", "空: ");
+//                    return@subscribe
+//                }
+//                Log.e(TAG, "process.onNext : " + (it)+", size: $count");
+////                GlobalScope.launch {
+////                    Log.e(TAG, "process.onNext : " + (it)+", size: $count");
+////                    count++
+////                    delay(1000)
+////                }
+////                Log.e(TAG, "外部 process.onNext : " + (it));
 
     }
 
