@@ -23,6 +23,12 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/bufferM"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:text="bufferM" />
+            <Button
                 android:id="@+id/buffer"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

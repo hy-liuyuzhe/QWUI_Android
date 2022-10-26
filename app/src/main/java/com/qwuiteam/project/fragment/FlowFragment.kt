@@ -12,6 +12,7 @@ import com.qwuiteam.project.viewmodel.EditViewModel
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.FlowableOnSubscribe
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Consumer
 import io.reactivex.plugins.RxJavaPlugins
@@ -45,6 +46,7 @@ class FlowFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bufferM.setOnClickListener { bufferMethod() }
         buffer.setOnClickListener { buffer() }
         process.setOnClickListener { process() }
         process2.setOnClickListener { process2() }
@@ -107,6 +109,15 @@ class FlowFragment : BaseFragment() {
             .onEach {
                 LogUtils.d("result: $it");
             }.launchIn(editViewModel.viewModelScope)
+    }
+
+    private fun bufferMethod() {
+        Log.d("liuyuzhe", "bufferMethod: ");
+        Observable.just(1)
+            .buffer(10,TimeUnit.SECONDS,1)
+            .subscribe {
+                Log.d("liuyuzhe", "10秒检测了: ");
+            }
     }
 
     lateinit var publishSubject: PublishSubject<Int>
