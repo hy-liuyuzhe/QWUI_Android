@@ -25,4 +25,22 @@
         android:scrollbars="vertical"
         android:text="Single-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widgetSingle-line text view that scrolls automatically if the text is too long to fit in the widget" />
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/red_fd2772">
+
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

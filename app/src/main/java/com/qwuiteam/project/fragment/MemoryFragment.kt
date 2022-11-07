@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_layout.log
 import kotlinx.android.synthetic.main.fragment_layout.print
 import kotlinx.android.synthetic.main.fragment_memory.*
 import java.util.*
+import java.util.concurrent.CountDownLatch
 
 /**
  * 动态设置layoutParams的类型要和add的父类一致，否则你设置的属性无效（宽高除外）
@@ -25,13 +26,12 @@ class MemoryFragment : BaseFragment() {
 
     val list = mutableListOf<Person>()
     lateinit var person: Person
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Looper.getMainLooper().setMessageLogging(MainLooperPrinter());
 
         encode_video.setOnClickListener {
-            //                person = Person("")
-            //                Log.d("liuyuzhe", "111111111111111: "+person);
             requireActivity().intent.putExtra("show", RoomMessageShowEnum.MESSAGE_ALL)
             val type = requireActivity().intent.getSerializableExtra("show")
             LogUtils.d("type: $type");
@@ -61,5 +61,29 @@ class MemoryFragment : BaseFragment() {
         log.setOnClickListener {
             Looper.getMainLooper().setMessageLogging(MainLooperPrinter());
         }
+        thread.setOnClickListener {
+            val t = arrayOfNulls<Thread>(100)
+            val countdownLatchTest = CountDownLatch(t.size)
+
+            t.forEachIndexed { index, thread ->
+                t[index] = Thread {
+                    var r = 0
+                    for (j in 0..1000) {
+                        r += j
+                    }
+                    println("index: $index , r: $r")
+                }
+                countdownLatchTest.countDown()
+            }
+
+            t.forEachIndexed { index, thread ->
+                t[index]?.start()
+            }
+
+            countdownLatchTest.await()
+            println("end countdownlatch")
+        }
     }
 }
+
+

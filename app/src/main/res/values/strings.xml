@@ -1389,7 +1389,7 @@
     <string name="line">Line</string>
     <string name="whatsapp">Whatsapp</string>
     <string name="celebrity">Celebrity</string>
-    <string name="at_content"><![CDATA[<font color=\'#C973FF\'>%1$s</font>  %2$s]]></string>
+    <string name="at_content"><![CDATA[<font color=\'#C973FF\' font-size: 32px>%1$s</font>  %2$s]]></string>
     <string name="room_p2p_msg_inputting">\@%s</string>
     <string name="share_not_installed">Opps! The app is not installed.</string>
     <string name="after_second_receive">After %d seconds to click on it</string>

@@ -17,8 +17,9 @@
             android:src="@mipmap/ic_launcher_round"
             android:text="add a object" />
 
-        <ImageView
-            android:id="@+id/avatarView"
+        <Button
+            android:id="@+id/thread"
+            android:text="thread"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal" />
