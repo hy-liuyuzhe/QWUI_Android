@@ -44,6 +44,11 @@
             android:launchMode="singleTask"
             android:exported="false" />
         <activity
+            android:name=".SimpleSecondActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

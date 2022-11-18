@@ -1,5 +1,6 @@
 package com.qwuiteam.project;
 
+import android.app.PendingIntent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.Utils;
 
 
@@ -43,7 +45,7 @@ public class CommonUtil {
     public static String getStringRes(int id, Object... formatArgs) {
         return Utils.getApp().getResources().getString(id, formatArgs);
     }
-    
+
 
     public static Drawable createDrawable(int color, float radius) {
         GradientDrawable drawable = new GradientDrawable();
@@ -59,7 +61,7 @@ public class CommonUtil {
         drawable.setShape(GradientDrawable.RECTANGLE);
         drawable.setColor(color);
         boolean isArabic = false;
-        if (isArabic){
+        if (isArabic) {
             drawable.setCornerRadii(new float[]{
                     trRadius, trRadius,
                     tlRadius, tlRadius,
@@ -67,7 +69,7 @@ public class CommonUtil {
                     brRadius, brRadius,
             });
             drawable.setAutoMirrored(true);
-        }else {
+        } else {
             drawable.setCornerRadii(new float[]{
                     tlRadius, tlRadius,
                     trRadius, trRadius,
@@ -94,7 +96,7 @@ public class CommonUtil {
         drawable.setShape(GradientDrawable.RECTANGLE);
         drawable.setColors(colors);
         boolean isArabic = false;
-        if (isArabic){
+        if (isArabic) {
             drawable.setCornerRadii(new float[]{
                     trRadius, trRadius,
                     tlRadius, tlRadius,
@@ -102,7 +104,7 @@ public class CommonUtil {
                     brRadius, brRadius,
             });
             drawable.setAutoMirrored(true);
-        }else {
+        } else {
             drawable.setCornerRadii(new float[]{
                     tlRadius, tlRadius,
                     trRadius, trRadius,
@@ -114,4 +116,15 @@ public class CommonUtil {
     }
 
 
+    public static void checkFlag(int flags) {
+        int two = PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT;
+        LogUtils.d("checkFlag.two: " + two);
+        LogUtils.d("checkFlag.two二进制: " + Integer.toBinaryString(two));
+
+        int flag1 = flags & PendingIntent.FLAG_IMMUTABLE;
+        final boolean flagImmutableSet = flag1 != 0;
+        LogUtils.d("checkFlag.flag1: " + flag1);
+        LogUtils.d("checkFlag.flagImmutableSet: " + flagImmutableSet);
+
+    }
 }

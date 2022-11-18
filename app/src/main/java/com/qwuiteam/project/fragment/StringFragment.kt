@@ -1,10 +1,12 @@
 package com.qwuiteam.project.fragment
 
+import android.app.PendingIntent
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
 import android.view.View
 import com.blankj.utilcode.util.*
+import com.qwuiteam.project.CommonUtil
 import com.qwuiteam.project.R
 import kotlinx.android.synthetic.main.fragment_string.*
 import java.math.BigDecimal
@@ -19,7 +21,16 @@ class StringFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        format1.setOnClickListener {
+        java2.setOnClickListener {
+            val flagUpdateCurrent = Integer.toBinaryString(PendingIntent.FLAG_UPDATE_CURRENT)
+            LogUtils.d("flagUpdateCurrent: $flagUpdateCurrent")
+
+            val flagImmutable= Integer.toBinaryString(PendingIntent.FLAG_IMMUTABLE)
+            LogUtils.d("flagImmutable: $flagImmutable")
+            val r = CommonUtil.checkFlag(PendingIntent.FLAG_UPDATE_CURRENT)
+            LogUtils.d("r: $r")
+        }
+        start_with.setOnClickListener {
             val json = "{\n" +
                     "    \"code\": 10003,\n" +
                     "    \"message\": \"Please update app version\"\n" +

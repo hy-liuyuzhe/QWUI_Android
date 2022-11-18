@@ -6,10 +6,16 @@
 
 
     <Button
-        android:id="@+id/java2"
+        android:id="@+id/start_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="java2" />
+        android:text="start_normal"/>
+
+    <Button
+        android:id="@+id/startTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="startTask" />
 
     <Button
         android:id="@+id/start_with"
@@ -39,10 +45,10 @@
         android:layout_height="wrap_content"
         android:text="BigDecimal" />
     <Button
-        android:id="@+id/format1"
+        android:id="@+id/start2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="format1" />
+        android:text="json" />
 
 
     <TextView
@@ -52,6 +58,13 @@
         android:layout_margin="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="week" />
+
 
 
 </LinearLayout>

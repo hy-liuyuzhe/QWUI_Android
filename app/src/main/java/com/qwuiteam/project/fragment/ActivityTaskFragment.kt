@@ -1,49 +1,53 @@
 package com.qwuiteam.project.fragment
 
+import android.app.PendingIntent
+import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.View
 import com.blankj.utilcode.constant.TimeConstants
-import com.blankj.utilcode.util.*
+import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.StringUtils
+import com.blankj.utilcode.util.TimeUtils
+import com.blankj.utilcode.util.Utils
+import com.qwuiteam.project.PageContainer
 import com.qwuiteam.project.R
+import com.qwuiteam.project.SimpleSecondActivity
 import com.qwuiteam.project.utils.HkCountDownTimer
 import kotlinx.android.synthetic.main.fragment_date.*
+import kotlinx.android.synthetic.main.fragment_date.week
 import kotlinx.android.synthetic.main.fragment_string.atText
 import kotlinx.android.synthetic.main.fragment_string.bigDecimal
 import kotlinx.android.synthetic.main.fragment_string.countdown
 import kotlinx.android.synthetic.main.fragment_string.formatText
-import kotlinx.android.synthetic.main.fragment_string.start_with
+import kotlinx.android.synthetic.main.fragment_task.*
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * id
+ * task
  */
-class DateFragment : BaseFragment() {
+class ActivityTaskFragment : BaseFragment() {
 
-    override fun getLayoutId(): Int = R.layout.fragment_date
+    override fun getLayoutId(): Int = R.layout.fragment_task
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        start2.setOnClickListener {
-            val time = formatTime(
-                TimeUnit.HOURS.toMillis(1)
-                        + TimeUnit.MINUTES.toMillis(1)
-                        + TimeUnit.SECONDS.toMillis(1)
-                        + TimeUnit.MILLISECONDS.toMillis(40)
-            )
-            LogUtils.d("millis2FitTimeSpan: " + time)
+
+        startTask.setOnClickListener {
+            LogUtils.d("new task")
+            val intent = Intent(Utils.getApp(), SimpleSecondActivity::class.java)
+                .putExtra("page", PageContainer.task)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
         }
-        start_with.setOnClickListener {
-            val time = millis2FitTimeSpan(
-                TimeUnit.HOURS.toMillis(1)
-                        + TimeUnit.MINUTES.toMillis(20)
-                        + TimeUnit.SECONDS.toMillis(30)
-                        + TimeUnit.MILLISECONDS.toMillis(40)
-            )
-            LogUtils.d("millis2FitTimeSpan: " + time)
+        start_normal.setOnClickListener {
+            LogUtils.d("normal")
+            val intent = Intent(requireActivity(), SimpleSecondActivity::class.java)
+                .putExtra("page", PageContainer.task)
+            startActivity(intent)
         }
 
         countdown.setOnClickListener {
