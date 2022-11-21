@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.text.Html
 import android.util.Log
 import android.view.View
+import android.webkit.URLUtil
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.CommonUtil
 import com.qwuiteam.project.R
+import com.qwuiteam.project.parseURLValue
 import kotlinx.android.synthetic.main.fragment_string.*
 import java.math.BigDecimal
+import java.net.URLEncoder
 
 /**
  * id
@@ -21,11 +24,35 @@ class StringFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        java2.setOnClickListener {
+        splitPath.setOnClickListener {
+            val url = "https://www.hakiapp.com/build/index.html#/rankReward?a=1&b=2&hideNav=1"
+            val isHttp = URLUtil.isHttpsUrl(url)
+            val rearParameter = url.substringAfterLast("?")
+            val list = rearParameter.split("&")
+            list.forEach {
+                val r = it.split("=")
+                val r2 = it.split("+")
+
+                if (r.size == 2) {
+                    if (r[0] == "hideNav") {
+                        LogUtils.d("hideNav: ${r[1]}")
+                    }
+                }
+
+                LogUtils.d("r2:$r2")
+            }
+//            LogUtils.d(list)
+            LogUtils.d("isHttpUrl: $isHttp")
+
+
+            LogUtils.d("parseURLValue: ${url.parseURLValue("export")}")
+
+        }
+        binaryString.setOnClickListener {
             val flagUpdateCurrent = Integer.toBinaryString(PendingIntent.FLAG_UPDATE_CURRENT)
             LogUtils.d("flagUpdateCurrent: $flagUpdateCurrent")
 
-            val flagImmutable= Integer.toBinaryString(PendingIntent.FLAG_IMMUTABLE)
+            val flagImmutable = Integer.toBinaryString(PendingIntent.FLAG_IMMUTABLE)
             LogUtils.d("flagImmutable: $flagImmutable")
             val r = CommonUtil.checkFlag(PendingIntent.FLAG_UPDATE_CURRENT)
             LogUtils.d("r: $r")

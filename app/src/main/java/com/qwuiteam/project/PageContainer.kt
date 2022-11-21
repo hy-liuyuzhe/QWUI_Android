@@ -15,6 +15,7 @@ enum class PageContainer(
     viewmodel("研究双向绑定", ViewmodelFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
+    seekbar("自定义seekbar", SeekBarFragment::class.java),
     task("task 需求", ActivityTaskFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),

@@ -6,10 +6,15 @@
 
 
     <Button
-        android:id="@+id/java2"
+        android:id="@+id/splitPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="java2" />
+        android:text="splitPath" />
+    <Button
+        android:id="@+id/binaryString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="binaryString" />
 
     <Button
         android:id="@+id/start_with"

@@ -20,6 +20,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/lcp"
+                android:text="longestCommonPrefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

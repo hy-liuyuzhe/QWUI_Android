@@ -41,3 +41,25 @@ fun EditText.textChangeFlow(): Flow<CharSequence> = callbackFlow {
         removeTextChangedListener(watcher)
     }
 }
+
+fun String?.parseURLValue(target: String?): String? {
+    if (this.isNullOrEmpty() || target.isNullOrEmpty()) {
+        return this
+    }
+    try {
+        val url = this
+        val rearParameter = url.substringAfterLast("?")
+        val list = rearParameter.split("&")
+        list.forEach {
+            val r = it.split("=")
+            if (r.size == 2) {
+                if (r[0] == target) {
+                    return r[1]
+                }
+            }
+        }
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    return this
+}
