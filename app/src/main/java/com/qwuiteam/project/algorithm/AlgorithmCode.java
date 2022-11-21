@@ -8,10 +8,24 @@ public class AlgorithmCode {
 //        String prefix = longestCommonPrefix(strs);
 //        String prefix = longestCommonPrefix2(strs, 0, strs.length - 1);
 //        String prefix = longestCommonPrefix2(strs);
-        String prefix = longestCommonPrefix3(strs);
+//        String prefix = longestCommonPrefix3(strs);
 
-        System.out.println("algorithm:" + prefix);
+        boolean r = palindrome(1221);
+        System.out.println("algorithm:" + r);
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    private static boolean palindrome(int x) {
+        if (x < 0) return false;
+        int curt = 0;
+        int num = x;
+        while (num > curt) {
+            curt = curt * 10 + num % 10;
+            num = num / 10;
+        }
+        return num == curt || num == curt / 10;//当是奇数时需要除以10来判断是否一样
+    }
+    ///////////////////////////////////////////////////////////////////////////
 
 
     ///////////////////////////////////////////////////////////////////////////

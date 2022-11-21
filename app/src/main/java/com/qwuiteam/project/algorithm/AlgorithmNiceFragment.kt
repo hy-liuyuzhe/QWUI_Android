@@ -2,12 +2,14 @@ package com.qwuiteam.project.algorithm
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.EnvironmentCompat
 import androidx.core.view.children
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.R
 import com.qwuiteam.project.fragment.BaseFragment
 import kotlinx.android.synthetic.main.fragment_algorithm.*
 import kotlinx.android.synthetic.main.layout_list_item.view.*
+import java.io.File
 
 /**
  * id
@@ -23,6 +25,12 @@ class AlgorithmNiceFragment : BaseFragment(), View.OnClickListener {
             LogUtils.d("children ${it.text}")
             it.setOnClickListener(host)
         }
+        val externalDownloadsPath = PathUtils.getExternalDownloadsPath()
+        val file = File(externalDownloadsPath + "/" + AppUtils.getAppPackageName(), "test.txt")
+        FileUtils.createOrExistsDir(file)
+        LogUtils.d("path: ${file.absolutePath}")
+        val r = FileIOUtils.writeFileFromString(file, "123")
+        LogUtils.d("write text: ${r}")
     }
 
     override fun onClick(v: View) {
