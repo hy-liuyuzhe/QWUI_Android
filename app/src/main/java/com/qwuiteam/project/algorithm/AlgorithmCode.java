@@ -4,12 +4,13 @@ public class AlgorithmCode {
 
     public static void main(String[] args) {
 //        String[] strs  = {"dog","racecar","car"};
-        String[] strs = {"flower", "flow", "flight", }; //"flexible"};
+        String[] strs = {"1flow", "flower flower ", "flight", "flexiblef"};
 //        String prefix = longestCommonPrefix(strs);
-        String prefix = longestCommonPrefix2(strs, 0, strs.length - 1);
+//        String prefix = longestCommonPrefix2(strs, 0, strs.length - 1);
+//        String prefix = longestCommonPrefix2(strs);
+        String prefix = longestCommonPrefix3(strs);
 
         System.out.println("algorithm:" + prefix);
-
     }
 
 
@@ -40,7 +41,6 @@ public class AlgorithmCode {
     /**
      * 当数量是奇数比如3个，树左边会分0，1，右边只有一个就是2
      * 当0，1merge后得出结果和2进行merge。
-     *
      */
     private static String longestCommonPrefix2(String[] strs, int start, int end) {
         if (start == end) {
@@ -65,10 +65,54 @@ public class AlgorithmCode {
         return lcpLeft.substring(0, minN);
     }
 
-    private static String findLongestCommonPrefix(String[] strs, int start, int end) {
-        String prefix = "";
+    private static String longestCommonPrefix2(String[] strs) {
+        //min length
+        int min = Integer.MAX_VALUE;
+        for (String s : strs) {
+            min = Math.min(min, s.length());
+        }
+        //二分查找mid，尝试去匹配
+        int low = 0, high = min;
+        //一旦匹配失败就返回
+        while (low < high) {
+            int mid = (high - low + 1) / 2 + low;
+            if (isCommonPrefix(strs, mid)) {
+                low = mid;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return strs[0].substring(0, low);
+    }
 
+    private static String longestCommonPrefix3(String[] strs) {
+//        第一个单词
+//        分别和每一个单词匹配，如果没找到就拆剪一个字
+        String prefix = strs[0];
+        int n = strs.length;
+        for (int i = 1; i < n; i++) {
+            String word = strs[i];
+            //完全匹配时会返回0
+            while (word.indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
         return prefix;
+    }
+
+    private static boolean isCommonPrefix(String[] strs, int length) {
+        String str0 = strs[0].substring(0, length);
+        int n = strs.length;
+        for (int i = 1; i < n; i++) {
+            String str = strs[i];
+            for (int j = 0; j < length; j++) {
+                if (str0.charAt(j) != str.charAt(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     ///////////////////////////////////////////////////////////////////////////

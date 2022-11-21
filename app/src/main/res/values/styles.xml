@@ -12,4 +12,8 @@
 
     </style>
 
+    <style name="progressBarStyle" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@drawable/progress_bar_drawable</item>
+    </style>
+
 </resources>

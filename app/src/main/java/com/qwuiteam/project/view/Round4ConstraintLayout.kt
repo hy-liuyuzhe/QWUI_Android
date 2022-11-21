@@ -17,7 +17,7 @@ class Round4ConstraintLayout @JvmOverloads constructor(
         super.onFinishInflate()
         outlineProvider = object : ViewOutlineProvider() {
             override fun getOutline(view: View, outline: Outline) {
-                outline.setRoundRect(0, 0, view.width, view.height, SizeUtils.dp2px(4f).toFloat())
+                outline.setRoundRect(0, 0, view.width, view.height, SizeUtils.dp2px(6f).toFloat())
             }
         }
         clipToOutline = true
