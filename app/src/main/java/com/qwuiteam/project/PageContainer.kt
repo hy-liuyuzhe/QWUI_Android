@@ -1,7 +1,6 @@
 package com.qwuiteam.project
 
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.qwuiteam.project.algorithm.AlgorithmNiceFragment
+import com.qwuiteam.project.algorithm.FileStoreFragment
 import com.qwuiteam.project.fragment.*
 
 enum class PageContainer(
@@ -15,11 +14,11 @@ enum class PageContainer(
     viewmodel("研究双向绑定", ViewmodelFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
-    seekbar("自定义seekbar", SeekBarFragment::class.java),
+    scroll("自定义滚动", ScrollFragment::class.java),
     task("task 需求", ActivityTaskFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
-    algorithm("算法", AlgorithmNiceFragment::class.java),
+    algorithm("文件存储", FileStoreFragment::class.java),
     date("日期格式化", DateFragment::class.java),
 //    agoraRTC("研究声网", RTCFragment::class.java),
     layout("研究布局layout", LayoutFragment::class.java),
