@@ -88,9 +88,16 @@
                 android:layout_gravity="end"
                 android:text="scrollToY" />
 
+            <Button
+                android:id="@+id/scrollerY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="scrollerY" />
+
         </LinearLayout>
 
-        <LinearLayout
+        <com.qwuiteam.project.view.ScrollerLayout
             android:id="@+id/testLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
 
-        </LinearLayout>
+        </com.qwuiteam.project.view.ScrollerLayout>
 
 
     </FrameLayout>

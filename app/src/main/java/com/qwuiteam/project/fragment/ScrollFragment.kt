@@ -2,12 +2,11 @@ package com.qwuiteam.project.fragment
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Scroller
 import android.widget.SeekBar
-import com.blankj.utilcode.util.*
+import com.blankj.utilcode.util.LogUtils
 import com.qwuiteam.project.R
-import kotlinx.android.synthetic.main.fragment_layout.*
-import kotlinx.android.synthetic.main.fragment_seek_bar.*
-import kotlinx.android.synthetic.main.fragment_string.*
+import kotlinx.android.synthetic.main.fragment_scroll.*
 
 
 class ScrollFragment : BaseFragment() {
@@ -17,6 +16,7 @@ class ScrollFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 update_progress_bar.setProgress(progress)
@@ -29,6 +29,10 @@ class ScrollFragment : BaseFragment() {
             }
 
         })
+        scrollerY.setOnClickListener {
+            testLayout.smoothScrollTo(0, 300 * 100)
+        }
+
         var scrollY = 300
         textScrollByY.setOnClickListener {
             val y = testLayout.scrollY
@@ -44,7 +48,5 @@ class ScrollFragment : BaseFragment() {
             LogUtils.d("scroll x to -100")
             layoutView.scrollBy(-100, 0)
         }
-
-
     }
 }

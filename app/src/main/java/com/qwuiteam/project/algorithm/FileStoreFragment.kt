@@ -103,9 +103,9 @@ class FileStoreFragment : BaseFragment(), View.OnClickListener {
                 FileUtils.createOrExistsDir(dir)
                 val createFile = FileUtils.createOrExistsFile(file)
                 LogUtils.d("createFile.r: $createFile" + ", path: ${file.absolutePath}")
-                val j = JSONObject()
-                j.put("deviceId", "111aaa")
-                val r = FileIOUtils.writeFileFromString(file, j.toString())
+//                val j = JSONObject()
+//                j.put("deviceId", "111aaa")
+                val r = FileIOUtils.writeFileFromString(file, "☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066 ☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066  ✘͢͢☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066  ✘͢͢☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066 ☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066  ✘͢͢☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066  ✘͢͢☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066 ☠↬ۦོ͢✰͢⇣͢      ✰͜✘                 ✘͢͢\u2066  ✘͢͢ۦ✰ོ͜͢✘͢͢ۦོ͢↬✰͜͢͡✘✰͜͢͡ۦོ͢✰͢⇣͢✘͢͢\u2066ۦ↬ۦོ͢✰͢⇣͢✰͜✘͢͢\u2066  ✘͢͢☠↬ۦོ͢✰͢⇣͢      ✰͜✘       ")
                 LogUtils.d("write text: ${r}")
             }
         }
