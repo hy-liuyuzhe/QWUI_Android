@@ -5,8 +5,8 @@ package jp.wasabeef.example.recyclerview
  */
 interface SampleData {
   companion object {
-    val LIST = arrayOf(
-      "Apple", "Ball"
+    val LIST = mutableListOf(
+      "Iron", "Japan", "Coke", "Dog", "Cat", "Yahoo", "Sony", "Canon", "Fujitsu", "USA"
     )
     val LIST1 = arrayOf(
       "Apple", "Ball", "Camera", "Day", "Egg", "Foo", "Google", "Hello",

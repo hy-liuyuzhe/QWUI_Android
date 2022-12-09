@@ -6,6 +6,7 @@ import android.text.Html
 import android.util.Log
 import android.view.View
 import android.webkit.URLUtil
+import androidx.recyclerview.widget.DiffUtil
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.CommonUtil
 import com.qwuiteam.project.R
@@ -123,6 +124,12 @@ class StringFragment : BaseFragment() {
                 )
             )
         )
+        replaceSpace.setOnClickListener {
+            val x = "weekly agency top 1"
+            val y = "weekly agency top  1"
+            LogUtils.d("space.x: ${x.replace(" ","")}")
+            LogUtils.d("space.y: ${y.replace(" ","").lowercase()}")
+        }
     }
 
     class Test {
