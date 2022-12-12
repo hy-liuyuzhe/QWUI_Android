@@ -6,10 +6,18 @@
 
 
     <Button
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="number" />
+
+    <Button
         android:id="@+id/splitPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="splitPath" />
+
+
     <Button
         android:id="@+id/binaryString"
         android:layout_width="wrap_content"

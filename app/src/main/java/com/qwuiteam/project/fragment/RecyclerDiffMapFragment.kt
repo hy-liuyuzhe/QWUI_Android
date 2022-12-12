@@ -2,13 +2,11 @@ package com.qwuiteam.project.fragment
 
 import android.os.Bundle
 import android.util.Log
-import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.qwuiteam.project.R
 import com.qwuiteam.project.databinding.ItemDiffBinding
@@ -19,39 +17,49 @@ import kotlin.random.Random
 /**
  * id
  */
-class RecyclerDiffFragment : BaseFragment() {
+class RecyclerDiffMapFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_rv_diff
 
-    val data = SampleData.LIST.toMutableList()
+    val mapData = HashMap<Int, String>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val diffAdapter = DiffAdapter(data)
+        val data = SampleData.LIST1.toMutableList()
+        for (i in -1..11) {
+            Log.d("liuyuzhe", "i : " + i);
+            mapData[i] = data[i + 1]
+        }
+
+
+        val diffAdapter = DiffAdapter(mapData)
 
         recyclerView.apply {
             itemAnimator = null
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context,4)
             adapter = diffAdapter
         }
 
         refresh.setOnClickListener {
             val diffDataCallback = MultiAudioDiffDataCallback()
-            diffDataCallback.old = diffAdapter.dataList as ArrayList<String>
-            val toMutableList = data.toMutableList()
+            diffDataCallback.old = diffAdapter.mapData as HashMap<Int, String>
+            val mutableMap = mapData.toMutableMap()
             val n = Random.nextInt(10)
             Log.d("liuyuzhe", "随机数: $n");
 
-            toMutableList[n] = "随机 $n"
-            diffDataCallback.new = toMutableList as ArrayList<String>
-            val diffResult: DiffUtil.DiffResult = DiffUtil.calculateDiff(diffDataCallback)
+            val tmp = mutableMap[n]
+            mutableMap[n] = mutableMap[0]!!
+            mutableMap[0] = tmp!!
+
+            diffDataCallback.new = mutableMap as HashMap<Int, String>
+            val diffResult: DiffUtil.DiffResult = DiffUtil.calculateDiff(diffDataCallback,false)
             diffResult.dispatchUpdatesTo(diffAdapter)
-            diffAdapter.dataList = toMutableList
+            diffAdapter.mapData = mutableMap
         }
     }
 
 
-    inner class DiffAdapter(var dataList: MutableList<String>) :
+    inner class DiffAdapter(var mapData: HashMap<Int, String>) :
         RecyclerView.Adapter<DiffViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiffViewHolder {
             return DiffViewHolder(ItemDiffBinding.inflate(LayoutInflater.from(parent.context),
@@ -60,12 +68,12 @@ class RecyclerDiffFragment : BaseFragment() {
 
         override fun onBindViewHolder(holderDiff: DiffViewHolder, position: Int) {
             Log.d("liuyuzhe", "onBindViewHolder.position: $position");
-            val data = dataList[position]
+            val data = mapData[position]
             holderDiff.binding.textTitle.text = data
-            holderDiff.binding.textPosition.text = position.toString()
+            holderDiff.binding.textPosition.text = (position+1).toString()
         }
 
-        override fun getItemCount(): Int = dataList.size
+        override fun getItemCount(): Int = mapData.size - 1
 
     }
 
@@ -73,14 +81,14 @@ class RecyclerDiffFragment : BaseFragment() {
     inner class DiffViewHolder(val binding: ItemDiffBinding) : RecyclerView.ViewHolder(binding.root)
 
 
-   inner class MultiAudioDiffDataCallback : DiffUtil.Callback() {
+    inner class MultiAudioDiffDataCallback : DiffUtil.Callback() {
 
-        var old = ArrayList<String>()
-        var new = ArrayList<String>()
+        var old = HashMap<Int, String>()
+        var new = HashMap<Int, String>()
 
-        override fun getOldListSize(): Int = old.size
+        override fun getOldListSize(): Int = old.size - 1
 
-        override fun getNewListSize(): Int = new.size
+        override fun getNewListSize(): Int = new.size - 1
 
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             try {

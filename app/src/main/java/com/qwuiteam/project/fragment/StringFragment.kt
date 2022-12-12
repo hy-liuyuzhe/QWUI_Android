@@ -6,14 +6,12 @@ import android.text.Html
 import android.util.Log
 import android.view.View
 import android.webkit.URLUtil
-import androidx.recyclerview.widget.DiffUtil
 import com.blankj.utilcode.util.*
 import com.qwuiteam.project.CommonUtil
 import com.qwuiteam.project.R
 import com.qwuiteam.project.parseURLValue
 import kotlinx.android.synthetic.main.fragment_string.*
 import java.math.BigDecimal
-import java.net.URLEncoder
 
 /**
  * id
@@ -22,9 +20,21 @@ class StringFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_string
 
+    var index = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val list = arrayListOf("162.62.52.194", "162.62.121.186", "162.62.120.170")
+        number.setOnClickListener {
+            for(n in 0..100){
+                index++
+                val i = index % list.size
+                val data = list[i]
+                LogUtils.d("data: $i")
+            }
+
+        }
+
         splitPath.setOnClickListener {
             val url = "https://www.hakiapp.com/build/index.html#/rankReward?a=1&b=2&hideNav=1"
             val isHttp = URLUtil.isHttpsUrl(url)
@@ -127,8 +137,8 @@ class StringFragment : BaseFragment() {
         replaceSpace.setOnClickListener {
             val x = "weekly agency top 1"
             val y = "weekly agency top  1"
-            LogUtils.d("space.x: ${x.replace(" ","")}")
-            LogUtils.d("space.y: ${y.replace(" ","").lowercase()}")
+            LogUtils.d("space.x: ${x.replace(" ", "")}")
+            LogUtils.d("space.y: ${y.replace(" ", "").lowercase()}")
         }
     }
 

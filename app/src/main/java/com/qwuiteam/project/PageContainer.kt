@@ -18,6 +18,7 @@ enum class PageContainer(
     task("task 需求", ActivityTaskFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     diff("diff刷新", RecyclerDiffFragment::class.java),
+    diffMap("diffMap刷新", RecyclerDiffMapFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),
     algorithm("文件存储", FileStoreFragment::class.java),
     date("日期格式化", DateFragment::class.java),
