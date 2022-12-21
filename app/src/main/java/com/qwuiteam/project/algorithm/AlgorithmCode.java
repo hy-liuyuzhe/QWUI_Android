@@ -10,8 +10,85 @@ public class AlgorithmCode {
 //        String prefix = longestCommonPrefix2(strs);
 //        String prefix = longestCommonPrefix3(strs);
 
-        boolean r = palindrome(1221);
-        System.out.println("algorithm:" + r);
+//        boolean r = palindrome(1221);
+//        twoNumbersMain();
+
+
+        System.out.println("algorithm:" + addStrings("51189", "967895"));
+    }
+
+    private static String addStrings(String num1, String num2) {
+        StringBuilder res = new StringBuilder();
+        int i = num1.length() - 1, j = num2.length() - 1, carry = 0;
+        while (i >= 0 || j >= 0) {
+            int n1 = i >= 0 ? num1.charAt(i) - '0' : 0; // -'0' 操作是获取 char对应的数字
+            int n2 = j >= 0 ? num2.charAt(j) - '0' : 0;
+            int tmp = n1 + n2 + carry;
+            carry = tmp / 10;
+            res.append(tmp % 10);
+            i--;
+            j--;
+        }
+        if (carry > 0) res.append("1");
+        return res.reverse().toString();
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    private static void twoNumbersMain() {
+        ListNode l1 = new ListNode(2);
+        ListNode node2 = new ListNode(4);
+        l1.after(node2);
+        ListNode node3 = new ListNode(9);
+        node2.after(node3);
+        ListNode node4 = new ListNode(9);
+        node3.after(node4);
+
+
+        ListNode l2 = new ListNode(5);
+        ListNode node5 = new ListNode(6);
+        l2.after(node5);
+        ListNode node6 = new ListNode(4);
+        node5.after(node6);
+
+        l1.sequenceShow();
+        System.out.println();
+        l2.sequenceShow();
+        System.out.println();
+        ListNode listNode = addTwoNumbers(l1, l2);
+
+        listNode.sequenceShow();
+    }
+
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy.next;
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.val : 0;
+            int n2 = l2 != null ? l2.val : 0;
+            int sum = (n1 + n2) + carry;
+            if (head == null) {
+                dummy.next = head = new ListNode(sum % 10);
+            } else {
+                head.next = new ListNode(sum % 10);
+                head = head.next;
+            }
+            carry = sum / 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        if (carry > 0) {
+            head.next = new ListNode(carry);
+        }
+        return dummy.next;
     }
 
     ///////////////////////////////////////////////////////////////////////////
