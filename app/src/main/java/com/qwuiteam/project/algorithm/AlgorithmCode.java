@@ -1,5 +1,7 @@
 package com.qwuiteam.project.algorithm;
 
+import java.util.Arrays;
+
 public class AlgorithmCode {
 
     public static void main(String[] args) {
@@ -12,9 +14,37 @@ public class AlgorithmCode {
 
 //        boolean r = palindrome(1221);
 //        twoNumbersMain();
+//        System.out.println("algorithm:" + addStrings("51189", "967895"));
 
+        System.out.println("algorithm:" + multiply("123", "456"));
+    }
 
-        System.out.println("algorithm:" + addStrings("51189", "967895"));
+    private static String multiply(String num1, String num2) {
+        if (num1.equals("0") || num2.equals("0")){
+            return "0";
+        }
+        int m = num1.length();
+        int n = num2.length();
+        int[] res = new int[m + n];
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                int num = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int p1 = i + j; //进位使用的索引
+                int p2 = i + j + 1; //这次结果计算的结果存储位置
+
+                int sum = num+res[p2];
+                res[p2] = sum%10;
+                res[p1] += sum/10;
+            }
+        }
+
+        System.out.println("res: "+ Arrays.toString(res));
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < res.length; i++) {
+            if (res[i] == 0  && i == 0)continue;
+            result.append(res[i]);
+        }
+        return result.toString();
     }
 
     private static String addStrings(String num1, String num2) {

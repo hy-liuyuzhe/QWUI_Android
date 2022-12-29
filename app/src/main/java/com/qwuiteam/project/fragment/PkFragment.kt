@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.ImageUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
@@ -28,12 +29,20 @@ class PkFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val maxSize = SizeUtils.dp2px(300f)
+        val origin = SizeUtils.dp2px(100f)
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) {
                     progressPk.update(10f, progress.toFloat())
                     layoutProgress.update(10f,progress.toFloat())
                 }
+                val newSize = origin + (maxSize * (progress / 100f)).toInt()
+                val params = image.layoutParams
+                params.width = newSize
+                params.height = newSize
+                image.layoutParams = params
+                Log.d("liuyuzhe", "maxSize * progress: "+ newSize);
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
