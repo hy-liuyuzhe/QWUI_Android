@@ -8,6 +8,7 @@ import com.blankj.utilcode.constant.MemoryConstants
 import com.blankj.utilcode.util.ConvertUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.SizeUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.opensource.svgaplayer.*
 import com.qwuiteam.project.R
 import kotlinx.android.synthetic.main.fragment_svga.*
@@ -39,7 +40,9 @@ class SvgaViewFragment : BaseFragment() {
 //        var total = 0f for (entry in images) {
 //            total += entry.value.height * entry.value.width * 4
 //        }
-
+        layoutTouchSize.setOnClickListener {
+            Log.d("liuyuzhe", "点 目标");
+        }
         load1.setOnClickListener {
             SVGAParser(context).decodeFromAssets(
                 "room_gift_first_banner.svga",
@@ -56,6 +59,9 @@ class SvgaViewFragment : BaseFragment() {
                         svgaDrawable1 = SVGADrawable(videoEntity, SVGADynamicEntity())
                         svgaView.setImageDrawable(svgaDrawable1)
                         svgaView.startAnimation()
+                        svgaView.setOnClickListener {
+                            Log.d("liuyuzhe", "点 1 banner");
+                        }
                     }
 
                     override fun onError() {
@@ -75,6 +81,9 @@ class SvgaViewFragment : BaseFragment() {
                             svgaDrawable2
                         )
                         svgaView.startAnimation()
+                        svgaView.setOnClickListener {
+                            Log.d("liuyuzhe", "点 大 banner");
+                        }
                     }
 
                     override fun onError() {

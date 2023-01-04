@@ -14,12 +14,10 @@
     <Button
         android:id="@+id/loadFull"
         android:text="loadFull"
-        android:layout_gravity="center_horizontal"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_gravity="bottom"
         android:src="@mipmap/ic_launcher_round" />
-
-
 
     <Button
         android:id="@+id/load2"
@@ -42,11 +40,17 @@
         android:layout_gravity="end"
         android:text="cache2"/>
 
-    <com.opensource.svgaplayer.SVGAImageView
+    <com.qwuiteam.project.TouchSizeLayout
+        android:id="@+id/layoutTouchSize"
+        android:background="@color/red_fd2772"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <com.qwuiteam.project.SvgaTouchSizeLayout
         android:id="@+id/svgaView"
         app:loopCount="-1"
         android:layout_width="match_parent"
-        android:layout_height="222dp"/>
+        android:layout_height="200dp"/>
 
     <com.opensource.svgaplayer.SVGAImageView
         android:id="@+id/svgaViewFull"
