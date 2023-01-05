@@ -42,7 +42,7 @@ class TabLayoutFragment : BaseFragment() {
             tab.view
             tab.text = "我是tab: $i"
             tabTitles.add("我是tab: $i")
-            fragment.add(IdImageFragment())
+            if (i == 0) fragment.add(Default3Fragment()) else fragment.add(IdImageFragment())
             tabLayout.addTab(tab)
         }
         viewPager.adapter = SimpleFragmentPagerAdapter(requireActivity().supportFragmentManager)

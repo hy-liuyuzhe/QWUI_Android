@@ -14,6 +14,7 @@ enum class PageContainer(
     viewmodel("研究双向绑定", ViewmodelFragment::class.java),
     idImage("研究。9图使用", IdImageFragment::class.java),
     pk("pk 需求", PkFragment::class.java),
+    viewpager("viewpager", ViewpagerFragment::class.java),
     scroll("自定义滚动", ScrollFragment::class.java),
     task("task 需求", ActivityTaskFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
