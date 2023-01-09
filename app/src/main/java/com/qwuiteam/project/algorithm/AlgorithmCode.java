@@ -1,5 +1,7 @@
 package com.qwuiteam.project.algorithm;
 
+import com.blankj.utilcode.util.TimeUtils;
+
 import java.util.Arrays;
 
 public class AlgorithmCode {
@@ -16,7 +18,77 @@ public class AlgorithmCode {
 //        twoNumbersMain();
 //        System.out.println("algorithm:" + addStrings("51189", "967895"));
 
-        System.out.println("algorithm:" + multiply("123", "456"));
+//        System.out.println("algorithm:" + multiply("123", "456"));
+
+        long time = System.currentTimeMillis();
+        System.out.println("正确的转换time: "+ TimeUtils.millis2String(time));
+        System.out.println("以前方法转换time: "+getYearMonthDayHourMinuteSecond(time));
+    }
+
+    public static String getYearMonthDayHourMinuteSecond(long timeMillis) {
+        int timezone = 8; // 时区
+        long totalSeconds = timeMillis / 1000;
+        totalSeconds += 60 * 60 * timezone;
+        int second = (int) (totalSeconds % 60);// 秒
+        long totalMinutes = totalSeconds / 60;
+        int minute = (int) (totalMinutes % 60);// 分
+        long totalHours = totalMinutes / 60;
+        int hour = (int) (totalHours % 24);// 时
+        int totalDays = (int) (totalHours / 24);
+        int _year = 1970;
+        int year = _year + totalDays / 366;
+        int month = 1;
+        int day = 1;
+        int diffDays;
+        boolean leapYear;
+        while (true) {
+            int diff = (year - _year) * 365;
+            diff += (year - 1) / 4 - (_year - 1) / 4;
+            diff -= ((year - 1) / 100 - (_year - 1) / 100);
+            diff += (year - 1) / 400 - (_year - 1) / 400;
+            diffDays = totalDays - diff;
+            leapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
+            if (!leapYear && diffDays < 365 || leapYear && diffDays < 366) {
+                break;
+            } else {
+                year++;
+            }
+        }
+
+        int[] monthDays;
+        if (diffDays >= 59 && leapYear) {
+            monthDays = new int[]{-1, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+        } else {
+            monthDays = new int[]{-1, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+        }
+        for (int i = monthDays.length - 1; i >= 1; i--) {
+            if (diffDays >= monthDays[i]) {
+                month = i;
+                day = diffDays - monthDays[i] + 1;
+                break;
+            }
+        }
+        String hours;
+        String minutes;
+        String seconds;
+        if (hour < 10) {
+            hours = "0" + hour;
+        } else {
+            hours = "" + hour;
+        }
+        if (minute < 10) {
+            minutes = "0" + minute;
+        } else {
+            minutes = "" + minute;
+        }
+        if (second < 10) {
+            seconds = "0" + second;
+        } else {
+            seconds = "" + second;
+        }
+
+//        return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+        return hours + ":" + minutes + ":" + seconds;
     }
 
     private static String multiply(String num1, String num2) {

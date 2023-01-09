@@ -34,8 +34,7 @@ class TabLayoutFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         update.setOnClickListener {
-            tabLayout.getTabAt(2)
-                ?.text = "我是长文本长文本长文本长文本1234567890"
+            tabLayout.getTabAt(2)?.text = "我是长文本长文本长文本长文本1234567890"
         }
         for (i in 0..2){
             val tab = tabLayout.newTab()

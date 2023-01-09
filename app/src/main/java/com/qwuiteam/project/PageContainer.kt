@@ -35,6 +35,7 @@ enum class PageContainer(
     BottomSheet("弹窗", BottomSheetFragment::class.java),
     ExpandLayout("展开折叠", ExpandLayoutFragment::class.java),
     gradient("渐变色", GradientFragment::class.java),
+    coordinator("coordinator 控件", CoordinatorLayoutFragment::class.java),
     FFmpag("ffmpag", FFmpagFragment::class.java)
 
 }
