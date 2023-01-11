@@ -18,6 +18,7 @@ enum class PageContainer(
     scroll("自定义滚动", ScrollFragment::class.java),
     task("task 需求", ActivityTaskFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
+    RecyclerHeader("RecyclerView Header", RecyclerHeaderFragment::class.java),
     diff("diff刷新", RecyclerDiffFragment::class.java),
     diffMap("diffMap刷新", RecyclerDiffMapFragment::class.java),
     avatar("头像挂链适配", AvatarFragment::class.java),

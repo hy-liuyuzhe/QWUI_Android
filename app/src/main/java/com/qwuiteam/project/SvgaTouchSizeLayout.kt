@@ -12,7 +12,7 @@ class SvgaTouchSizeLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0,
 ) : SVGAImageView(context, attrs, defStyleAttr) {
 
-    private val offset = SizeUtils.dp2px(30f)
+    private val offset = SizeUtils.dp2px(60f)
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         event ?: return super.onTouchEvent(event)

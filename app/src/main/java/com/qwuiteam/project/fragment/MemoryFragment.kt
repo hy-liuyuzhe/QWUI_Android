@@ -5,8 +5,12 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import com.blankj.utilcode.util.LogUtils
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.qwuiteam.project.R
+import com.qwuiteam.project.bean.AbsUser
 import com.qwuiteam.project.bean.Person
+import com.qwuiteam.project.bean.User
+import com.qwuiteam.project.bean.User2
 import com.qwuiteam.project.enum.RoomMessageShowEnum
 import com.qwuiteam.project.utils.MainLooperPrinter
 import kotlinx.android.synthetic.main.fragment_layout.encode_video
@@ -83,6 +87,27 @@ class MemoryFragment : BaseFragment() {
             countdownLatchTest.await()
             println("end countdownlatch")
         }
+        covariantTest()
+    }
+
+    private fun covariantTest() {
+        show(mutableListOf(User()))
+        val list1: MutableList<AbsUser> = mutableListOf(User())
+        BaseQuickAdapter
+        show2(list1)
+        val user = list1[1] as User
+        LogUtils.d("非可变集合: ${user.age}")
+    }
+
+
+    //只读集合是安全的
+    fun show(list: List<AbsUser>) {
+        LogUtils.d("测试 继承: $list")
+    }
+
+    fun show2(list: MutableList<AbsUser>) {
+        LogUtils.d("非可变集合: $list")
+        list.add(User2())
     }
 }
 
