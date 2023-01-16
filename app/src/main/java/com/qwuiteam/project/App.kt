@@ -1,11 +1,11 @@
 package com.qwuiteam.project
 
+import android.app.Activity
 import android.app.Application
 import android.net.http.HttpResponseCache
 import android.os.Environment
 import com.arthenica.ffmpegkit.FFmpegKitConfig
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.Utils
+import com.blankj.utilcode.util.*
 import com.opensource.svgaplayer.utils.log.SVGALogger
 import com.opensource.svgaplayer.utils.log.SVGALogger.setLogEnabled
 import com.tencent.mars.xlog.Log
@@ -34,6 +34,20 @@ class App : Application() {
         //BlockCanary.install(this, new AppBlockCanaryContext()).start();
         //Looper.getMainLooper().setMessageLogging(new MainLooperPrinter());
         FFmpegKitConfig.setFontDirectory(this, "/storage/emulated/0/Download/font", null)
+        ActivityUtils.addActivityLifecycleCallbacks(object : Utils.ActivityLifecycleCallbacks(){
+            override fun onActivityCreated(activity: Activity) {
+                android.util.Log.d("liuyuzhe", "onActivityCreated: $activity");
+            }
+
+            override fun onActivityStarted(activity: Activity) {
+                android.util.Log.d("liuyuzhe", "onActivityStarted: $activity");
+            }
+
+            override fun onActivityPaused(activity: Activity) {
+                android.util.Log.d("liuyuzhe", "onActivityPaused: $activity");
+            }
+        })
+
     }
 
 

@@ -17,6 +17,7 @@ enum class PageContainer(
     viewpager("viewpager", ViewpagerFragment::class.java),
     scroll("自定义滚动", ScrollFragment::class.java),
     task("task 需求", ActivityTaskFragment::class.java),
+    kotlin("kotlin api 学习", KotlinDocumentFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     RecyclerHeader("RecyclerView Header", RecyclerHeaderFragment::class.java),
     diff("diff刷新", RecyclerDiffFragment::class.java),

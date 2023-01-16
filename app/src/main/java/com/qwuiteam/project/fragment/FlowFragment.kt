@@ -109,6 +109,20 @@ class FlowFragment : BaseFragment() {
             .onEach {
                 LogUtils.d("result: $it");
             }.launchIn(editViewModel.viewModelScope)
+
+        groupBy()
+    }
+
+    private fun groupBy() {
+        val numbers = listOf("one", "two", "three", "four", "five")
+
+        println(numbers.groupBy { it.first().uppercase() })
+        println(numbers.groupBy(keySelector = { it.first() }, valueTransform = { it.uppercase() }))
+        numbers.slice(0..4 step 2)
+        numbers.drop(1)
+
+        numbers.chunked(3)
+        numbers.windowed(3)
     }
 
     private fun bufferMethod() {

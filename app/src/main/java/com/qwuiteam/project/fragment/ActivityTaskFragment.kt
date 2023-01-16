@@ -1,10 +1,14 @@
 package com.qwuiteam.project.fragment
 
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.View
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.blankj.utilcode.constant.TimeConstants
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.StringUtils
@@ -32,9 +36,27 @@ class ActivityTaskFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_task
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d("liuyuzhe", "onAttach: ");
+    }
+
+        lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("liuyuzhe", "onCreate: ");
+        activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+//            Log.d("liuyuzhe", "ActivityTaskFragment is receiver: ");
+//            if (it.resultCode == 222) {
+                Log.d("liuyuzhe", "ActivityTaskFragment is receiver data: ${it.data?.getStringExtra("result data")}");
+//            }
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("liuyuzhe", "onViewCreated: ");
 
         startTask.setOnClickListener {
             LogUtils.d("new task")
@@ -50,21 +72,15 @@ class ActivityTaskFragment : BaseFragment() {
             startActivity(intent)
         }
 
-        countdown.setOnClickListener {
-            object : HkCountDownTimer(TimeUnit.HOURS.toMillis(1)
-                    + TimeUnit.MINUTES.toMillis(20)
-                    + TimeUnit.SECONDS.toMillis(30)
-                    + TimeUnit.MILLISECONDS.toMillis(40), 1000L) {
-                override fun onTick(millisUntilFinished: Long) {
-                    val t = formatTime(millisUntilFinished)
-                    LogUtils.d("millis2FitTimeSpan: " + t)
-                }
+        startLaunch.setOnClickListener {
+            val intent = Intent(requireActivity(), SimpleSecondActivity::class.java)
+                .putExtra("page", PageContainer.task)
+            activityResultLauncher.launch(intent)
+        }
 
-                override fun onFinish() {
-
-                }
-
-            }.start()
+        setResult.setOnClickListener {
+            activity?.setResult(1,Intent().putExtra("result data","haha"))
+            activity?.finish()
         }
         formatText.setOnClickListener {
             val time = 1663045680000L

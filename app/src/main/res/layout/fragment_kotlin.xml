@@ -6,28 +6,35 @@
 
 
     <Button
-        android:id="@+id/start_normal"
+        android:id="@+id/simple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="start_normal"/>
+        android:text="simple" />
 
     <Button
-        android:id="@+id/startTask"
+        android:id="@+id/splitPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="startTask" />
+        android:text="splitPath" />
+
 
     <Button
-        android:id="@+id/startLaunch"
+        android:id="@+id/binaryString"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="startLaunch" />
+        android:text="binaryString" />
 
     <Button
-        android:id="@+id/setResult"
+        android:id="@+id/start_with"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setResult" />
+        android:text="start_with" />
+
+    <Button
+        android:id="@+id/countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="countdown" />
 
     <Button
         android:id="@+id/formatText"
@@ -45,10 +52,10 @@
         android:layout_height="wrap_content"
         android:text="BigDecimal" />
     <Button
-        android:id="@+id/start2"
+        android:id="@+id/format1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="json" />
+        android:text="format1" />
 
 
     <TextView
@@ -60,11 +67,12 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/week"
+        android:id="@+id/replaceSpace"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="replaceSpace"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="week" />
-
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>
