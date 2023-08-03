@@ -25,6 +25,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        //111
         XCrash.init(this)
         initxLog()
         Utils.init(this)
