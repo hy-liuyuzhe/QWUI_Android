@@ -1,3 +1,4 @@
 rootProject.name = "QWUI_Android"
 include ':app'
 include ':qwui'
+include ':lib'

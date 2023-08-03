@@ -10,6 +10,7 @@ import com.opensource.svgaplayer.utils.log.SVGALogger
 import com.opensource.svgaplayer.utils.log.SVGALogger.setLogEnabled
 import com.tencent.mars.xlog.Log
 import com.tencent.mars.xlog.Xlog
+import xcrash.XCrash
 import java.io.File
 
 class App : Application() {
@@ -24,6 +25,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        XCrash.init(this)
         initxLog()
         Utils.init(this)
         LogUtils.getConfig().globalTag = "liuyuzhe"

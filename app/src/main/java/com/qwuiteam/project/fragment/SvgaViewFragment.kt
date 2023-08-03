@@ -5,13 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.blankj.utilcode.constant.MemoryConstants
-import com.blankj.utilcode.util.ConvertUtils
-import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.SizeUtils
-import com.blankj.utilcode.util.ToastUtils
+import com.blankj.utilcode.util.*
 import com.opensource.svgaplayer.*
 import com.qwuiteam.project.R
 import kotlinx.android.synthetic.main.fragment_svga.*
+import java.io.File
 import java.lang.reflect.Field
 import java.net.URL
 import kotlin.math.roundToLong
@@ -40,6 +38,7 @@ class SvgaViewFragment : BaseFragment() {
 //        var total = 0f for (entry in images) {
 //            total += entry.value.height * entry.value.width * 4
 //        }
+        playBell()
         layoutTouchSize.setOnClickListener {
             Log.d("liuyuzhe", "点 目标");
         }
@@ -139,6 +138,51 @@ class SvgaViewFragment : BaseFragment() {
             svgaView.setImageDrawable(svgaDrawable2)
             svgaView.startAnimation()
         }
+    }
+
+    private fun playBell() {
+        bell.callback = object : SVGACallback {
+            override fun onFinished() {
+                Log.d("liuyuzhe", "onFinished");
+
+                ThreadUtils.runOnUiThreadDelayed(
+                    { realPlayBell() }, 2000L
+                )
+            }
+
+            override fun onPause() {
+            }
+
+            override fun onRepeat() {
+            }
+
+            override fun onStep(frame: Int, percentage: Double) {
+            }
+
+        }
+        realPlayBell()
+    }
+
+    private var svgaDrawable3: SVGADrawable? = null
+
+    private fun realPlayBell() {
+        if (svgaDrawable3!=null){
+            Log.d("liuyuzhe", "realPlayBell.svgaDrawable3");
+            bell.setImageDrawable(svgaDrawable3)
+            bell.startAnimation()
+            return
+        }
+        Log.d("liuyuzhe", "realPlayBell");
+        SVGAParser(context).decodeFromAssets("room_invited_bell_icon.svga",
+            object : SVGAParser.ParseCompletion {
+                override fun onComplete(videoItem: SVGAVideoEntity) {
+                    svgaDrawable3 = SVGADrawable(videoItem)
+                    bell.setImageDrawable(svgaDrawable3)
+                    bell.startAnimation()
+                }
+
+                override fun onError() {}
+            })
     }
 
     private fun calculateSvgaMemory(videoEntity: SVGAVideoEntity) {

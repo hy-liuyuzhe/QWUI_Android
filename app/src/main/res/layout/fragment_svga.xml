@@ -58,4 +58,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/bell"
+        app:loopCount="1"
+        android:layout_gravity="center"
+        android:layout_width="32dp"
+        android:layout_height="32dp"/>
+
 </FrameLayout>
