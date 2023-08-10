@@ -1,0 +1,19 @@
+{
+    "star_light_list": "星光榜",
+    "rule": "规则",
+    "star_list": "明星榜",
+    "rich_list": "富豪榜",
+    "award": "奖励",
+    "ranking": "排行榜",
+    "reward_car": "{days} 天",
+    "diamond_count": "{count}",
+    "no_ranking": "未上榜",
+    "star_rule_title": "活动规则",
+    "star_rules_1": "1.  明星榜根据用户收到的礼物换算成的钻石数进行排序；",
+    "star_rules_2": "2.  富豪榜根据用户送出的礼物对应的金币数进行排序；",
+    "star_rules_3": "3.  活动获得的奖励会在活动结束后24h小时内发送给获奖者：",
+    "star_rules_4": "4. 活动结束后获奖用户会公布1天；",
+    "loading": "加载中",
+    "activity_end": "活动已结束",
+    "activity_time": "{start}-{end}"
+}

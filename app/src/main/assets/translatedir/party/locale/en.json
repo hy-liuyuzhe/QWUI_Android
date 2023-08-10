@@ -1,0 +1,18 @@
+{
+    "party_activity_title": "Looking for Wyak New Year's Party",
+    "party_top_desc": "The top 3 will be the official organizers of the New Year party",
+    "party_reward": "Reward",
+    "party_reward_rank": "No.{rank}",
+    "party_activity_rule1": "1. New Year's activities can be created during the event, and the New Year's activities must be held within the specified time;",
+    "party_activity_rule2": "2. All rewards will take effect immediately after the event ends;",
+    "party_activity_rule3": "3. During the event, each user can only hold 1 New Year event to participate in the competition",
+    "party_activity_rule4": "4. The room where the New Year's event is held will receive 2 times the level acceleration for receiving and sending gifts on New Year's Day;",
+    "party_hot_desc": "Popularity = number of diamonds out of the room + 100x the highest number of online people in the room",
+    "party_reward_new_year_popular_room": "• New Year’s Hot Room No.{rank}",
+    "party_reward_diamond_party_fund": "• {diamonds} Diamond Party Fund",
+    "party_reward_new_year_theme": "• New Year Exclusive Room Background",
+    "party_reward_room_acceleration": "• Room receiving and sending gifts {times} times the level acceleration",
+    "party_create": "Create a new year activity",
+    "party_activity_limit": "{limit} entries",
+    "party_create_limit": "You can only create a new year party"
+}

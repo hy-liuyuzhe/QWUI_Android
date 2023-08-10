@@ -1,0 +1,1 @@
+export const CP_RANK_REWARD_TIME = "cp_rank_reward_time";

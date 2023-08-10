@@ -1,0 +1,12 @@
+{
+    "title": "Şanslı hediye",
+    "rule_tip": "Şanslı hediyeler vererek coins ödülünün 1888 katını patlatma şansı yakalama fırsatınız vardır.",
+    "rule_title": "Oyun kuralları",
+    "rule_content_1": "1. Arkadaşlarınıza şanslı hediyeler gönderin, 1888 kata kadar coins ödülü kazanma şansınız olacak;",
+    "rule_content_2": "2. Tek seferde ne kadar çok hediye gönderirseniz, kazanma olasılığınız ve kazanma çarpanınız o kadar yüksek olur;",
+    "rule_content_3": "3. Ödül çarpanı, hediye değerinin çarpanıdır;",
+    "rule_content_4": "4. Şanslı hediyeyi alan kullanıcı, şanslı hediyenin {ratio} değeri ödül havuzuna girecektir ve geri kalanı hediye alan kullanıcıya ait olacak;",
+    "rule_content_5": "5. Şanslı hediye oyununda kullanıcıların elde ettiği ödüller, Wyak platformundaki tüketimle sınırlıdır ve hiçbir şekilde kar amacı güden faaliyetler için kullanılamaz;",
+    "rule_content_6": "6. Şanslı hediyelerin sadece %20'si resmi etkinliklerde, kullanıcı seviyelerinde ve listelerde sayılacaktır.",
+    "rule_declaimer": "Bu oyunun nihai yorumlama hakkı Wyak yetkilisine aittir."
+}

@@ -1,0 +1,54 @@
+@mixin padding-start($value) {
+  padding-inline-start: $value;
+  -webkit-padding-start: $value;
+}
+
+@mixin padding-end($value) {
+  padding-inline-end: $value;
+  -webkit-padding-end: $value;
+}
+
+@mixin margin-start($value) {
+  margin-inline-start: $value;
+  -webkit-margin-start: $value;
+}
+
+@mixin margin-end($value) {
+  margin-inline-end: $value;
+  -webkit-margin-end: $value;
+}
+
+@mixin sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+@mixin animation-name($value) {
+  animation-name: $value;
+  -webkit-animation-name: $value;
+}
+
+@mixin animation-duration($value) {
+  animation-duration: $value;
+  -webkit-animation-duration: $value;
+}
+
+@mixin animation-fill-mode($value) {
+  animation-fill-mode: $value;
+  -webkit-animation-fill-mode: $value;
+}
+
+@mixin animation-timing-function($value) {
+  animation-timing-function: $value;
+  -webkit-animation-timing-function: $value;
+}
+
+@mixin animation-iteration-count($value) {
+  animation-iteration-count: $value;
+  -webkit-animation-iteration-count: $value;
+}
+
+@mixin transform($value) {
+  transform: $value;
+  -webkit-transform: $value;
+}

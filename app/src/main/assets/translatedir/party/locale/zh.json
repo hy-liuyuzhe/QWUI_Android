@@ -1,0 +1,18 @@
+{
+    "party_activity_title": "寻找Wyak新年派对",
+    "party_top_desc": "排名前3的将作为新年派对官方指定举办方",
+    "party_reward": "奖励",
+    "party_reward_rank": "No.{rank}",
+    "party_activity_rule1": "1. 活动期间均可创建新年活动，新年活动必须在规定时间内举办；",
+    "party_activity_rule2": "2. 所有奖励在活动结束后立即s生效；",
+    "party_activity_rule3": "3. 活动期间每个用户只能举办1次新年活动参加比赛；",
+    "party_activity_rule4": "4. 举办新年活动的房间在新年当天收送礼物获得2倍等级加速；",
+    "party_hot_desc": "热度=房间出钻石数+100x 房间最高在线人数",
+    "party_reward_new_year_popular_room": "• 新年热门房间第{rank}位",
+    "party_reward_diamond_party_fund": "• {diamonds}钻派对基金",
+    "party_reward_new_year_theme": "• 新年专属房间背景",
+    "party_reward_room_acceleration": "• 房间收送礼物{times}倍等级加速",
+    "party_create": "创建新年活动",
+    "party_activity_limit": "{limit}个参赛名额",
+    "party_create_limit": "你只能创建一个新年派对"
+}

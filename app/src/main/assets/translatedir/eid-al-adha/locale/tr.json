@@ -1,0 +1,18 @@
+{
+    "eid_al_adha_activity_gifts_desc": "Etkinliğe katılmak için hediyeler şunlardır:",
+    "eid_al_adha_shared_prize_pool": "Paylaşılan ödül havuzu",
+    "eid_al_adha_shared_prize_pool_desc": "Etkinlik hediyeleri gönderilmekte harcanan coinslerin %1'i ödül havuzuna dahil edilecektir.",
+    "eid_al_adha_shared_prize_pool_total_coins": "{coins} coins",
+    "eid_al_adha_shared_prize_pool_total_people": "Etkinliğe {num} kişi katıldı",
+    "eid_al_adha_award": "Ödül",
+    "eid_al_adha_award_top_rank": "İlk {rank}.",
+    "eid_al_adha_award_num": "{value}Gün x{num}",
+    "eid_al_adha_contribution_list": "Katkı kistesi",
+    "eid_al_adha_contribution_list_desc": "Ödül havuzuna katkıda bulunan coins sayısı",
+    "eid_al_adha_activiy_award": "Etkinlik ödülleri",
+    "eid_al_adha_activiy_end_tip": "Etkinlik sona erdi, şunu alacaksınız",
+    "eid_al_adha_rule_ranking": "Sıralama",
+    "eid_al_adha_rule_share_ratio": "Paylaşım oranı",
+    "eid_al_adha_rule_divide_equally_tip": "Kalan {rate}, tüm etkinlik katılımcıları arasında eşit olarak paylaştırılacaktır.",
+    "eid_al_adha_activity_gifts_for_all_desc": "Etkinliğe katılmak için herhangi bir hediye gönderin"
+}

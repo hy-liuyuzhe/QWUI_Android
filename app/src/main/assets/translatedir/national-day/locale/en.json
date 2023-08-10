@@ -1,0 +1,9 @@
+{
+  "national_day_gift_title": "Every {num} Saudi Arabia flags sent, the flag raises once in all rooms",
+  "national_day_gift_title_dz": "Every {num} Algeria flags sent, the flag raises once in all rooms",
+  "national_day_gift_title_ma": "Every {num} Morocco flags sent, the flag raises once in all rooms",
+  "national_day_gift_title_country": "Every {num} {country} flags sent, the flag raises once in all rooms",
+  "national_day_rank_title": "This round of flag raising contributed the most",
+  "national_day_rank_explain": "The first 3 of each round will appear at the flag raising ceremony",
+  "national_day_reward_title": "{times} times the most contributions, get the avatar frame for {days} days"
+}

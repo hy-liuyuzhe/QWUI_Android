@@ -1,0 +1,13 @@
+{
+    "light_gift_reward_top_tip": "Tüm hediyeleri 10 kez aydınlattan sonra şunları alabilirsin",
+    "light_gift_reward_bottom_tip": "En çok meteor yağmuru hediyesini kime verirseniz, o kişivarsayılan olarak başka bir çift fotoğraf çerçevesi alacak",
+    "light_gift_name_gift_times_tip": "Her 7 kez yaktığınızda 1 hafta boyunca bir hediyeye isim verme şansı yakalayabilirsiniz.",
+    "light_gift_name_gift_got_channce": "{num} aylık Özel ID'yi  al",
+    "light_gift_name_gift_first_tip": "Adlandırılacak hediye etkinlikte hediye olmalıdır ve ilk aydınlatabilen kullanıcılar , ilk olarak adlandırmayı düzenleme şansına sahip olur.",
+    "light_gift_name_gift_contact_tip": "Personelimiz, hediye seçimi ve zamanlaması için ışıklandırmanın ardından sizinle iletişime geçecektir.",
+    "light_gift_light_times": "Tüm hediyeleri {num} kez aydınlatmayı tamamlandınız ve şunları kazanacaksınız",
+    "light_gift_light_num": "{num} aydınlatıldı",
+    "light_gift_name_gift_instruction": "Tüm ödüller etkinlik sona erdikten sonra dağıtılacaktır.",
+    "light_gift_all_light_times": "{num} kez aydınlatıldı",
+    "light_gift_light_tip": "Bu hediyeyi vermeniz, aydınlatma sayılır"
+}

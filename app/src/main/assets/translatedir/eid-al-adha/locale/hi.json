@@ -1,0 +1,18 @@
+{
+    "eid_al_adha_activity_gifts_desc": "कार्यक्रम में भाग लेने के लिए निम्नलिखित उपहार भेजें।",
+    "eid_al_adha_shared_prize_pool": "साझा पुरस्कार पूल",
+    "eid_al_adha_shared_prize_pool_desc": "इवेंट उपहार भेजकर उपयोग किए गए सोने के सिक्कों का 1% पुरस्कार पूल में शामिल किया जाएगा।",
+    "eid_al_adha_shared_prize_pool_total_coins": "{coins} सिक्के",
+    "eid_al_adha_shared_prize_pool_total_people": "{num} व्यक्ति ने गतिविधि में भाग लिया था",
+    "eid_al_adha_award": "पुरस्कार",
+    "eid_al_adha_award_top_rank": "Top {rank}",
+    "eid_al_adha_award_num": "{value}days x{num}",
+    "eid_al_adha_contribution_list": "योगदान सूची",
+    "eid_al_adha_contribution_list_desc": "इनाम पूल में उपयोगकर्ताओं द्वारा योगदान किए गए सोने के सिक्कों की संख्या का संदर्भ देता है।",
+    "eid_al_adha_activiy_award": "गतिविधि पुरस्कार",
+    "eid_al_adha_activiy_end_tip": "गतिविधि समाप्त हो गई है, आपको मिल जाएगा",
+    "eid_al_adha_rule_ranking": "श्रेणी",
+    "eid_al_adha_rule_share_ratio": "शेयर अनुपात",
+    "eid_al_adha_rule_divide_equally_tip": "शेष {rate} को सभी ईवेंट प्रतिभागियों के बीच समान रूप से विभाजित किया जाता है।",
+    "eid_al_adha_activity_gifts_for_all_desc": "आप किसी भी उपहार के साथ गतिविधि में भाग ले सकते हैं"
+}

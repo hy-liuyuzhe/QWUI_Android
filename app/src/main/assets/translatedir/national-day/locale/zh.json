@@ -1,0 +1,9 @@
+{
+  "national_day_gift_title": "每送出{num}沙特国旗，会在全服升旗1次",
+  "national_day_gift_title_dz": "每送出{num}阿尔及利亚国旗，会在全服升旗1次",
+  "national_day_gift_title_ma": "每送出{num}摩洛哥国旗，会在全服升旗1次",
+  "national_day_gift_title_country": "每送出{num}{country}国旗，会在全服升旗1次",
+  "national_day_rank_title": "本轮升级贡献最多",
+  "national_day_rank_explain": "每轮前3会出现在升旗仪式上",
+  "national_day_reward_title": "累计{times}次贡献最多，获得该相框{days}天"
+}

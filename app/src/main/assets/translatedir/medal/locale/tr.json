@@ -1,0 +1,36 @@
+{
+    "medal_rule_title": "Madalya Faaliyetlerinin Tanımı",
+
+    "rule_title_1": "Özel Not",
+    "rule_content_1_1": "(a) Madalya kazanma faaliyetine katılmadan önce lütfen faaliyetin şart ve koşullarını, özellikle faaliyet görevlerinin tamamlanması, faaliyet ödüllerinin alınması ve faaliyet hesap anormallikleri/ihlalleri ile ilgili olanları dikkatlice okuyunuz.",
+    "rule_content_1_2": "(b) Bu faaliyete katılan kullanıcılar, bu faaliyetin kurallarını tamamen okuyup anlamış ve gönüllü olarak faaliyetin kurallarına bağlı kalmış sayılırlar.",
+
+    "rule_title_2": "Madalya nedir?",
+    "rule_content_2": "Madalyalar, Wyak tarafından belirli koşulları yerine getiren kullanıcılara verilen onurlu ödüllerdir. Wyak'e başarıyla kaydolduysanız ve giriş yaptıysanız, platformdaki görevleri veya etkinlikleri başarıyla tamamladıysanız ve gereksinimleri karşıladıysanız, ilgili madalyalar ve seviyelerle ödüllendirileceksiniz. Madalyalar iki türe ayrılır: başarı madalyaları ve etkinlik madalyaları ve her madalya türü üç seviyeye ayrılır: I, II ve III. Madalya seviyesi, kullanıcının belirli bir süre içinde Wyak uygulama hizmetlerini kullanma konusundaki birikmiş davranışına göre belirlenir ve kullanıcılar ilgili seviye eşiğine ulaştıklarında yükseltme yapabilirler.",
+
+    "rule_title_3": "Madalya ve ilgili seviye nasıl alınır?",
+    "rule_content_3": "Her madalya ve ilgili seviyeyi elde etmenin farklı yolları vardır ve bunlar ilgili madalyanın ayrıntılar sayfasında ayrıntılı olarak açıklanmıştır. Hedefe ulaşıldığında, görevli madalyayı otomatik olarak verecek ve yakacaktır. Madalyanın ilk seviyesinin hesaplanma süresi madalyanın türüne bağlı olarak değişir. Madalyanın başlatıldığı tarihten veya Wyak'e ilk giriş tarihinden itibaren hesaplanabilir. Madalya yükseltme mekanizması başlatıldığında, kullanıcının geçmiş verileri de dönüştürülecek ve ilgili başlangıç seviyesine ayarlanacaktır. Ayrıntılar güncellemeye tabidir.",
+
+    "rule_title_4": "Madalya ile ne yapabilirim?",
+    "rule_content_4": "Farklı madalyalar, kullanıcının farklı alanlardaki başarılarını temsil eder ve madalyanın seviyesi ne kadar yüksekse, o alandaki başarılarınız da o kadar yüksek olur. Madalyalar kişisel avatarınızın yanına takılabilir, platformdaki onurlu statünüzü ve olağanüstü başarılarınızı vurgulamak için. Madalyaların bazıları ilgili hak ve avantajlara sahiptir ve madalyanın derecesi ne kadar yüksekse, hak ve avantajların içeriği de o kadar zengin olur. Platform, kendi iş gelişimine dayanarak, mevcut madalya düzeyindeki ayrıcalıkları sürekli olarak optimize eder, değiştirir, yükseltir ve yineler ve madalya düzeyindeki ayrıcalıkların türlerini ve içeriklerini sürekli olarak yenileyerek kullanıcılara daha iyi hizmetler ve sosyal deneyimler sunmaya çalışır.",
+
+    "rule_title_5": "Madalyanın ilgili faydaları için geçerlilik süresi var mı?",
+    "rule_content_5": "Madalyanın ilgili faydalarının geçerlilik süresi: Madalyanın faydalarının geçerlilik süresi, ilgili madalya seviyesine ulaştığınız tarihten itibaren 90 gündür. Farklı madalyaların hak ve faydaları üst üste konulamaz, hak ve faydaların geçerlilik süresi içinde yeni bir madalya seviyesine ulaşırsanız, yeni hak ve faydalar yeni seviyenizin varış tarihine göre hesaplanacaktır.",
+
+    "rule_title_6": "Madalya ödüllerimi nasıl görüntüleyebilirim?",
+    "rule_content_6": "Wyak uygulamasına giriş yapın, [Benim]-[Madalyam] sayfasına gidin, ödüllendirilen madalyaları ve madalya seviyesini kontrol edebilirsiniz.",
+
+    "rule_title_7": "Madalya seviyemi nasıl yükseltebilirim?",
+    "rule_content_7": "Madalya seviyeniz, tamamladığınız görev ve faaliyetlerin mevcut durumuna göre belirlenir. Wyak Uygulamasına başarıyla kaydolduktan ve giriş yaptıktan sonra uygulamadaki görevleri ve faaliyetleri tamamladıktan sonra, ilgili veri kaydını alacaksınız. İlgili görevleri/faaliyetleri tamamladığınızda ve terfi eşiğine ulaştığınızda yeni bir seviyeye terfi edeceksiniz. Platform, madalya seviyesiyle ilgili kuralları duruma göre ayarlar ve kurallar değişir.  kurallar o zaman geçerli olacaktır. Kurallar değiştirilirse, o zamanki kurallar geçerli olacaktır.",
+
+    "rule_title_8": "Madalyanın geçerlilik süresi",
+    "rule_content_8": "Normalde madalyaların kullanım süresi için herhangi bir sınırlama yoktur. Bir kullanıcının madalya alma kurallarını ihlal ettiği tespit edilirse, kötü niyetle elde edilen madalyalar geçersiz sayılacaktır.",
+
+    "rule_title_9": "Diğer notlar",
+    "rule_content_9_1": "(a) Uygunsuz Davranış Yasağı: Görev ve etkinliklere katılmak için herhangi bir eklenti, ekstra ve diğer uygunsuz araçların kullanılması yasaktır. Kullanıcı yasaları ihlal ederse, platform kullanıcının faaliyet yeterliliğini sınırlandıracak veya iptal edecek ve ilgili yasadışı işlemi iptal etme, madalyayı ve hakları ve ödülleri geri çekme hakkına sahiptir. Bu arada platform, kullanıcıların diğer yasal sorumluluklarını ilgili kurallara uygun olarak ele alma ve takip etme hakkını saklı tutar.",
+    "rule_content_9_2": "(b) Muafiyetler: Mücbir sebepler veya koşulların değişmesi durumunda (büyük bir felaket, etkinliğin bir devlet kurumu tarafından durdurulması veya ayarlanması emri verilmesi, etkinliğin ciddi bir siber saldırıya maruz kalması veya etkinliğin bir sistem arızası nedeniyle askıya alınması dahil ancak bunlarla sınırlı olmamak üzere), etkinliğin organizatörü ilgili yasa ve yönetmelik hükümlerine uygun olarak sorumluluktan muafiyet talep edebilir.",
+    "rule_content_9_3": "(c) Yasa ve yönetmeliklerin izin verdiği ölçüde platform, madalya ile ilgili görev ve faaliyetlerin kurallarında değişiklik veya düzenleme yapma hakkını saklı tutar ve ilgili değişiklik veya düzenlemeler görev/faaliyet kuralları sayfasında yayınlanacaktır. Görevlere/faaliyetlere katılmaya devam eden kullanıcılar, değiştirilen veya ayarlanan görev/faaliyet kurallarını kabul etmiş sayılırlar.",   
+    "rule_content_9_4": "(d) Kullanıcı deneyimini daha da iyileştirmek için madalyayı zaman zaman zenginleştirecek ve yükselteceğiz ve madalyanın açıklaması buna göre güncellenecek ve güncelleme yayın tarihinde yürürlüğe girecektir. Madalyalar ile ilgili nihai yorum hakkı Wyakplatform'a aittir.",   
+    "rule_content_9_5": "(e) Madalyalara karşılık gelen haklar ve faydalar, platform içinde tüketim veya kullanımla sınırlıdır, nakit veya değerli mallara çevrilemez ve herhangi bir şekilde kar getirici faaliyetler için kullanılamaz. Tüm çevrimdışı işlemler, madeni para satıcıları tarafından satın alma ve diğer üçüncü taraf uygunsuz davranışlar yasaktır ve platform, kullanıcıların kendi başlarına üstlenmeleri gereken yukarıdaki işlemleri engelleyecektir."
+    
+}

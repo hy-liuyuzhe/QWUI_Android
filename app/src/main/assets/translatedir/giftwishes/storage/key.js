@@ -1,0 +1,2 @@
+export const GIFT_WISH_WIN_GOOD_DELIVERED_TIP_LEVEL = "gift_wish_delivered_tip_level";
+export const GIFT_WISH_GOOD_DELIVERED_TIP_LEVEL_TIME = "gift_wish_good_delivered_tip_level_time";

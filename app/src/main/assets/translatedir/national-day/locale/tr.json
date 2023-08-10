@@ -1,0 +1,9 @@
+{
+    "national_day_gift_title": "{num} Suudi bayrağı her gönderildiğinde, bayrak tüm sunucuda bir kez çekilecek",
+    "national_day_gift_title_dz": "{num} Cezayir bayrağı her gönderildiğinde, bayrak tüm sunucuda bir kez çekilecek",
+    "national_day_gift_title_ma": "{num} Fas bayrağı her gönderildiğinde, bayrak tüm sunucuda bir kez çekilecek",
+    "national_day_gift_title_country": "{num}{country} ulusal bayrağı her gönderildiğinde, bayrak tüm sunucuda bir kez gönderilecek",
+    "national_day_rank_title": "Bu yükseltme turu en çok katkıda bulunan",
+    "national_day_rank_explain": "Her turda ilk 3'e girenler, bayrak kaldırma töreninde görünecek.",
+    "national_day_reward_title": "Toplam olarak {times} kez en fazla katkıda bulunan  {times}olduğunuz için {days} günlük fotoğraf çerçevesini kanzandınız."
+}

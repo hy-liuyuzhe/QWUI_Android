@@ -1,0 +1,21 @@
+{
+  "super_gift_lottery_remaining_debris": "الأجزاء المتبقية",
+  "super_gift_lottery_exchange": "تبادل",
+  "super_gift_lottery_debris_not_enough": "الأجزاء غير كافية",
+  "super_gift_lottery_sure_exchange": "هل أنت متأكد من التبادل؟",
+  "super_gift_lottery_history_records": "السجل",
+  "super_gift_lottery_draw": "لقد فزت",
+  "super_gift_lottery_once": "مره واحده ",
+  "super_gift_lottery_ten_times": "10 مرات",
+  "super_gift_lottery_energy_value_rule": "قواعد قيمة الطاقة",
+  "super_gift_lottery_energy_value_value": "قيمة الطاقة = عدد العملات الذهبية المستهلكة في الشهر الحالي",
+  "super_gift_lottery_energy_value_rule_desc": "1. عندما تستوفي قيمة الطاقة المتراكمة لكل شهر شروط فتح الصندوق ، يمكنك فتح صندوق هدايا الطاقة والحصول على مكافأة تأهيل اليانصيب. سيتم مسح قيمة الطاقة تلقائيًا في اليوم الأول من كل شهر. مؤهلات فتح الصندوق مناسبة لا تدعم التراكم للشهر المقبل.\n\n2. يمكن فتح كل صندوق هدايا للطاقة مرة واحدة في الشهر ولا يمكن فتحه بشكل متكرر. إذا كانت قيمة الطاقة المتراكمة في الشهر الحالي تفي بشروط فتح جميع الصناديق ، يمكنك فتح جميع صناديق هدايا الطاقة والحصول على مكافأة تأهيل اليانصيب. ",
+  "super_gift_lottery_debris": "الأجزاء ",
+  "super_gift_lottery_energy_value": "قيمة الطاقة",
+  "super_gift_lottery_receive": "فتح",
+  "super_gift_lottery_energy_value_of_month": "قيمة الطاقة في الشهر",
+  "super_gift_lottery_next_energy_value_need": "مطلوب فقط قيمة طاقة {value} حتى مكافأة المرحلة التالية",
+  "super_gift_lottery_tickets_amount": "لديك حاليًا {tickets} تذاكر سحب متبقية",
+  "super_gift_lottery_happy_to_accept": "يسعدنا قبولك",
+  "super_gift_lottery_get_tickets_amount": "تذكرة السحبx {amount}"
+}

@@ -1,0 +1,13 @@
+{
+  "light_gift_reward_top_tip": "点亮10次所有礼物，你可以获得",
+  "light_gift_reward_bottom_tip": "你送谁流星雨礼物数量最多，谁将默认获取另外一个情侣相框",
+  "light_gift_name_gift_times_tip": "每点亮7次，可以获得冠名1周礼物的机会",
+  "light_gift_name_gift_got_channce": "获取定制ID{num}个月",
+  "light_gift_name_gift_first_tip": "冠名礼物必须为活动中的礼物，先点亮拥有优先安排的机会",
+  "light_gift_name_gift_contact_tip": "点亮后我们的工作人员会主动联系你，安排礼物的选择和时间安排",
+  "light_gift_light_times": "完成所有礼物点亮{num}次，获得",
+  "light_gift_light_num": "点亮 {num}",
+  "light_gift_name_gift_instruction": "所有奖励将在活动结束后发放",
+  "light_gift_all_light_times" : "点亮：{times}次",
+  "light_gift_light_tip": "送出这个礼物，视为点亮"
+}

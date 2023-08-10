@@ -1,0 +1,23 @@
+{
+  "couple_award": "奖励",
+  "couple_ranking_single": "第{rank}名",
+  "couple_ranking_range": "第{min}到{max}名",
+  "couple_group_cp": "组CP",
+  "couple_update_version": "你需要更新到最新版本，才能组建CP",
+  "couple_no_cp": "你还没有CP，只有CP才可以参加活动",
+  "couple_gift_send": "恭喜你在活动中获得{gift}",
+  "couple_activity_rule": "活动规则",
+  "couple_rank_gift_rule": "CP双方收到以下CP礼物，可以为CP累加结缘值，获得全服祝福。CP之间互送礼物，结缘值翻倍喔！",
+  "couple_rank_gift_wyak_rule": "CP之间互送以下活动礼物，即可增加亲密积分！根据礼物价值计算，100金币=1亲密积分",
+  "couple_rank_activity_rule1": "1.Once the player has formed Couple, they can participate in the activity ranking. \nIf the Couple relationship is removed midway through the activity,the accumulated binding value will be reset. \nIf couple form again later, value will be recalculated.",
+  "couple_rank_activity_rule2": "2.Couple Ranking is sorted according to the number of gold coins corresponding to this contest gifts sending by other users or the couple partner.",
+  "couple_rank_activity_rule3": "3.Couple can get value by receiving  CP activity specified gifts, 1 gold coin =1 bond value;\nIf couple get CP activity specified gifts from the couple partner, 1 gold =2 values;",
+  "couple_rank_activity_rule4": "4.{app} reserves the right of interpretation",
+  "couple_rank_activity_wyak_rule1": "1、用户成为CP后，即可参与活动排行。若活动中途解除了CP关系，活动累计的亲密积分清零。后续再组建CP将重新计算亲密积分；",
+  "couple_rank_activity_wyak_rule2": "2、CP获得活动礼物均可获得亲密积分，100金币=1亲密积分，积分没有上限；",
+  "couple_rank_activity_wyak_rule3": "3、CP同时上麦1分钟=1亲密积分，每天最多获得180亲密积分（需要CP双方在同一房间且同时上麦）；",
+  "couple_rank_activity_wyak_rule4": "4、活动奖励会在活动结束后24小时内发放；",
+  "couple_rank_activity_wyak_rule5": "5、活动最终解释权归{app}所有。",
+  "couple_cp_list": "CP榜单",
+  "couple_intimacy_title": "亲密积分"
+}

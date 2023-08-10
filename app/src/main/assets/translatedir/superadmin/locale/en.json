@@ -1,0 +1,11 @@
+{
+  "super_admin_order_manage": "Order manage",
+  "super_admin_responsibility_tip": "Super administrators are both honor and responsibility. Please punish users with caution. If there is a situation where users are punished for no reason, the privileges of super administrators will be revoked.",
+  "super_admin_user_penalty": "User penalty",
+  "super_admin_user_penalty_remain_normal_amount": "Remain Normal Penalties：{count}",
+  "super_admin_user_penalty_remain_severe_amount": "Remain Severe Penalties：{count}",
+  "super_admin_punishment_record": "Punishment record",
+  "super_admin_punishment_detail": "Punishment detail",
+  "super_admin_punishment_operation": "Punishment operation",
+  "super_admin_punishment_reason": "Punishment reason"
+}

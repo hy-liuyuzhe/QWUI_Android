@@ -1,0 +1,21 @@
+{
+  "super_gift_lottery_remaining_debris": "剩余锁片",
+  "super_gift_lottery_exchange": "兑换",
+  "super_gift_lottery_debris_not_enough": "碎片不足",
+  "super_gift_lottery_sure_exchange": "确定兑换？",
+  "super_gift_lottery_history_records": "记录",
+  "super_gift_lottery_draw": "抽中了",
+  "super_gift_lottery_once": "一次",
+  "super_gift_lottery_ten_times": "10次",
+  "super_gift_lottery_energy_value_rule": "能量值规则",
+  "super_gift_lottery_energy_value_value": "能量值=当月消耗金币数",
+  "super_gift_lottery_energy_value_rule_desc": "1.当每个月累计能量值满足开盒条件时，即可开启能量礼盒，领取抽奖资格奖励。能量值将在每个月1日自动清零，当月满足开盒条件后但未领取的开盒资格，不支持累积到次月使用。\n\n2.每个能量礼盒每月仅支持开启1次，不可重复开启。若当月累积的能量值满足所有盒子的开盒条件时，可开启全部能量礼盒礼盒，领取抽奖资格奖励。",
+  "super_gift_lottery_debris": "碎片",
+  "super_gift_lottery_energy_value": "能量值",
+  "super_gift_lottery_receive": "打开",
+  "super_gift_lottery_energy_value_of_month": "当月能量值",
+  "super_gift_lottery_next_energy_value_need": "距下一阶段奖励仅需{value}能量值",
+  "super_gift_lottery_tickets_amount": "你当前剩余{tickets}张抽奖券",
+  "super_gift_lottery_happy_to_accept": "开心收下",
+  "super_gift_lottery_get_tickets_amount": "抽奖券x{amount}"
+}

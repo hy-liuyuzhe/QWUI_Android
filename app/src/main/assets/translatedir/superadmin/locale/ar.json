@@ -1,0 +1,11 @@
+{
+  "super_admin_order_manage": "إدارة الأوامر",
+  "super_admin_user_penalty": "عقوبة المستخدم",
+  "super_admin_responsibility_tip": "يتسم المشرفون المتميزون بالشرف والمسؤولية. يرجى معاقبة المستخدمين بحذر. إذا كان هناك موقف يتم فيه معاقبة المستخدمين بدون سبب ، فسيتم إبطال امتيازات المشرف المتميز",
+  "super_admin_user_penalty_remain_normal_amount": "عدد العقوبات العادية المتبقية：{count}",
+  "super_admin_user_penalty_remain_severe_amount": "عدد العقوبات الشديدة المتبقية：{count}",
+  "super_admin_punishment_record": "سجل العقوبات",
+  "super_admin_punishment_detail": "تفاصيل العقوبة",
+  "super_admin_punishment_operation": "إجراء عملية العقوبة",
+  "super_admin_punishment_reason": "سبب العقوبة"
+}

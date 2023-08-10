@@ -1,0 +1,11 @@
+{
+  "super_admin_order_manage": "秩序管理",
+  "super_admin_user_penalty": "用户处罚",
+  "super_admin_responsibility_tip": "超级管理员是荣誉也是责任，请谨慎处罚用户，如果存在无故处罚用户的情况，将被回收超级管理员权限",
+  "super_admin_user_penalty_remain_normal_amount": "剩余普通封禁次量：{count}",
+  "super_admin_user_penalty_remain_severe_amount": "剩余严重封禁次量：{count}",
+  "super_admin_punishment_record": "处罚记录",
+  "super_admin_punishment_detail": "处罚详情",
+  "super_admin_punishment_operation": "处罚操作",
+  "super_admin_punishment_reason": "处罚原因"  
+}

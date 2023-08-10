@@ -1,0 +1,18 @@
+{
+    "party_activity_title": "Wyak arama yeni yıl partisi",
+    "party_top_desc": "İlk 3, Yeni Yıl partisinin resmi olarak belirlenen organizatörleri olacak",
+    "party_reward": "Ödül",
+    "party_reward_rank": "No.{rank}",
+    "party_activity_rule1": "1. Herkes yılbaşı etkinlikleri etkinlik süresi içinde oluşturulabilir ve Yeni Yıl etkinlikleri belirtilen süre içinde gerçekleştirilmelidir;",
+    "party_activity_rule2": "2. Tüm ödüller, etkinlik sona erdikten hemen sonra geçerli olacaktır;",
+    "party_activity_rule3": "3. Etkinlik süresi boyunca, her kullanıcı yarışmaya katılmak için yalnızca bir Yeni Yıl etkinliği düzenleyebilir;",
+    "party_activity_rule4": "4. Yılbaşı etkinliğinin yapıldığı odada yılbaşında hediye alarak ve göndererek 2 kat seviye hızlandırması olacaktır.",
+    "party_hot_desc": "Popülarite = odadaki elmas sayısı + odadaki en yüksek çevrimiçi insan sayısının 100 katı",
+    "party_reward_new_year_popular_room": "• Yılbaşı Sıcak Odası No. {rank}",
+    "party_reward_diamond_party_fund": "• {diamonds} Elmas Parti Fonu",
+    "party_reward_new_year_theme": "• Yılbaşına özel oda teması",
+    "party_reward_room_acceleration": "• Odada hediyeler alıp göndererek {time} kat seviye hızlandırma elde edebilirsiniz.",
+    "party_create": "Yeni Yıl Etkinliği Oluşturun",
+    "party_activity_limit": "{limit} yarışmaya katılan kontejan",
+    "party_create_limit": "Yalnızca bir yeni yıl partisi oluşturabilirsiniz"
+}

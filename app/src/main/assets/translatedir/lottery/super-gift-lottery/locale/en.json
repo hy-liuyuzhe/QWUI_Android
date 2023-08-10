@@ -1,0 +1,21 @@
+{
+  "super_gift_lottery_remaining_debris": "Remaining debris",
+  "super_gift_lottery_exchange": "Exchange",
+  "super_gift_lottery_debris_not_enough": "Debris not enough",
+  "super_gift_lottery_sure_exchange": "Are you sure to exchange?",
+  "super_gift_lottery_history_records": "Records",
+  "super_gift_lottery_draw": "draw",
+  "super_gift_lottery_once": "Once",
+  "super_gift_lottery_ten_times": "10 times",
+  "super_gift_lottery_energy_value_rule": "Energy value rule",
+  "super_gift_lottery_energy_value_value": "Energy value = the number of gold coins consumed in the current month",
+  "super_gift_lottery_energy_value_rule_desc": "1. When the accumulated energy value of each month meets the conditions for opening the box, you can open the energy gift box and receive a lottery qualification reward. The energy value will be automatically reset on the 1st of each month, and the unboxing qualifications that have not been received after meeting the box opening conditions in the current month will not be accumulated to the next month.\n\n2. Each energy gift box can only be opened once a month and cannot be opened repeatedly. If the energy value accumulated in the current month meets the opening conditions of all boxes, you can open all the energy gift boxes and receive the lottery qualification reward.",
+  "super_gift_lottery_debris": "Debris",
+  "super_gift_lottery_energy_value": "Energy value",
+  "super_gift_lottery_receive": "Receive",
+  "super_gift_lottery_energy_value_of_month": "Energy value of month",
+  "super_gift_lottery_next_energy_value_need": "Only {value} energy value are needed until the next stage reward",
+  "super_gift_lottery_tickets_amount": "You have {tickets} raffle tickets",
+  "super_gift_lottery_happy_to_accept": "Happy to accept",
+  "super_gift_lottery_get_tickets_amount": "Raffle tickets x{amount}"
+}

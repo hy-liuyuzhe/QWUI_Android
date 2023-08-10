@@ -1,0 +1,12 @@
+{
+    "gift_wishes_set_gifts_want_today": "请设置你今天想要的礼物",
+    "gift_wishes_wish": "心愿",
+    "gift_wishes_gifts_want_today": "我今天的心愿礼物",
+    "gift_wishes_completed": "已完成",
+    "gift_wishes_award": "奖励",
+    "gift_wishes_help_others_desc": "累计帮助过多少人完成礼物心愿",
+    "gift_wishes_help_others_detail": "给某人送了他的心愿礼物算完成1次",
+    "gift_wishes_gift_package": "Lv{level} 礼包",
+    "gift_wishes_update_version_tip": "更新到最新版本才能更好参与活动",
+    "gift_wishes_package_delivered": "恭喜你获得了{lv}礼包，奖励已经发送到你的背包"
+}

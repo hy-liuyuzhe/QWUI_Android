@@ -1,0 +1,13 @@
+{
+  "light_gift_reward_top_tip": "Light up 10 times all gifts, you can get",
+  "light_gift_reward_bottom_tip": "Whoever you give the most meteor shower gifts will get another couple photo frame by default",
+  "light_gift_name_gift_times_tip": "Every 7 times you light up, you can get a chance to name a gift for the week.",
+  "light_gift_name_gift_got_channce": "Get the Custom ID for {num} months",
+  "light_gift_name_gift_first_tip": "Named gifts are gifts in the event, first to light up opportunities for prioritized arrangements.",
+  "light_gift_name_gift_contact_tip": "After obtaining the title, we will actively contact you to arrange the choice and time of the gift.",
+  "light_gift_light_times": "You finish lighting {num} times and get",
+  "light_gift_light_num": "Light {num}",
+  "light_gift_name_gift_instruction": "All rewards will be issued after the event.",
+  "light_gift_all_light_times" : "All light: {times} times",
+  "light_gift_light_tip": "Sent the gift, it is considered to light up"
+}

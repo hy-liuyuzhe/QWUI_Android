@@ -1,0 +1,22 @@
+{
+    "star_light_list": "Yıldız Işığı Sıralaması",
+    "rule": "Kural",
+    "star_list": "Yıldız Sıralaması",
+    "rich_list": "Zengin Sıralaması",
+    "award": "Ödül",
+    "ranking": "Sıralama listesi",
+    "reward_car": "{days} Gün",
+    "diamond_count": "{count}",
+    "no_ranking": "Listede değil",
+    "star_rule_title": "Etkinlik kuralları",
+    "rules_1": "1. Yıldız sıralaması, kullanıcıların aldığı belirtilen yarışma hediyelerinden dönüştürülen elmas sayısına göre sıralanır. İlk 200 kullanıcı farklı ödüller alır ve birinci olan kullanıcı 2022 Parlayan Yıldız unvanını alır;",
+    "rules_2": "2. Zengin sıralaması, kullanıcılar tarafından gönderilen belirlenmiş yarışma hediyelerine karşılık gelen coins sayısına göre sıralanır. ilk 30'a farklı ödüller verilir ve birinci olana 2022'de Süper Zengin unvanı verilir;",
+    "rules_3": "3. Etkinlikten elde edilen ödüller, etkinliğin bitiminden sonraki 24 saat içinde kazananlara gönderilecektir:",
+    "rules_4": "4. Kazananlar, etkinlik sona erdikten 1 gün sonra duyurulacaktır;",
+    "loading": "Yükleniyor",
+    "activity_end": "Etkinlik bitti",
+    "activity_time": "{start}-{end}",
+    "contest_gift": "Tören hediyesi",
+    "star_contest_tip": "Büyük tören hediyesini aldıktan sonra, sıralama için karşılık gelen değerde elmaslara dönüştürülecektir.",
+    "rich_contest_tip": "Gönderdiğiniz tören hediye, sıralama için karşılık gelen değerde altın paralara dönüştürülecektir."
+}

@@ -1,0 +1,12 @@
+{
+    "gift_wishes_set_gifts_want_today": "Please set your wish gift for today",
+    "gift_wishes_wish": "WISH",
+    "gift_wishes_gifts_want_today": "The present I want to receive today",
+    "gift_wishes_completed": "Completed",
+    "gift_wishes_award": "AWARD",
+    "gift_wishes_help_others_desc": "How many people have you helped fulfill your gift wishes?",
+    "gift_wishes_help_others_detail": "Giving someone his wish gift counts as 1 completion",
+    "gift_wishes_gift_package": "Lv{level} gift pack",
+    "gift_wishes_update_version_tip": "Update to the latest version to better participate in the event",
+    "gift_wishes_package_delivered": "Congratulations, you got the {lv} package, the reward has been sent to your backpack"
+}

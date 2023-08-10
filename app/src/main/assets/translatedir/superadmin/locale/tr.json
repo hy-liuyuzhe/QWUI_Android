@@ -1,0 +1,10 @@
+{
+    "super_admin_order_manage": "Düzeni sağlama",
+    "super_admin_user_penalty": "Kullanıcı cezası",
+    "super_admin_responsibility_tip": "Süper yönetici olmak hem bir onur hem de bir sorumluluktur. Lütfen kullanıcıları cezalandırırken dikkatli olun. Kullanıcıları sebepsiz yere cezalandırırsanız, süper yönetici ayrıcalıklarınız iptal edilir.",
+    "super_admin_user_penalty_remain_amount": "Kalan sayısı：{count}",
+    "super_admin_punishment_record": "Ceza rekoru",
+    "super_admin_punishment_detail": "Ceza detayları",
+    "super_admin_punishment_operation": "Ceza operasyonu",
+    "super_admin_punishment_reason": "Ceza nedeni"
+}

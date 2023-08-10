@@ -1,0 +1,8 @@
+{
+    "rule_1": "1. Everyone will have a temporary club, which can be used to invite friends to enter the club to protect the chest.",
+    "rule_2": "2. Every day at 00:00 (UTC+0) will randomly get a chest (unopened).",
+    "rule_3": "3. The unopened chest can be guarded by inviting friends to enter your club together. Different chests have different guard time. The higher the chest level, the richer the rewards.",
+    "rule_4": "4. After the chest enters the club and starts guarding, the guarding cannot be cancelled, and the club will be occupied for a period of time (guard time + 10 minutes cooldown), during this period, you cannot bring new chests into your own club.",
+    "rule_5": "5. After both guardians have guarded in the club for a certain period of time, they will successfully guard the chest, and can open the chest, randomly get one of the prizes in the chest. (the rewards will take effect directly, and the duration of the same item will be accumulated)",
+    "rule_6": "Add: Guarding is a joint action, and both guardians need to be in the club. If one of guardians leaves the club and fails to return to the club within 1 minute, the chest guarding will fail. Enjoy your time in the club together!"
+}

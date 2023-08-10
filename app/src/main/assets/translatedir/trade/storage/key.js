@@ -1,0 +1,1 @@
+export const TRADE_RECHARGE_REACH_LEVEL = "trade_recharge_reach_level";

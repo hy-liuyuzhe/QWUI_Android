@@ -1,0 +1,12 @@
+{
+    "gift_wishes_set_gifts_want_today": "कृपया आज के लिए अपना इच्छा उपहार निर्धारित करें",
+    "gift_wishes_wish": "इच्छा",
+    "gift_wishes_gifts_want_today": "वर्तमान मैं आज प्राप्त करना चाहता हूं",
+    "gift_wishes_completed": "पुरा होना।",
+    "gift_wishes_award": "पुरस्कार",
+    "gift_wishes_help_others_desc": "आपने अपनी उपहार इच्छाओं को पूरा करने में कितने लोगों की मदद की है?",
+    "gift_wishes_help_others_detail": "किसी को उसकी इच्छा का उपहार देना 1 पूर्णता के रूप में गिना जाता है",
+    "gift_wishes_gift_package": "Lv{level} उपहार पैक",
+    "gift_wishes_update_version_tip": "कार्यक्रम में बेहतर भागीदारी के लिए नवीनतम संस्करण में अपडेट करें",
+    "gift_wishes_package_delivered": "बधाई हो, आपको {lv} पैकेज मिल गया है, इनाम आपके बैकपैक में भेज दिया गया है"
+}

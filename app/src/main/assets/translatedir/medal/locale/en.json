@@ -1,0 +1,36 @@
+{
+    "medal_rule_title": "Description of Medal Activities",
+
+    "rule_title_1": "Special Note",
+    "rule_content_1_1": "(a) Before participating in the medal acquisition activity, please read the terms of the event rules carefully, especially the terms related to completing event tasks, receiving event rewards, and event account anomalies/violations.",
+    "rule_content_1_2": "(b) Users who participate in this activity are deemed to have fully read and understood the rules of this activity, and are voluntarily bound by the rules of the activity.",
+
+    "rule_title_2": "What is a medal?",
+    "rule_content_2": "Medals are honorary rewards issued by Wyak to users who meet certain conditions. After successfully registering and logging in to Wyak, and successfully completing tasks or activities on the platform and meeting the requirements, you can get the corresponding medals and levels. Medals are divided into two types: achievement medals and activity medals, and each type of medal is divided into three levels: I, II, and III. The medal level is determined based on the user's accumulated behavior of using Wyak APP services within a certain period of time, and users can upgrade when they reach the corresponding level threshold.",
+
+    "rule_title_3": "How to get the medal and the corresponding level?",
+    "rule_content_3": "Each medal and the corresponding level have different ways to obtain them, which are described in detail on the details page of the corresponding medal. When the goal is achieved, the official will automatically issue and light the medal. The calculation time of the initial level of the medal varies depending on the type of medal. It can be calculated from the date when the medal was launched or the date of first logging in to Wyak. When the medal upgrade mechanism is launched, the user's historical data will also be converted and set to the corresponding initial level. The actual shall prevail.",
+
+    "rule_title_4": "What can the medal do?",
+    "rule_content_4": "Different medals represent users' achievements in different fields. The higher the medal level, the higher your achievements in this field. Medals can be worn next to your profile picture to show your distinguished status and outstanding achievements on the platform. Some medals have corresponding rights and interests rewards. The higher the medal level, the richer the content of rights and interests. Based on its own business development, the platform continuously optimizes, replaces, upgrades and iterates the current medal-level privileges, and continuously innovates the types and contents of medal-level privileges, striving to provide users with better services and social experiences.",
+
+    "rule_title_5": "Do the corresponding rights and interests of the medal have an expiration date?",
+    "rule_content_5": "Validity period of the corresponding rights and interests of the medal: The validity period of the rights and interests of the medal is 90 days from the date you reach the corresponding medal level. The benefits of different medal levels cannot be superimposed. If you reach a new medal level within the validity period of the benefits, the new benefits will be calculated based on the date when your new level reached.",
+
+    "rule_title_6": "How can I check the status of my medals?",
+    "rule_content_6": "Log in to the Wyak APP and go to the [My] - [Medal] page to view the obtained children and medal levels.",
+
+    "rule_title_7": "How do I increase my medal level?",
+    "rule_content_7": "Your Medallion level is determined by your current quest activity status. After successfully registering and logging into the Wyak APP, you can obtain corresponding data records after completing tasks and activities in the APP. You can upgrade to a new level after you complete the corresponding tasks/activities and reach the level-up threshold. The platform adjusts the relevant rules of the medal level according to the situation. If the rules change, the rules at that time shall prevail.",
+
+    "rule_title_8": "Validity period of the medal",
+    "rule_content_8": "Usually medals have no expiration date. If a user is found to have illegally obtained medals, the maliciously obtained medals will be considered invalid.",
+
+    "rule_title_9": "Other instructions",
+    "rule_content_9_1": "(a) Prohibition of improper behavior: It is prohibited to use any plug-ins, plug-ins and other improper means to participate in tasks and activities. If the user violates laws and regulations, the platform will limit or cancel the user's activity qualifications, and has the right to revoke relevant illegal operations, withdraw medals and equity rewards. At the same time, it will be processed in accordance with relevant rules and reserves the right to pursue other legal responsibilities of users.",
+    "rule_content_9_2": "(b) Exemption: In the event of force majeure or changes in circumstances (including but not limited to major disasters, activities that need to be stopped or adjusted by orders from government agencies, activities that are subject to severe cyber attacks or need to be suspended due to system failures), The event organizer may claim exemption from liability in accordance with relevant laws and regulations.",
+    "rule_content_9_3": "(c) To the extent permitted by laws and regulations, the platform has the right to change or adjust the tasks and activity rules related to medals, and the relevant changes or adjustments will be published on the task/activity rules page. The user's continued participation in the task/activity is deemed to agree and accept the changed or adjusted task/activity rules.",   
+    "rule_content_9_4": "(d) In order to further improve the user experience, we will enrich and open medals from time to time, and the descriptions of the medals will also be updated accordingly. The updated content will take effect from the date of announcement. Wyak platform reserves the right of final interpretation of the medal.",   
+    "rule_content_9_5": "(e) The rights and interests corresponding to the medal are limited to consumption or use on the platform, and cannot be reversely converted into cash or valuable commodities, and cannot be used for any form of profit-making activities. All offline transactions, acquisitions by currency merchants and other third-party improper behaviors are prohibited. The platform will severely crack down on the above-mentioned transactions, and users must bear it by themselves."
+    
+}

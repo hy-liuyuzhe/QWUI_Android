@@ -1,0 +1,13 @@
+{
+  "light_gift_reward_top_tip": "تضيء جميع الهدايا 10 مرات ويمكنك الحصول عليها",
+  "light_gift_reward_bottom_tip": "أيا كان من ترسل له  عدد اكثر من هدايا النيزك ستحصل على إطار صور آخر للزوجين بشكل افتراضي",
+  "light_gift_name_gift_times_tip": "في كل 7 مرات تجمع الهدايا ، يمكنك الحصول على فرصة لتسمية هدية لمدة أسبوع",
+  "light_gift_name_gift_got_channce": "احصل علي ID مخصص لمدة {num} شهر",
+  "light_gift_name_gift_first_tip": "يجب أن تكون الهدية موجودة في الحدث ، الهدية التي تجمعها أولًا لديها الفرصة في الترتيب",
+  "light_gift_name_gift_contact_tip": "بعد نشاط جمع الهدايا، سيأخذ موظفونا زمام المبادرة للتواصل مع للترتيب لاختيار الهدية وتوقيتها",
+  "light_gift_light_times": "لقد أكملت جمع الهدايا {num} مرة، احصل عليها الآن",
+  "light_gift_light_num": "ضوء {num}",
+  "light_gift_name_gift_instruction": "سيتم توزيع جميع المكافآت بعد انتهاء الحدث",
+  "light_gift_all_light_times" : "أضاء: {times} مرة",
+  "light_gift_light_tip": "أرسل الهدية ، ويعتبر أن تضيء"
+}

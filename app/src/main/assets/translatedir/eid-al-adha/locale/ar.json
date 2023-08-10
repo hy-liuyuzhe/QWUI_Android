@@ -1,0 +1,18 @@
+{
+  "eid_al_adha_activity_gifts_desc": "أرسل الهدايا التالية للمشاركة في الحدث",
+  "eid_al_adha_shared_prize_pool": "مشاركة صندوق الجوائز",
+  "eid_al_adha_shared_prize_pool_desc": "سيتم تضمين 1٪ من العملات الذهبية المستهلكة في إرسال هدايا الحدث في مجموع الجوائز",
+  "eid_al_adha_shared_prize_pool_total_coins": "عملات ذهبية {coins}",
+  "eid_al_adha_shared_prize_pool_total_people": "شارك {num} في الحدث",
+  "eid_al_adha_award": "الجوائز",
+  "eid_al_adha_award_top_rank": "اول {rank} اسم",
+  "eid_al_adha_award_num": "{value}days x{num}",
+  "eid_al_adha_contribution_list": "قائمة المساهمات",
+  "eid_al_adha_contribution_list_desc": "مجموع العملات الذهبية المساهمة في صندوق الجوائز ",
+  "eid_al_adha_activiy_award": "جوائز الحدث",
+  "eid_al_adha_activiy_end_tip": "الحدث انتهى ، سوف تحصل",
+  "eid_al_adha_rule_ranking": "تصنيف",
+  "eid_al_adha_rule_share_ratio": "نسبة المشاركة",
+  "eid_al_adha_rule_divide_equally_tip": "سيتم تقاسم {rate} المتبقية بالتساوي من قبل جميع المشاركين في الحدث",
+  "eid_al_adha_activity_gifts_for_all_desc": "أرسل أي هدية وستتمكن من المشاركة في النشاط"
+}

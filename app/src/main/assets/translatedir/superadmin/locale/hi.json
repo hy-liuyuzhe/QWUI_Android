@@ -1,0 +1,10 @@
+{
+    "super_admin_order_manage": "आदेश प्रबंधन",
+    "super_admin_responsibility_tip": "सुपर व्यवस्थापक सम्मान और उत्तरदायित्व दोनों हैं। कृपया उपयोगकर्ताओं को सावधानी से दंडित करें। यदि ऐसी स्थिति होती है जहां उपयोगकर्ताओं को बिना किसी कारण के दंडित किया जाता है, तो सुपर व्यवस्थापकों के विशेषाधिकार रद्द कर दिए जाएंगे।",
+    "super_admin_user_penalty": "उपयोगकर्ता दंड",
+    "super_admin_user_penalty_remain_amount": "शेष राशि:{count}",
+    "super_admin_punishment_record": "सजा का रिकॉर्ड",
+    "super_admin_punishment_detail": "सजा का विवरण",
+    "super_admin_punishment_operation": "दंड संचालन",
+    "super_admin_punishment_reason": "सजा का कारण"
+}

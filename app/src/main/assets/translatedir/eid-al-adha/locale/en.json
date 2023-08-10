@@ -1,0 +1,18 @@
+{
+  "eid_al_adha_activity_gifts_desc": "Send the following gifts to participate in the event.",
+  "eid_al_adha_shared_prize_pool": "Shared prize pool",
+  "eid_al_adha_shared_prize_pool_desc": "1% of the gold coins consumed by sending event gifts will be included in the prize pool.",
+  "eid_al_adha_shared_prize_pool_total_coins": "{coins}coins",
+  "eid_al_adha_shared_prize_pool_total_people": "{num} person had taken part activity",
+  "eid_al_adha_award": "Award",
+  "eid_al_adha_award_top_rank": "Top {rank}",
+  "eid_al_adha_award_num": "{value}days x{num}",
+  "eid_al_adha_contribution_list": "Contribution list",
+  "eid_al_adha_contribution_list_desc": "Refers to the number of gold coins contributed by users to the prize pool.",
+  "eid_al_adha_activiy_award": "Activity Award",
+  "eid_al_adha_activiy_end_tip": "The activity has ended, you will get",
+  "eid_al_adha_rule_ranking": "Ranking",
+  "eid_al_adha_rule_share_ratio": "Share ratio",
+  "eid_al_adha_rule_divide_equally_tip": "The remaining {rate} is divided equally among all event participants.",
+  "eid_al_adha_activity_gifts_for_all_desc": "You can participate in the activity with any gift"
+}

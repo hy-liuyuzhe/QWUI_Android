@@ -1,0 +1,257 @@
+@use "./var.scss" as *;
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input {
+  -webkit-user-select: auto;
+}
+
+body * {
+  box-sizing: border-box;
+}
+body {
+  font-family: PingFangSC-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma,
+    Arial, PingFang SC-Light, Microsoft YaHei;
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: transparent;
+}
+
+button:active {
+  opacity: 0.6;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.single-line-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.image-background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+@mixin we($block) {
+  $B: $namespace + "-" + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin z-layout($block) {
+  $B: $block + "-z-layout";
+
+  .#{$B} {
+    position: relative;
+    @content;
+  }
+}
+
+@mixin v-layout($block, $align: center) {
+  $B: $block + "-v-layout";
+
+  .#{$B} {
+    display: flex;
+    flex-direction: column;
+    align-items: $align;
+    @content;
+  }
+}
+
+@mixin h-layout($block, $align: center) {
+  $B: $block + "-h-layout";
+
+  .#{$B} {
+    display: flex;
+    flex-direction: row;
+    align-items: $align;
+    @content;
+  }
+}
+
+@mixin grid-layout($block, $colums, $rows, $column-gap, $row-gap) {
+  $B: $block + "-grid-layout";
+
+  .#{$B} {
+    display: grid;
+    grid-template-columns: $colums;
+    grid-template-rows: $rows;
+    grid-column-gap: $column-gap;
+    grid-row-gap: $row-gap;
+    @content;
+  }
+}
+
+@mixin backgroud($block, $color) {
+  $B: $block + "-background";
+  .#{$B} {
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    position: fixed;
+    @content;
+  }
+}
+
+@mixin image-view($block, $width, $height) {
+  $B: $block + "-image-view";
+  .#{$B} {
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+
+@mixin text-view(
+  $block,
+  $font-size,
+  $line-height,
+  $font-color,
+  $font-weight: normal,
+  $font-family: SFUIText,
+  $text-align: start,
+  $line-number: 0,
+  //0表示自动换行
+) {
+  $B: $block + "-text-view";
+  .#{$B} {
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+    color: $font-color;
+    line-height: $line-height;
+    text-align: $text-align;
+    @if $line-number == 0 {
+      white-space: pre;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      white-space: pre-line;
+    } @else if $line-number == 1 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    @content;
+  }
+}
+
+@mixin edit-view(
+  $block,
+  $width,
+  $height,
+  $font-size,
+  $font-color,
+  $font-weight: normal,
+  $font-family: SFUIText,
+  $text-align: start,
+  $background-color
+) {
+  $B: $block + "-edit-view";
+  .#{$B} {
+    width: $width;
+    height: $height;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+      family: $font-family;
+    }
+    color: $font-color;
+    text-align: $text-align;
+    background-color: $background-color;
+    border: 0px solid #ffffff;
+    @content;
+  }
+}
+
+@mixin divide-line($block, $width, $height, $color) {
+  $B: $block + "-divide-line";
+  .#{$B} {
+    width: $width;
+    height: $height;
+    background: $color;
+    @content;
+  }
+}
+
+@mixin button(
+  $block,
+  $width,
+  $height,
+  $text-size,
+  $text-color: #ffffff,
+  $border-radius: 48px,
+  $background: #00e0d7
+) {
+  $B: $block + "-button";
+  .#{$B} {
+    width: $width;
+    height: $height;
+    background: $background;
+    border-radius: $border-radius;
+    padding-left: 30px;
+    padding-right: 30px;
+    font: {
+      size: $text-size;
+      weight: bold;
+      family: SFUIText;
+    }
+    color: $text-color;
+    line-height: $height;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @content;
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin dir($dir: "rtl") {
+  [dir="#{$dir}"] & {
+    @content;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

@@ -1,0 +1,1 @@
+export const LIGHT_ALL_GIFTS_TIMES = "light_all_gifts_times"
