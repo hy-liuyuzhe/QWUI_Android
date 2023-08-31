@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/xls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to xls" />
+
+
+    <Button
+        android:id="@+id/more_to_one_json"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="more to one json" />
+
+    <Button
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="count json " />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="4dp"
+            android:drawableEnd="@drawable/room_rules_icon"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="asldfjldaskjflasldfjldaskjflasldfjldaskjflasldfjldaskjflasldfjldaskjfl"
+            android:textColor="@color/black"
+            android:textDirection="locale"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/switch_btn"
+            android:layout_width="45dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
+            android:text="好卡时间到了发会计师"
+            android:textDirection="locale"
+            android:textColor="@color/color_333333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/space"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/space"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/btn"
+            app:layout_constraintStart_toEndOf="@id/textView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn"
+            android:layout_width="50dp"
+            android:layout_height="29dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

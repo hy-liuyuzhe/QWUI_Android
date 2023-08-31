@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import com.qwuiteam.project.R
+import com.qwuiteam.project.setCanMarqueeScrolled
 import kotlinx.android.synthetic.main.fragment_auto_text.*
 
 
@@ -16,6 +17,8 @@ class AutoScrollTextViewFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         autoText.isSelected = true
         autoText2.movementMethod = ScrollingMovementMethod()
+
+        autoText3.setCanMarqueeScrolled()
 
     }
 }

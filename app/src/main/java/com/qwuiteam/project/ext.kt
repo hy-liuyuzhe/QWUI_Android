@@ -1,9 +1,11 @@
 package com.qwuiteam.project
 
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import com.blankj.utilcode.util.LogUtils
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -62,4 +64,11 @@ fun String?.parseURLValue(target: String?): String? {
         e.printStackTrace()
     }
     return this
+}
+
+fun TextView.setCanMarqueeScrolled(){
+    setSingleLine()
+    ellipsize = TextUtils.TruncateAt.MARQUEE
+    isSelected = true
+    marqueeRepeatLimit = -1
 }

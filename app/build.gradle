@@ -113,4 +113,7 @@ dependencies {
 
     implementation project(path: ':lib')
 
+
+    implementation "androidx.camera:camera-camera2:1.2.1"
+
 }

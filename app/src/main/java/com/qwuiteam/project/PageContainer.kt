@@ -20,6 +20,7 @@ enum class PageContainer(
     kotlin("kotlin api 学习", KotlinDocumentFragment::class.java),
     xlog("xlog", XlogFragment::class.java),
     i18n("i18n", I18nFragment::class.java),
+    span("span", SpanFragment::class.java),
     RecyclerHeader("RecyclerView Header", RecyclerHeaderFragment::class.java),
     diff("diff刷新", RecyclerDiffFragment::class.java),
     diffMap("diffMap刷新", RecyclerDiffMapFragment::class.java),
